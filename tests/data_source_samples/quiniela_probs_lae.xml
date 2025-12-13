@@ -1,0 +1,19 @@
+<quinielista>
+    <porcentajes jornada="28" temporada="2026" activo="si">
+        <partido num="1" local="AT.MADRID" visitante="VALENCIA" porc_1="87" porc_X="9" porc_2="4"/>
+        <partido num="2" local="MALLORCA" visitante="ELCHE" porc_1="38" porc_X="36" porc_2="26"/>
+        <partido num="3" local="BARCELONA" visitante="OSASUNA" porc_1="92" porc_X="5" porc_2="3"/>
+        <partido num="4" local="GETAFE" visitante="ESPANYOL" porc_1="34" porc_X="39" porc_2="27"/>
+        <partido num="5" local="SEVILLA" visitante="R.OVIEDO" porc_1="77" porc_X="15" porc_2="8"/>
+        <partido num="6" local="CELTA" visitante="ATH.CLUB" porc_1="31" porc_X="34" porc_2="35"/>
+        <partido num="7" local="LEVANTE" visitante="VILLARREAL" porc_1="11" porc_X="16" porc_2="73"/>
+        <partido num="8" local="ALAVÉS" visitante="R.MADRID" porc_1="7" porc_X="11" porc_2="82"/>
+        <partido num="9" local="SPORTING" visitante="GRANADA" porc_1="53" porc_X="32" porc_2="15"/>
+        <partido num="10" local="VALLADOLID" visitante="ANDORRA FC" porc_1="77" porc_X="15" porc_2="8"/>
+        <partido num="11" local="RACING S." visitante="LEGANÉS" porc_1="76" porc_X="15" porc_2="9"/>
+        <partido num="12" local="R.ZARAGOZA" visitante="CÁDIZ" porc_1="32" porc_X="33" porc_2="35"/>
+        <partido num="13" local="ALMERÍA" visitante="BURGOS" porc_1="69" porc_X="21" porc_2="10"/>
+        <partido num="14" local="CEUTA" visitante="LAS PALMAS" porc_1="26" porc_X="32" porc_2="42"/>
+        <partido num="15" local="RAYO" visitante="BETIS" porc_15L_0="11" porc_15L_1="61" porc_15L_2="25" porc_15L_M="3" porc_15V_0="7" porc_15V_1="37" porc_15V_2="44" porc_15V_M="12"/>
+    </porcentajes>
+</quinielista>

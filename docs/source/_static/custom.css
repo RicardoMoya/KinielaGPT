@@ -1,0 +1,633 @@
+/* Custom CSS for KinielaGPT Documentation - GitBook Style */
+
+/* ============================================
+   LAYOUT & STRUCTURE (GitBook inspired)
+   ============================================ */
+
+/* Main page layout - centered container */
+.page {
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    background-color: #ffffff;
+}
+
+/* Force light mode only - hide dark mode toggle */
+button[title="Toggle Light / Dark / Auto color theme"] {
+    display: none !important;
+}
+
+.theme-toggle {
+    display: none !important;
+}
+
+/* Ensure light theme always */
+html[data-theme="dark"],
+html[data-theme="auto"] {
+    color-scheme: light !important;
+}
+
+body[data-theme="dark"],
+body[data-theme="auto"] {
+    background-color: #ffffff !important;
+    color: #374151 !important;
+}
+
+/* Content area - aligned to left next to sidebar */
+.content {
+    max-width: 950px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+    padding: 1rem 1rem !important;
+}
+
+.main {
+    max-width: none !important;
+}
+
+.main .content {
+    max-width: 950px !important;
+    margin: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Sidebar - GitBook style - part of centered layout */
+/* Sidebar adjustments */
+.sidebar-drawer {
+    max-width: 280px !important;
+    background-color: #fafbfc !important;
+    border-right: 1px solid #e8eaed !important;
+    padding: 1.5rem 1rem !important;
+}
+
+/* Show and style sidebar logo */
+.sidebar-logo-container {
+    text-align: center !important;
+    padding: 1rem 0 1rem 0 !important;
+}
+
+.sidebar-logo {
+    max-width: 150px !important;
+    height: auto !important;
+}
+
+.sidebar-brand-text {
+    display: block !important;
+    margin-top: 0.5rem !important;
+    font-size: 1.125rem !important;
+    font-weight: 600 !important;
+    color: #111827 !important;
+}
+
+.sidebar-tree {
+    font-size: 0.875rem !important;
+}
+
+/* Collapsible captions styling */
+.sidebar-tree .caption {
+    text-transform: none !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    color: #1f2937 !important;
+    margin-top: 0.6rem !important;
+    margin-bottom: 0.2rem !important;
+    letter-spacing: 0 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    padding: 0.5rem 0.75rem !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+
+.sidebar-tree .caption:hover {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+.sidebar-tree .caption::before {
+    content: "▼" !important;
+    display: inline-block !important;
+    margin-right: 0.5rem !important;
+    transition: transform 0.2s ease !important;
+    font-size: 0.65rem !important;
+    color: #9ca3af !important;
+}
+
+.sidebar-tree .caption.collapsed::before {
+    transform: rotate(-90deg) !important;
+}
+
+/* Collapsible content */
+.sidebar-tree .caption + ul {
+    max-height: 1000px !important;
+    overflow: hidden !important;
+    transition: max-height 0.3s ease, opacity 0.3s ease !important;
+    opacity: 1 !important;
+}
+
+.sidebar-tree .caption.collapsed + ul {
+    max-height: 0 !important;
+    opacity: 0 !important;
+}
+
+.sidebar-tree li > a {
+    padding: 0.5rem 0.75rem !important;
+    color: #4b5563 !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    display: block !important;
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+}
+
+.sidebar-tree li > a:hover {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+}
+
+.sidebar-tree .current > a {
+    background-color: #eef2ff !important;
+    color: #6366f1 !important;
+    font-weight: 500 !important;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    text-align: left;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.hero-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Hero section info box style */
+/* Hero section info box style */
+/* Main title styling */
+h1.main-title,
+.content h1.main-title {
+    text-align: center !important;
+    color: #238682 !important;
+    font-family: 'Merriweather', serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    margin-bottom: 2rem !important;
+    line-height: 1.2 !important;
+    border-bottom: none !important;
+}
+
+/* Hero section info box style */
+.hero-description {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #29908d;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.hero-description strong {
+    color: #29908d;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+/* Features list styling - Grid layout with flip effect */
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.1rem;
+}
+
+.features-list li {
+    perspective: 1000px;
+    height: 220px;
+}
+
+.feature-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    transition: transform 1.2s;
+    transform-style: preserve-3d;
+}
+
+.features-list li:hover .feature-content {
+    transform: rotateY(180deg);
+}
+
+.feature-header,
+.feature-description {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.feature-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-top: 4px solid #29908d;
+}
+
+.feature-description {
+    background: linear-gradient(135deg, #29908d 0%, #238682 100%);
+    transform: rotateY(180deg);
+}
+
+.feature-content strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.feature-description p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.0rem;
+    color: #ffffff !important;
+    line-height: 1.4 !important;
+    margin: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   TYPOGRAPHY (Optuna style)
+   ============================================ */
+
+/* Base typography with Outfit */
+body {
+    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333333;
+    font-weight: 400;
+}
+
+.content h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.0rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    border-bottom: none;
+    letter-spacing: -0.02em;
+}
+
+.content h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #34495e;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0e0;
+    letter-spacing: -0.015em;
+}
+
+.content h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #34495e;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.content h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #3d566e;
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.content p {
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 1.5rem;
+    color: #333333;
+    line-height: 1.8;
+}
+
+/* ============================================
+   CODE & SYNTAX (Optuna style)
+   ============================================ */
+
+pre {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.25rem;
+    overflow-x: auto;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+}
+
+code {
+    font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+    background-color: #f5f5f5;
+    color: #c7254e;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+pre code {
+    background-color: transparent;
+    color: #333333;
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+}
+
+/* ============================================
+   LISTS (GitBook spacing)
+   ============================================ */
+
+.content ul, .content ol {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content li {
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 0.75rem;
+    color: #333333;
+    line-height: 1.8;
+}
+
+.content ul ul,
+.content ol ol,
+.content ul ol,
+.content ol ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   LINKS (Optuna blue)
+   ============================================ */
+
+.content a {
+    color: #0074d9;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.content a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ============================================
+   ADMONITIONS (GitBook boxes)
+   ============================================ */
+
+.admonition {
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #6366f1;
+    border-radius: 6px;
+    background-color: #f9fafb;
+    font-size: 0.95rem;
+}
+
+.admonition-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+.admonition.note {
+    border-left-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+.admonition.warning {
+    border-left-color: #f59e0b;
+    background-color: #fffbeb;
+}
+
+.admonition.tip {
+    border-left-color: #10b981;
+    background-color: #f0fdf4;
+}
+
+/* ============================================
+   TABLES (GitBook clean tables)
+   ============================================ */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5rem 0;
+    font-size: 0.9375rem;
+}
+
+th, td {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    background-color: #f9fafb;
+    font-weight: 600;
+    color: #111827;
+    border-top: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+
+blockquote {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .content {
+        padding: 1.5rem 1.25rem !important;
+    }
+    
+    .hero-section {
+        padding: 2.5rem 1.5rem;
+        margin: -1.5rem -1.25rem 2rem -1.25rem;
+    }
+    
+    .hero-logo {
+        width: 80px;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .content h1 {
+        font-size: 1.875rem;
+    }
+    
+    .content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .sidebar-drawer {
+        max-width: 260px !important;
+    }
+}
+
+/* ============================================
+   DARK MODE (if enabled)
+   ============================================ */
+
+[data-theme="dark"] {
+    background-color: #111827;
+}
+
+[data-theme="dark"] body {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+[data-theme="dark"] .page {
+    background-color: #111827;
+}
+
+[data-theme="dark"] .sidebar-drawer {
+    background-color: #1f2937 !important;
+    border-right-color: #374151;
+}
+
+[data-theme="dark"] .hero-section {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+}
+
+[data-theme="dark"] .content h1,
+[data-theme="dark"] .content h2,
+[data-theme="dark"] .content h3,
+[data-theme="dark"] .content h4 {
+    color: #f9fafb;
+}
+
+[data-theme="dark"] .content h2 {
+    border-bottom-color: #374151;
+}
+
+[data-theme="dark"] .content p,
+[data-theme="dark"] .content li {
+    color: #d1d5db;
+}
+
+[data-theme="dark"] pre {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+[data-theme="dark"] code {
+    background-color: #374151;
+    color: #fb7185;
+}
+
+[data-theme="dark"] .admonition {
+    background-color: #1f2937;
+    border-left-color: #6366f1;
+}
+
+[data-theme="dark"] th {
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-color: #374151;
+}
+
+[data-theme="dark"] td,
+[data-theme="dark"] th {
+    border-bottom-color: #374151;
+}
+
+[data-theme="dark"] tbody tr:hover {
+    background-color: #1f2937;
+}
+
+[data-theme="dark"] .sidebar-tree .toctree-l1 > a {
+    color: #e5e7eb;
+}
+
+[data-theme="dark"] .sidebar-tree .toctree-l1 > a:hover {
+    background-color: #374151;
+    color: #818cf8;
+}
+
+[data-theme="dark"] .sidebar-tree .toctree-l1.current > a {
+    background-color: #312e81;
+    color: #818cf8;
+}
+
+[data-theme="dark"] .sidebar-tree .toctree-l2 > a {
+    color: #9ca3af;
+}
+
+[data-theme="dark"] .sidebar-tree .toctree-l2 > a:hover {
+    background-color: #374151;
+    color: #818cf8;
+}
