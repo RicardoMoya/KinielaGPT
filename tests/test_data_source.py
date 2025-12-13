@@ -34,18 +34,13 @@ JORNADA_TEST = 28
 TEMPORADA_TEST = 2026
 
 
-def test_get_xml_as_json(url: str) -> None:
+def test_get_xml_as_json() -> None:
     """
     Prueba la función get_xml_as_json validando la obtención y conversión de XML a JSON.
 
     Verifica que la función puede realizar peticiones HTTP GET a la API de quinielista.es,
     parsear el XML recibido y convertirlo a formato diccionario. Valida la estructura completa
     del JSON resultante incluyendo campos de jornada, temporada, partidos y probabilidades.
-
-    Parameters
-    ----------
-    url : str
-        URL del endpoint XML a probar (URL_LAE o URL_QUINI).
 
     Raises
     ------
@@ -54,7 +49,7 @@ def test_get_xml_as_json(url: str) -> None:
 
     Examples
     --------
-    >>> test_get_xml_as_json(url=URL_TEST_1)
+    >>> test_get_xml_as_json()
     ================================================================================
     TEST: get_xml_as_json()
     ================================================================================
@@ -67,7 +62,7 @@ def test_get_xml_as_json(url: str) -> None:
     print("TEST: get_xml_as_json()")
     print("=" * 80)
 
-    result = data_source.get_xml_as_json(url=url)
+    result = data_source.get_xml_as_json(url=URL_TEST_1)
     
     assert result is not None,       "❌ No se pudo obtener el XML"
     assert isinstance(result, dict), "❌ El resultado debe ser un diccionario"
@@ -111,7 +106,7 @@ def test_get_xml_as_json(url: str) -> None:
     print(f"✅ JSON resultante: {json.dumps(result)}")
 
 
-def test_get_kiniela(jornada: int = JORNADA_TEST, temporada: int = TEMPORADA_TEST) -> None:
+def test_get_kiniela() -> None:
     """
     Prueba la función get_kiniela para una jornada y temporada específicas.
 
@@ -145,11 +140,11 @@ def test_get_kiniela(jornada: int = JORNADA_TEST, temporada: int = TEMPORADA_TES
     print("TEST: get_kiniela()")
     print("=" * 80)
 
-    info, jornada_ret, temporada_ret, partidos = data_source.get_kiniela(jornada=jornada, temporada=temporada)
+    info, jornada_ret, temporada_ret, partidos = data_source.get_kiniela(jornada=JORNADA_TEST, temporada=TEMPORADA_TEST)
     
     assert info is not None,            "❌ No se pudo obtener info"
-    assert jornada_ret == jornada,     f"❌ Jornada esperada: {jornada}, obtenida: {jornada_ret}"
-    assert temporada_ret == temporada, f"❌ Temporada esperada: {temporada}, obtenida: {temporada_ret}"
+    assert jornada_ret == JORNADA_TEST,     f"❌ Jornada esperada: {JORNADA_TEST}, obtenida: {jornada_ret}"
+    assert temporada_ret == TEMPORADA_TEST, f"❌ Temporada esperada: {TEMPORADA_TEST}, obtenida: {temporada_ret}"
     assert partidos is not None,        "❌ No se pudieron obtener partidos"
     assert isinstance(partidos, list),  "❌ Partidos debe ser una lista"
     assert len(partidos) == 15,        f"❌ Se esperaban 15 partidos, se obtuvieron {len(partidos)}"
@@ -176,20 +171,13 @@ def test_get_kiniela(jornada: int = JORNADA_TEST, temporada: int = TEMPORADA_TES
         print(f"  {p['id']}: {p['partido']}")
 
 
-def test_get_kiniela_probabilities(jornada: int = JORNADA_TEST, temporada: int = TEMPORADA_TEST) -> None:
+def test_get_kiniela_probabilities() -> None:
     """
     Prueba la función get_kiniela_probabilities validando el cálculo de probabilidades normalizadas.
 
     Verifica que la función fusiona correctamente datos de fuentes LAE y Quiniela, calcula
     probabilidades normalizadas para resultados de partido (1, X, 2) y goles del partido 15,
     asegurando que las probabilidades sumen aproximadamente 100% por grupo.
-
-    Parameters
-    ----------
-    jornada : int, optional
-        Número de jornada a probar (por defecto JORNADA_TEST=28).
-    temporada : int, optional
-        Año de temporada a probar (por defecto TEMPORADA_TEST=2026).
 
     Raises
     ------
@@ -214,7 +202,7 @@ def test_get_kiniela_probabilities(jornada: int = JORNADA_TEST, temporada: int =
     print("TEST: get_kiniela_probabilities()")
     print("=" * 80)
 
-    result = data_source.get_kiniela_probabilities(jornada=jornada, temporada=temporada)
+    result = data_source.get_kiniela_probabilities(jornada=JORNADA_TEST, temporada=TEMPORADA_TEST)
     
     assert result is not None,       "❌ No se pudieron obtener probabilidades"
     assert isinstance(result, list), "❌ El resultado debe ser una lista"
@@ -394,8 +382,7 @@ def test_procesar_comparativa() -> None:
 
 
 if __name__ == "__main__":
-    test_get_xml_as_json(url=URL_TEST_1)
-    test_get_xml_as_json(url=URL_TEST_2)
-    test_get_kiniela(jornada=JORNADA_TEST, temporada=TEMPORADA_TEST)
-    test_get_kiniela_probabilities(jornada=JORNADA_TEST, temporada=TEMPORADA_TEST)
+    test_get_xml_as_json()
+    test_get_kiniela()
+    test_get_kiniela_probabilities()
     test_procesar_comparativa()
