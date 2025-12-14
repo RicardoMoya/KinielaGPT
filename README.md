@@ -218,7 +218,7 @@ La documentación completa está disponible en: **https://ricardomoya.github.io/
 Incluye:
 - TODO
 
-## 📖 Uso
+## 📖 ¿Cómo usar KinielaGPT?
 
 Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.) en lenguaje natural. Simplemente hazle preguntas como las siguientes:
 
