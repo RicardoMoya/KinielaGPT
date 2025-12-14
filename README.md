@@ -25,94 +25,115 @@
 - 📈 **Consulta Flexible de Datos**: Accede tanto a análisis interpretados como a los datos en bruto para sacar tus propias conclusiones.
 - 🔌 **Servidor MCP Nativo**: Incluye 7 herramientas especializadas, totalmente compatibles con Claude Desktop, VS Code y otros clientes MCP.
 
-## 🚀 Instalación
+## ✅ Antes de Empezar
 
-### Opción 1: Usando uv (recomendado)
+Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+** instalado en tu sistema.
 
-#### 1. Instalar uv
+A continuación se muestran como instalar las dos opciones, aunque debes elegir **una** de las dos:
+
+### Opción 1: UV (Recomendado) ⚡
+
+UV es un gestor de paquetes y proyectos Python ultrarrápido que simplifica la instalación y ejecución de herramientas Python. **No requiere tener Python pre-instalado**, ya que UV lo gestiona automáticamente. Además, ofrece aislamiento de entornos y una instalación significativamente más rápida que pip tradicional.
 
 <details>
-<summary>Windows</summary>
+<summary><b>🪟 Instalar UV en Windows</b></summary>
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
+
+Verificar:
+```powershell
+uv --version
+```
 </details>
 
 <details>
-<summary>macOS/Linux</summary>
+<summary><b>🍎🐧 Instalar UV en macOS/Linux</b></summary>
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
+
+Verificar:
+```bash
+uv --version
+```
+
+> Reinicia tu terminal después de la instalación.
 </details>
 
-#### 2. Usar KinielaGPT
+---
 
-Con [`uv`](https://docs.astral.sh/uv/) instalado, no necesitas instalar `kinielagpt`. Usarás [`uvx`](https://docs.astral.sh/uv/guides/tools/) para ejecutarlo directamente (ver sección de [Configuración](#-configuración)).
+### Opción 2: Python 3.10+ y pip
+
+Si ya tienes Python instalado o prefieres el método tradicional, puedes usar pip (el gestor de paquetes estándar de Python). Requiere tener Python 3.10 o superior ya instalado en tu sistema.
+
+<details>
+<summary><b>🪟 Instalar Python en Windows</b></summary>
+
+1. Descarga Python 3.10+ desde [python.org/downloads](https://www.python.org/downloads/)
+2. **Marca "Add Python to PATH"** durante la instalación
+3. Verifica:
+```powershell
+python --version
+pip --version
+```
+</details>
+
+<details>
+<summary><b>🍎🐧 Instalar Python en macOS/Linux</b></summary>
+
+**macOS:**
+1. Ve a [python.org/downloads](https://www.python.org/downloads/)
+2. Descarga Python 3.10+ para macOS
+3. Ejecuta el instalador . pkg
+
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt update
+sudo apt install python3.10 python3-pip python3.10-venv
+```
+
+Verifica:
+```bash
+python3 --version
+pip3 --version
+```
+</details>
+
+---
+
+## 🚀 Instalación
+
+### Opción 1: Usando UV (recomendado)
+
+Con UV instalado, **no necesitas instalar** KinielaGPT. Usarás `uvx` para ejecutarlo directamente (ver [Configuración](#-configuración)).
 
 ---
 
 ### Opción 2: Usando pip
 
-#### 1. Instalar Python y pip
-
-<details>
-<summary>Windows</summary>
-
-1. Descarga Python 3.10+ desde [python.org](https://www.python.org/downloads/)
-2. Durante la instalación, marca "Add Python to PATH"
-3. pip se instala automáticamente con Python
-</details>
-
-<details>
-<summary>macOS/Linux</summary>
-
-```bash
-# macOS (con Homebrew)
-brew install python@3.10
-
-# Linux (Ubuntu/Debian)
-sudo apt update
-sudo apt install python3.10 python3-pip
-```
-</details>
-
-#### 2. Instalar KinielaGPT
-
-<details>
-<summary>Comando de instalación</summary>
-
 ```bash
 pip install kinielagpt
 ```
-</details>
 
 ---
-
-### Instalación desde código fuente (desarrolladores)
-
-<details>
-<summary>Instrucciones</summary>
-
-```bash
-git clone https://github.com/RicardoMoya/KinielaGPT.git
-cd KinielaGPT
-pip install -e .
-```
-</details>
 
 ## 🔧 Configuración
 
 ### 🤖 Configurar para Claude.app
 
-Añade la siguiente configuración a tu archivo `claude_desktop_config.json`:
+Edita el archivo de configuración `claude_desktop_config.json` que según tu sistema operativo se encuentra en:
+
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
+
+Añade una de las siguientes configuraciones según tu método de instalación:
 
 <details>
 <summary>Usando uvx</summary>
-
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`  
-**macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -127,9 +148,7 @@ Añade la siguiente configuración a tu archivo `claude_desktop_config.json`:
 </details>
 
 <details>
-<summary>Usando pip (Windows)</summary>
-
-Ruta: `%APPDATA%\Claude\claude_desktop_config.json`
+<summary>Usando pip</summary>
 
 ```json
 {
@@ -141,40 +160,21 @@ Ruta: `%APPDATA%\Claude\claude_desktop_config.json`
   }
 }
 ```
-</details>
 
-<details>
-<summary>Usando pip (macOS/Linux)</summary>
-
-Ruta: `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "kinielagpt": {
-      "command": "python3",
-      "args": ["-m", "kinielagpt"]
-    }
-  }
-}
-```
+> **Nota:** En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
 </details>
 
 ### 💻 Configurar para VS Code
 
-Para una instalación rápida, usa el botón de instalación con un clic:
+**Instalación rápida (un clic):**
+
+Haz clic en el siguiente botón para instalar automáticamente el servidor MCP en VS Code:
 
 [![Instalar con Python en VS Code](https://img.shields.io/badge/VS_Code-Python-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=kinielagpt&config=%7B%22command%22%3A%22python%22%2C%22args%22%3A%5B%22-m%22%2C%22kinielagpt%22%5D%7D)
 
-Para instalación manual, puedes configurar el servidor MCP usando uno de estos métodos:
+**Instalación manual:**
 
-**Método 1: Configuración de Usuario (Recomendado)**  
-Añade la configuración a tu archivo de configuración MCP a nivel de usuario. Abre la Paleta de Comandos (`Ctrl + Shift + P`) y ejecuta `MCP: Open User Configuration`. Esto abrirá tu archivo `mcp.json` de usuario donde puedes añadir la configuración del servidor.
-
-**Método 2: Configuración de Workspace**  
-Alternativamente, puedes añadir la configuración a un archivo llamado `.vscode/mcp.json` en tu workspace. Esto te permitirá compartir la configuración con otros.
-
-> Para más detalles sobre la configuración de MCP en VS Code, consulta la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configuration` y añade una de las siguientes configuraciones:
 
 <details>
 <summary>Usando uvx</summary>
@@ -204,7 +204,12 @@ Alternativamente, puedes añadir la configuración a un archivo llamado `.vscode
   }
 }
 ```
+
+> **Nota:** En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
 </details>
+
+> **Alternativa:** También puedes crear el archivo `.vscode/mcp.json` en tu workspace para compartir la configuración con otros. Más detalles en la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+
 
 ## 📚 Documentación
 
@@ -215,9 +220,7 @@ Incluye:
 
 ## 📖 Uso
 
-### ¿Cómo interactuar con un LLM?
-
-Una vez configurado el MCP, puedes interactuar con un LLM usando comandos naturales como los siguientes:
+Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.) en lenguaje natural. Simplemente hazle preguntas como las siguientes:
 
 **Consultas de información:**
 - "¿Cuál es la última quiniela disponible?"

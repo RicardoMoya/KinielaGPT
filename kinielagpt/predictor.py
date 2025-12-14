@@ -51,13 +51,8 @@ class KinielaPredictor:
             "personalizada": self.__predict_custom,
         }
 
-    def predict(
-        self,
-        jornada: int,
-        temporada: int,
-        strategy: str = "conservadora",
-        custom_distribution: dict[str, int] | None = None,
-    ) -> dict[str, Any] | None:
+    def predict(self, jornada: int, temporada: int, strategy: str = "conservadora",
+                custom_distribution: dict[str, int] | None = None) -> dict[str, Any] | None:
         """
         Genera una predicción completa de quiniela.
         
@@ -135,11 +130,17 @@ class KinielaPredictor:
             return None
 
         # Ejecutar estrategia seleccionada
-        predictions = self.__strategies[strategy](
-            probabilities=probabilities,
-            details=details,
-            custom_distribution=custom_distribution,
-        )
+        if strategy == "personalizada":
+            predictions = self.__strategies[strategy](
+                probabilities=probabilities,
+                details=details,
+                custom_distribution=custom_distribution,
+            )
+        else:
+            predictions = self.__strategies[strategy](
+                probabilities=probabilities,
+                details=details,
+            )
 
         # Calcular resumen
         summary = self.__calculate_summary(predictions=predictions)
