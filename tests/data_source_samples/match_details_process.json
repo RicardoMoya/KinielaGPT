@@ -4,14 +4,14 @@
         "partido": "AT.MADRID | VALENCIA",
         "division": 1,
         "clasificacionLocal": 4,
-        "clasificacionVisitante": 16,
+        "clasificacionVisitante": 17,
         "evolucionClasificacionLocal": [
-            16,
             14,
-            15,
+            13,
+            16,
             10,
             12,
-            9,
+            8,
             5,
             5,
             4,
@@ -21,12 +21,12 @@
             4,
             4,
             4,
-            4,
+            3,
             4
         ],
         "evolucionClasificacionVisitante": [
-            10,
-            13,
+            12,
+            14,
             8,
             14,
             11,
@@ -40,8 +40,8 @@
             15,
             15,
             16,
-            16,
-            16
+            17,
+            17
         ],
         "historico_10_years": [
             {
@@ -99,10 +99,40 @@
         "vecesX": 1,
         "veces2": 0,
         "datosDestacados": [
-            "El AT.MADRID lleva 8 partidos seguidos sin empatar",
-            "..."
+            "El AT.MADRID lleva 9 partidos seguidos sin empatar",
+            "El AT.MADRID lleva 8 partidos seguidos ganando en casa",
+            "El AT.MADRID lleva 8 partidos seguidos sin empatar en casa",
+            "El AT.MADRID lleva 13 partidos seguidos sin perder en casa",
+            "El VALENCIA lleva 10 partidos seguidos sin ganar fuera",
+            "En toda la historia, este partido ha finalizado con el signo 1 en el 51.16% de las ocasiones",
+            "En los últimos 10 años, este partido ha finalizado con el signo 1 en el 90% de las ocasiones"
         ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "Espanyol | AT.MADRID",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "1",
+                "partido": "VALENCIA | Real Sociedad",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "AT.MADRID | Elche",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "Osasuna | VALENCIA",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "3",
+                "partido": "Deportivo Alavés | AT.MADRID",
+                "resultado": "1-1"
+            },
             {
                 "jornada": "3",
                 "partido": "VALENCIA | Getafe",
@@ -112,6 +142,16 @@
                 "jornada": "4",
                 "partido": "AT.MADRID | Villarreal",
                 "resultado": "2-0"
+            },
+            {
+                "jornada": "4",
+                "partido": "Barcelona | VALENCIA",
+                "resultado": "6-0"
+            },
+            {
+                "jornada": "5",
+                "partido": "Mallorca | AT.MADRID",
+                "resultado": "1-1"
             },
             {
                 "jornada": "5",
@@ -124,9 +164,29 @@
                 "resultado": "3-2"
             },
             {
+                "jornada": "6",
+                "partido": "Espanyol | VALENCIA",
+                "resultado": "2-2"
+            },
+            {
                 "jornada": "7",
                 "partido": "AT.MADRID | Real Madrid",
                 "resultado": "5-2"
+            },
+            {
+                "jornada": "7",
+                "partido": "VALENCIA | Real Oviedo",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "8",
+                "partido": "Celta | AT.MADRID",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "Girona | VALENCIA",
+                "resultado": "2-1"
             },
             {
                 "jornada": "9",
@@ -134,8 +194,18 @@
                 "resultado": "1-0"
             },
             {
+                "jornada": "9",
+                "partido": "Deportivo Alavés | VALENCIA",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "10",
                 "partido": "Real Betis | AT.MADRID",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "10",
+                "partido": "VALENCIA | Villarreal",
                 "resultado": "0-2"
             },
             {
@@ -144,9 +214,19 @@
                 "resultado": "3-0"
             },
             {
+                "jornada": "11",
+                "partido": "Real Madrid | VALENCIA",
+                "resultado": "4-0"
+            },
+            {
                 "jornada": "12",
                 "partido": "AT.MADRID | Levante",
                 "resultado": "3-1"
+            },
+            {
+                "jornada": "12",
+                "partido": "VALENCIA | Real Betis",
+                "resultado": "1-1"
             },
             {
                 "jornada": "13",
@@ -162,6 +242,26 @@
                 "jornada": "14",
                 "partido": "AT.MADRID | Real Oviedo",
                 "resultado": "2-0"
+            },
+            {
+                "jornada": "14",
+                "partido": "Rayo Vallecano | VALENCIA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "15",
+                "partido": "Athletic | AT.MADRID",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "VALENCIA | Sevilla",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "19",
+                "partido": "FC Barcelona | AT.MADRID",
+                "resultado": "3-1"
             }
         ]
     },
@@ -169,8 +269,8 @@
         "id": 2,
         "partido": "MALLORCA | ELCHE",
         "division": 1,
-        "clasificacionLocal": 18,
-        "clasificacionVisitante": 9,
+        "clasificacionLocal": 14,
+        "clasificacionVisitante": 11,
         "evolucionClasificacionLocal": [
             20,
             16,
@@ -181,18 +281,18 @@
             19,
             20,
             16,
-            16,
+            17,
             17,
             15,
             16,
             16,
             17,
-            18,
-            18
+            14,
+            14
         ],
         "evolucionClasificacionVisitante": [
-            11,
-            11,
+            10,
+            12,
             7,
             8,
             5,
@@ -203,11 +303,11 @@
             8,
             9,
             11,
-            10,
+            9,
             11,
             9,
-            9,
-            9
+            11,
+            11
         ],
         "historico_10_years": [
             {
@@ -265,19 +365,71 @@
         "vecesX": 5,
         "veces2": 1,
         "datosDestacados": [
-            "El MALLORCA lleva 6 partidos seguidos sin perder en casa",
-            "..."
+            "El MALLORCA lleva 7 partidos seguidos sin perder en casa",
+            "El ELCHE lleva 5 partidos seguidos perdiendo fuera",
+            "El ELCHE lleva 8 partidos seguidos sin ganar fuera",
+            "En la casilla número 2 hace 19 jornadas seguidas que no aparece el signo X"
         ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "MALLORCA | Barcelona",
+                "resultado": "0-3"
+            },
+            {
+                "jornada": "1",
+                "partido": "ELCHE | Real Betis",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "MALLORCA | Celta",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "Atlético | ELCHE",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "3",
+                "partido": "Real Madrid | MALLORCA",
+                "resultado": "2-1"
+            },
             {
                 "jornada": "3",
                 "partido": "ELCHE | Levante",
                 "resultado": "2-0"
             },
             {
+                "jornada": "4",
+                "partido": "Espanyol | MALLORCA",
+                "resultado": "3-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "Sevilla | ELCHE",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "5",
+                "partido": "MALLORCA | Atlético",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "5",
                 "partido": "ELCHE | Real Oviedo",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "Real Sociedad | MALLORCA",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "Osasuna | ELCHE",
+                "resultado": "1-1"
             },
             {
                 "jornada": "7",
@@ -290,14 +442,79 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "8",
+                "partido": "Athletic | MALLORCA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "Deportivo Alavés | ELCHE",
+                "resultado": "3-1"
+            },
+            {
                 "jornada": "9",
                 "partido": "Sevilla | MALLORCA",
                 "resultado": "1-3"
             },
             {
+                "jornada": "9",
+                "partido": "ELCHE | Athletic",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "10",
+                "partido": "MALLORCA | Levante",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "10",
+                "partido": "Espanyol | ELCHE",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "11",
+                "partido": "Real Betis | MALLORCA",
+                "resultado": "3-0"
+            },
+            {
+                "jornada": "11",
+                "partido": "FC Barcelona | ELCHE",
+                "resultado": "3-1"
+            },
+            {
                 "jornada": "12",
                 "partido": "MALLORCA | Getafe",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "ELCHE | Real Sociedad",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "Villarreal | MALLORCA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "ELCHE | Real Madrid",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "14",
+                "partido": "MALLORCA | Osasuna",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "14",
+                "partido": "Getafe | ELCHE",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "Real Oviedo | MALLORCA",
+                "resultado": "0-0"
             },
             {
                 "jornada": "15",
@@ -311,7 +528,7 @@
         "partido": "BARCELONA | OSASUNA",
         "division": 1,
         "clasificacionLocal": 1,
-        "clasificacionVisitante": 15,
+        "clasificacionVisitante": 16,
         "evolucionClasificacionLocal": [
             1,
             3,
@@ -333,11 +550,11 @@
         ],
         "evolucionClasificacionVisitante": [
             15,
-            10,
+            9,
             13,
             9,
             13,
-            12,
+            13,
             13,
             12,
             13,
@@ -347,8 +564,8 @@
             17,
             17,
             15,
-            15,
-            15
+            16,
+            16
         ],
         "historico_10_years": [
             {
@@ -406,14 +623,26 @@
         "vecesX": 0,
         "veces2": 1,
         "datosDestacados": [
-            "El BARCELONA lleva 6 partidos seguidos ganando",
-            "..."
+            "El BARCELONA lleva 7 partidos seguidos ganando",
+            "El BARCELONA lleva 14 partidos seguidos sin empatar",
+            "El BARCELONA lleva 7 partidos seguidos sin perder",
+            "El BARCELONA lleva 9 partidos seguidos ganando en casa",
+            "El BARCELONA lleva 13 partidos seguidos sin empatar en casa",
+            "El BARCELONA lleva 9 partidos seguidos sin perder en casa",
+            "El OSASUNA lleva 12 partidos seguidos sin ganar fuera",
+            "En toda la historia, este partido ha finalizado con el signo 1 en el 79.07% de las ocasiones",
+            "En la casilla número 3 hace 6 jornadas seguidas que no aparece el signo X"
         ],
         "comparativa": [
             {
                 "jornada": "1",
                 "partido": "Mallorca | BARCELONA",
                 "resultado": "0-3"
+            },
+            {
+                "jornada": "1",
+                "partido": "Real Madrid | OSASUNA",
+                "resultado": "1-0"
             },
             {
                 "jornada": "2",
@@ -423,6 +652,16 @@
             {
                 "jornada": "2",
                 "partido": "OSASUNA | Valencia",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "3",
+                "partido": "Rayo Vallecano | BARCELONA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "3",
+                "partido": "Espanyol | OSASUNA",
                 "resultado": "1-0"
             },
             {
@@ -441,14 +680,34 @@
                 "resultado": "3-0"
             },
             {
+                "jornada": "5",
+                "partido": "Villarreal | OSASUNA",
+                "resultado": "2-1"
+            },
+            {
                 "jornada": "6",
                 "partido": "Real Oviedo | BARCELONA",
                 "resultado": "1-3"
             },
             {
+                "jornada": "6",
+                "partido": "OSASUNA | Elche",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "7",
                 "partido": "BARCELONA | Real Sociedad",
                 "resultado": "2-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "Real Betis | OSASUNA",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "8",
+                "partido": "Sevilla | BARCELONA",
+                "resultado": "4-1"
             },
             {
                 "jornada": "8",
@@ -461,9 +720,29 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "9",
+                "partido": "Atlético | OSASUNA",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "10",
+                "partido": "Real Madrid | BARCELONA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "10",
+                "partido": "OSASUNA | Celta",
+                "resultado": "2-3"
+            },
+            {
                 "jornada": "11",
                 "partido": "BARCELONA | Elche",
                 "resultado": "3-1"
+            },
+            {
+                "jornada": "11",
+                "partido": "Real Oviedo | OSASUNA",
+                "resultado": "0-0"
             },
             {
                 "jornada": "12",
@@ -471,14 +750,29 @@
                 "resultado": "2-4"
             },
             {
+                "jornada": "12",
+                "partido": "Sevilla | OSASUNA",
+                "resultado": "1-0"
+            },
+            {
                 "jornada": "13",
                 "partido": "BARCELONA | Athletic",
                 "resultado": "4-0"
             },
             {
+                "jornada": "13",
+                "partido": "OSASUNA | Real Sociedad",
+                "resultado": "1-3"
+            },
+            {
                 "jornada": "14",
                 "partido": "BARCELONA | Deportivo Alavés",
                 "resultado": "3-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "Mallorca | OSASUNA",
+                "resultado": "2-2"
             },
             {
                 "jornada": "15",
@@ -501,13 +795,13 @@
         "id": 4,
         "partido": "GETAFE | ESPANYOL",
         "division": 1,
-        "clasificacionLocal": 8,
+        "clasificacionLocal": 9,
         "clasificacionVisitante": 5,
         "evolucionClasificacionLocal": [
-            2,
+            3,
             4,
             6,
-            5,
+            4,
             7,
             7,
             8,
@@ -519,12 +813,12 @@
             7,
             7,
             8,
-            8,
-            8
+            9,
+            9
         ],
         "evolucionClasificacionVisitante": [
             8,
-            7,
+            6,
             5,
             3,
             4,
@@ -597,8 +891,10 @@
         "vecesX": 2,
         "veces2": 2,
         "datosDestacados": [
-            "El GETAFE lleva 8 partidos seguidos sin empatar",
-            "..."
+            "El ESPANYOL lleva 4 partidos seguidos ganando",
+            "El GETAFE lleva 9 partidos seguidos sin empatar",
+            "El ESPANYOL lleva 9 partidos seguidos sin empatar",
+            "En la casilla número 4 hace 9 jornadas seguidas que no aparece el signo X"
         ],
         "comparativa": [
             {
@@ -617,6 +913,16 @@
                 "resultado": "1-2"
             },
             {
+                "jornada": "2",
+                "partido": "Real Sociedad | ESPANYOL",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "3",
+                "partido": "Valencia | GETAFE",
+                "resultado": "3-0"
+            },
+            {
                 "jornada": "3",
                 "partido": "ESPANYOL | Osasuna",
                 "resultado": "1-0"
@@ -630,6 +936,51 @@
                 "jornada": "4",
                 "partido": "ESPANYOL | Mallorca",
                 "resultado": "3-2"
+            },
+            {
+                "jornada": "5",
+                "partido": "Barcelona | GETAFE",
+                "resultado": "3-0"
+            },
+            {
+                "jornada": "5",
+                "partido": "Real Madrid | ESPANYOL",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "GETAFE | Deportivo Alavés",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "6",
+                "partido": "ESPANYOL | Valencia",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "7",
+                "partido": "GETAFE | Levante",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "Girona | ESPANYOL",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "8",
+                "partido": "Osasuna | GETAFE",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "ESPANYOL | Real Betis",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "9",
+                "partido": "GETAFE | Real Madrid",
+                "resultado": "0-1"
             },
             {
                 "jornada": "9",
@@ -652,6 +1003,26 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "11",
+                "partido": "Deportivo Alavés | ESPANYOL",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "12",
+                "partido": "Mallorca | GETAFE",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "ESPANYOL | Villarreal",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "13",
+                "partido": "GETAFE | Atlético de Madrid",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "13",
                 "partido": "ESPANYOL | Sevilla",
                 "resultado": "2-1"
@@ -668,6 +1039,11 @@
             },
             {
                 "jornada": "15",
+                "partido": "Villarreal | GETAFE",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "15",
                 "partido": "ESPANYOL | Rayo Vallecano",
                 "resultado": "1-0"
             }
@@ -677,29 +1053,29 @@
         "id": 5,
         "partido": "SEVILLA | R.OVIEDO",
         "division": 1,
-        "clasificacionLocal": 13,
+        "clasificacionLocal": 8,
         "clasificacionVisitante": 19,
         "evolucionClasificacionLocal": [
-            13,
+            16,
             18,
             12,
             12,
             9,
-            13,
+            12,
             9,
             6,
             9,
             11,
             13,
             9,
-            11,
+            12,
             13,
             13,
-            13,
-            13
+            8,
+            8
         ],
         "evolucionClasificacionVisitante": [
-            17,
+            18,
             19,
             14,
             16,
@@ -773,10 +1149,32 @@
         "vecesX": 3,
         "veces2": 3,
         "datosDestacados": [
-            "El R.OVIEDO lleva 8 partidos seguidos sin ganar",
-            "..."
+            "El R.OVIEDO lleva 9 partidos seguidos sin ganar",
+            "El SEVILLA lleva 6 partidos seguidos sin empatar en casa",
+            "El R.OVIEDO lleva 6 partidos seguidos sin marcar",
+            "En toda la historia, este partido ha finalizado con el signo 1 en el 58.97% de las ocasiones"
         ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "Athletic | SEVILLA",
+                "resultado": "3-2"
+            },
+            {
+                "jornada": "1",
+                "partido": "Villarreal | R.OVIEDO",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "2",
+                "partido": "SEVILLA | Getafe",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "2",
+                "partido": "R.OVIEDO | Real Madrid",
+                "resultado": "0-3"
+            },
             {
                 "jornada": "3",
                 "partido": "Girona | SEVILLA",
@@ -788,9 +1186,34 @@
                 "resultado": "1-0"
             },
             {
+                "jornada": "4",
+                "partido": "SEVILLA | Elche",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "Getafe | R.OVIEDO",
+                "resultado": "2-0"
+            },
+            {
                 "jornada": "5",
                 "partido": "Deportivo Alavés | SEVILLA",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "5",
+                "partido": "Elche | R.OVIEDO",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "SEVILLA | Villarreal",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "6",
+                "partido": "R.OVIEDO | Barcelona",
+                "resultado": "1-3"
             },
             {
                 "jornada": "7",
@@ -808,9 +1231,79 @@
                 "resultado": "4-1"
             },
             {
+                "jornada": "8",
+                "partido": "R.OVIEDO | Levante",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "9",
+                "partido": "SEVILLA | Mallorca",
+                "resultado": "1-3"
+            },
+            {
+                "jornada": "9",
+                "partido": "R.OVIEDO | Espanyol",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "10",
+                "partido": "Real Sociedad | SEVILLA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "10",
+                "partido": "Girona | R.OVIEDO",
+                "resultado": "3-3"
+            },
+            {
+                "jornada": "11",
+                "partido": "Atlético de Madrid | SEVILLA",
+                "resultado": "3-0"
+            },
+            {
+                "jornada": "11",
+                "partido": "R.OVIEDO | Osasuna",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "12",
                 "partido": "SEVILLA | Osasuna",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "Athletic | R.OVIEDO",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "Espanyol | SEVILLA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "R.OVIEDO | Rayo Vallecano",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "14",
+                "partido": "SEVILLA | Real Betis",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "14",
+                "partido": "Atlético de Madrid | R.OVIEDO",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "Valencia | SEVILLA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "15",
+                "partido": "R.OVIEDO | Mallorca",
+                "resultado": "0-0"
             }
         ]
     },
@@ -821,36 +1314,36 @@
         "clasificacionLocal": 10,
         "clasificacionVisitante": 7,
         "evolucionClasificacionLocal": [
-            19,
+            17,
             15,
             17,
             15,
             16,
+            14,
             15,
-            16,
             16,
             17,
             13,
             12,
-            14,
             13,
+            11,
             12,
             10,
             10,
             10
         ],
         "evolucionClasificacionVisitante": [
-            6,
+            7,
             5,
             2,
-            4,
+            5,
             6,
             6,
             10,
             8,
             8,
             9,
-            11,
+            10,
             7,
             8,
             8,
@@ -915,13 +1408,24 @@
         "veces2": 5,
         "datosDestacados": [
             "El CELTA lleva 6 partidos seguidos sin empatar",
-            "..."
+            "El ATH.CLUB lleva 6 partidos seguidos sin empatar",
+            "El CELTA lleva 9 partidos seguidos sin ganar en casa"
         ],
         "comparativa": [
             {
                 "jornada": "1",
+                "partido": "CELTA | Getafe",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "1",
                 "partido": "ATH.CLUB | Sevilla",
                 "resultado": "3-2"
+            },
+            {
+                "jornada": "2",
+                "partido": "Mallorca | CELTA",
+                "resultado": "1-1"
             },
             {
                 "jornada": "2",
@@ -930,8 +1434,58 @@
             },
             {
                 "jornada": "3",
+                "partido": "CELTA | Villarreal",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "3",
                 "partido": "Real Betis | ATH.CLUB",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "CELTA | Girona",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "ATH.CLUB | Deportivo Alavés",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "5",
+                "partido": "Rayo Vallecano | CELTA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "5",
+                "partido": "Valencia | ATH.CLUB",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "CELTA | Real Betis",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "6",
+                "partido": "ATH.CLUB | Girona",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "Elche | CELTA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "Villarreal | ATH.CLUB",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "8",
+                "partido": "CELTA | Atlético",
+                "resultado": "1-1"
             },
             {
                 "jornada": "8",
@@ -939,14 +1493,39 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "9",
+                "partido": "CELTA | Real Sociedad",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "9",
+                "partido": "Elche | ATH.CLUB",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "10",
                 "partido": "Osasuna | CELTA",
                 "resultado": "2-3"
             },
             {
+                "jornada": "10",
+                "partido": "ATH.CLUB | Getafe",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "11",
                 "partido": "Levante | CELTA",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "11",
+                "partido": "Real Sociedad | ATH.CLUB",
+                "resultado": "3-2"
+            },
+            {
+                "jornada": "12",
+                "partido": "CELTA | FC Barcelona",
+                "resultado": "2-4"
             },
             {
                 "jornada": "12",
@@ -956,6 +1535,16 @@
             {
                 "jornada": "13",
                 "partido": "Deportivo Alavés | CELTA",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "FC Barcelona | ATH.CLUB",
+                "resultado": "4-0"
+            },
+            {
+                "jornada": "14",
+                "partido": "CELTA | Espanyol",
                 "resultado": "0-1"
             },
             {
@@ -972,6 +1561,11 @@
                 "jornada": "15",
                 "partido": "ATH.CLUB | Atlético de Madrid",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "19",
+                "partido": "ATH.CLUB | Real Madrid",
+                "resultado": "0-3"
             }
         ]
     },
@@ -982,13 +1576,13 @@
         "clasificacionLocal": 20,
         "clasificacionVisitante": 3,
         "evolucionClasificacionLocal": [
-            14,
+            13,
             17,
             19,
             18,
             15,
             17,
-            15,
+            16,
             13,
             15,
             15,
@@ -1076,9 +1670,23 @@
         "veces2": 5,
         "datosDestacados": [
             "El VILLARREAL lleva 6 partidos seguidos ganando",
-            "..."
+            "El LEVANTE lleva 5 partidos seguidos perdiendo",
+            "El LEVANTE lleva 7 partidos seguidos sin ganar",
+            "El VILLARREAL lleva 6 partidos seguidos sin empatar",
+            "El VILLARREAL lleva 7 partidos seguidos sin perder",
+            "El LEVANTE lleva 4 partidos seguidos perdiendo en casa",
+            "El LEVANTE lleva 6 partidos seguidos sin ganar en casa",
+            "El VILLARREAL lleva 6 partidos seguidos sin empatar fuera",
+            "En toda la historia, este partido ha finalizado con el signo 2 en el 56.25% de las ocasiones",
+            "En la casilla número 7 hace 6 jornadas seguidas que no aparece el signo X",
+            "En la casilla número 7 hace 4 jornadas seguidas que aparece el signo 2"
         ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "Deportivo Alavés | LEVANTE",
+                "resultado": "2-1"
+            },
             {
                 "jornada": "1",
                 "partido": "VILLARREAL | Real Oviedo",
@@ -1086,8 +1694,33 @@
             },
             {
                 "jornada": "2",
+                "partido": "LEVANTE | Barcelona",
+                "resultado": "2-3"
+            },
+            {
+                "jornada": "2",
                 "partido": "VILLARREAL | Girona",
                 "resultado": "5-0"
+            },
+            {
+                "jornada": "3",
+                "partido": "Elche | LEVANTE",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "3",
+                "partido": "Celta | VILLARREAL",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "LEVANTE | Real Betis",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "Atlético | VILLARREAL",
+                "resultado": "2-0"
             },
             {
                 "jornada": "5",
@@ -1101,8 +1734,18 @@
             },
             {
                 "jornada": "6",
+                "partido": "LEVANTE | Real Madrid",
+                "resultado": "1-4"
+            },
+            {
+                "jornada": "6",
                 "partido": "Sevilla | VILLARREAL",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "7",
+                "partido": "Getafe | LEVANTE",
+                "resultado": "1-1"
             },
             {
                 "jornada": "7",
@@ -1115,9 +1758,34 @@
                 "resultado": "0-2"
             },
             {
+                "jornada": "8",
+                "partido": "Real Madrid | VILLARREAL",
+                "resultado": "3-1"
+            },
+            {
+                "jornada": "9",
+                "partido": "LEVANTE | Rayo Vallecano",
+                "resultado": "0-3"
+            },
+            {
+                "jornada": "9",
+                "partido": "VILLARREAL | Real Betis",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "10",
+                "partido": "Mallorca | LEVANTE",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "10",
                 "partido": "Valencia | VILLARREAL",
                 "resultado": "0-2"
+            },
+            {
+                "jornada": "11",
+                "partido": "LEVANTE | Celta",
+                "resultado": "1-2"
             },
             {
                 "jornada": "11",
@@ -1126,8 +1794,18 @@
             },
             {
                 "jornada": "12",
+                "partido": "Atlético de Madrid | LEVANTE",
+                "resultado": "3-1"
+            },
+            {
+                "jornada": "12",
                 "partido": "Espanyol | VILLARREAL",
                 "resultado": "0-2"
+            },
+            {
+                "jornada": "13",
+                "partido": "Valencia | LEVANTE",
+                "resultado": "1-0"
             },
             {
                 "jornada": "13",
@@ -1136,8 +1814,18 @@
             },
             {
                 "jornada": "14",
+                "partido": "LEVANTE | Athletic",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "14",
                 "partido": "Real Sociedad | VILLARREAL",
                 "resultado": "2-3"
+            },
+            {
+                "jornada": "15",
+                "partido": "Osasuna | LEVANTE",
+                "resultado": "2-0"
             },
             {
                 "jornada": "15",
@@ -1150,11 +1838,11 @@
         "id": 8,
         "partido": "ALAVÉS | R.MADRID",
         "division": 1,
-        "clasificacionLocal": 11,
+        "clasificacionLocal": 12,
         "clasificacionVisitante": 2,
         "evolucionClasificacionLocal": [
             5,
-            9,
+            10,
             10,
             7,
             10,
@@ -1168,11 +1856,11 @@
             14,
             14,
             11,
-            11,
-            11
+            12,
+            12
         ],
         "evolucionClasificacionVisitante": [
-            7,
+            6,
             2,
             1,
             1,
@@ -1187,7 +1875,7 @@
             1,
             2,
             3,
-            3,
+            4,
             2
         ],
         "historico_10_years": [
@@ -1247,7 +1935,7 @@
         "veces2": 9,
         "datosDestacados": [
             "El ALAVÉS lleva 6 partidos seguidos sin empatar",
-            "..."
+            "En toda la historia, este partido ha finalizado con el signo 2 en el 78.95% de las ocasiones"
         ],
         "comparativa": [
             {
@@ -1262,8 +1950,18 @@
             },
             {
                 "jornada": "2",
+                "partido": "Real Betis | ALAVÉS",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "2",
                 "partido": "Real Oviedo | R.MADRID",
                 "resultado": "0-3"
+            },
+            {
+                "jornada": "3",
+                "partido": "ALAVÉS | Atlético",
+                "resultado": "1-1"
             },
             {
                 "jornada": "3",
@@ -1282,13 +1980,33 @@
             },
             {
                 "jornada": "5",
+                "partido": "ALAVÉS | Sevilla",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "5",
                 "partido": "R.MADRID | Espanyol",
                 "resultado": "2-0"
             },
             {
                 "jornada": "6",
+                "partido": "Getafe | ALAVÉS",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "6",
                 "partido": "Levante | R.MADRID",
                 "resultado": "1-4"
+            },
+            {
+                "jornada": "7",
+                "partido": "Mallorca | ALAVÉS",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "7",
+                "partido": "Atlético | R.MADRID",
+                "resultado": "5-2"
             },
             {
                 "jornada": "8",
@@ -1302,8 +2020,18 @@
             },
             {
                 "jornada": "9",
+                "partido": "ALAVÉS | Valencia",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "9",
                 "partido": "Getafe | R.MADRID",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "10",
+                "partido": "Rayo Vallecano | ALAVÉS",
+                "resultado": "1-0"
             },
             {
                 "jornada": "10",
@@ -1321,9 +2049,44 @@
                 "resultado": "4-0"
             },
             {
+                "jornada": "12",
+                "partido": "Girona FC | ALAVÉS",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "Rayo Vallecano | R.MADRID",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "ALAVÉS | Celta",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "Elche | R.MADRID",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "14",
+                "partido": "FC Barcelona | ALAVÉS",
+                "resultado": "3-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "Girona FC | R.MADRID",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "15",
                 "partido": "ALAVÉS | Real Sociedad",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "R.MADRID | Celta",
+                "resultado": "0-2"
             },
             {
                 "jornada": "19",
@@ -1336,10 +2099,10 @@
         "id": 9,
         "partido": "SPORTING | GRANADA",
         "division": 2,
-        "clasificacionLocal": 10,
-        "clasificacionVisitante": 16,
+        "clasificacionLocal": 7,
+        "clasificacionVisitante": 19,
         "evolucionClasificacionLocal": [
-            5,
+            6,
             3,
             2,
             2,
@@ -1356,7 +2119,7 @@
             12,
             11,
             10,
-            10
+            7
         ],
         "evolucionClasificacionVisitante": [
             20,
@@ -1366,7 +2129,7 @@
             22,
             22,
             22,
-            19,
+            18,
             20,
             20,
             20,
@@ -1376,7 +2139,7 @@
             20,
             14,
             15,
-            16
+            19
         ],
         "historico_10_years": [
             {
@@ -1434,8 +2197,8 @@
         "vecesX": 2,
         "veces2": 1,
         "datosDestacados": [
-            "En toda la historia, este partido ha finalizado con el signo 1 en el 77.78% de las ocasiones",
-            "..."
+            "El SPORTING lleva 6 partidos seguidos sin perder en casa",
+            "En toda la historia, este partido ha finalizado con el signo 1 en el 77.78% de las ocasiones"
         ],
         "comparativa": [
             {
@@ -1444,9 +2207,19 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "1",
+                "partido": "GRANADA | RC Deportivo",
+                "resultado": "1-3"
+            },
+            {
                 "jornada": "2",
                 "partido": "AD Ceuta FC | SPORTING",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "Eibar | GRANADA",
+                "resultado": "3-0"
             },
             {
                 "jornada": "3",
@@ -1454,9 +2227,54 @@
                 "resultado": "1-0"
             },
             {
+                "jornada": "3",
+                "partido": "GRANADA | Mirandés",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "RC Deportivo | SPORTING",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "4",
+                "partido": "Málaga | GRANADA",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "5",
+                "partido": "SPORTING | Burgos",
+                "resultado": "2-3"
+            },
+            {
+                "jornada": "5",
+                "partido": "GRANADA | Leganés",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "6",
+                "partido": "Almería | SPORTING",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "6",
+                "partido": "Burgos | GRANADA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "SPORTING | Albacete",
+                "resultado": "3-4"
+            },
+            {
                 "jornada": "7",
                 "partido": "Huesca | GRANADA",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "CD Castellón | SPORTING",
+                "resultado": "3-1"
             },
             {
                 "jornada": "8",
@@ -1469,9 +2287,19 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "9",
+                "partido": "GRANADA | UD Las Palmas",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "10",
                 "partido": "Real Valladolid | SPORTING",
                 "resultado": "2-3"
+            },
+            {
+                "jornada": "10",
+                "partido": "FC Andorra | GRANADA",
+                "resultado": "0-0"
             },
             {
                 "jornada": "11",
@@ -1479,9 +2307,54 @@
                 "resultado": "1-0"
             },
             {
+                "jornada": "11",
+                "partido": "GRANADA | Cádiz",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "SPORTING | UD Las Palmas",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "Real Valladolid | GRANADA",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "Mirandés | SPORTING",
+                "resultado": "2-1"
+            },
+            {
                 "jornada": "13",
                 "partido": "GRANADA | Real Zaragoza",
                 "resultado": "3-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "SPORTING | Eibar",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "Racing | GRANADA",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "15",
+                "partido": "Huesca | SPORTING",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "GRANADA | Córdoba CF",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "16",
+                "partido": "SPORTING | FC Andorra",
+                "resultado": "1-1"
             },
             {
                 "jornada": "16",
@@ -1492,6 +2365,11 @@
                 "jornada": "17",
                 "partido": "Real Sociedad B | SPORTING",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "17",
+                "partido": "GRANADA | AD Ceuta FC",
+                "resultado": "1-1"
             }
         ]
     },
@@ -1499,8 +2377,8 @@
         "id": 10,
         "partido": "VALLADOLID | ANDORRA FC",
         "division": 2,
-        "clasificacionLocal": 8,
-        "clasificacionVisitante": 19,
+        "clasificacionLocal": 10,
+        "clasificacionVisitante": 16,
         "evolucionClasificacionLocal": [
             2,
             1,
@@ -1519,13 +2397,13 @@
             10,
             9,
             8,
-            8
+            10
         ],
         "evolucionClasificacionVisitante": [
-            15,
-            6,
+            9,
+            7,
             4,
-            8,
+            9,
             5,
             5,
             3,
@@ -1539,7 +2417,7 @@
             19,
             19,
             19,
-            19
+            16
         ],
         "historico_10_years": [
             {
@@ -1551,14 +2429,17 @@
         "veces1": 1,
         "vecesX": 0,
         "veces2": 0,
-        "datosDestacados": [
-            "El ANDORRA FC lleva 10 partidos seguidos sin ganar"
-        ],
+        "datosDestacados": [],
         "comparativa": [
             {
                 "jornada": "1",
                 "partido": "VALLADOLID | AD Ceuta FC",
                 "resultado": "3-0"
+            },
+            {
+                "jornada": "1",
+                "partido": "UD Las Palmas | ANDORRA FC",
+                "resultado": "1-1"
             },
             {
                 "jornada": "2",
@@ -1572,8 +2453,23 @@
             },
             {
                 "jornada": "3",
+                "partido": "VALLADOLID | Córdoba CF",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "3",
                 "partido": "ANDORRA FC | Burgos",
                 "resultado": "2-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "Real Zaragoza | VALLADOLID",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "Eibar | ANDORRA FC",
+                "resultado": "2-0"
             },
             {
                 "jornada": "5",
@@ -1586,8 +2482,33 @@
                 "resultado": "3-1"
             },
             {
+                "jornada": "6",
+                "partido": "Albacete | VALLADOLID",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "ANDORRA FC | Mirandés",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "VALLADOLID | Cultural Leonesa",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "7",
                 "partido": "Racing | ANDORRA FC",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "8",
+                "partido": "VALLADOLID | Mirandés",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "ANDORRA FC | Leganés",
                 "resultado": "1-2"
             },
             {
@@ -1596,14 +2517,89 @@
                 "resultado": "0-1"
             },
             {
+                "jornada": "9",
+                "partido": "Real Sociedad B | ANDORRA FC",
+                "resultado": "3-0"
+            },
+            {
+                "jornada": "10",
+                "partido": "VALLADOLID | Real Sporting",
+                "resultado": "2-3"
+            },
+            {
+                "jornada": "10",
+                "partido": "ANDORRA FC | Granada",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "11",
+                "partido": "RC Deportivo | VALLADOLID",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "11",
+                "partido": "Málaga | ANDORRA FC",
+                "resultado": "4-1"
+            },
+            {
                 "jornada": "12",
                 "partido": "VALLADOLID | Granada",
                 "resultado": "2-1"
             },
             {
+                "jornada": "12",
+                "partido": "ANDORRA FC | Cádiz",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "Cádiz | VALLADOLID",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "Huesca | ANDORRA FC",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "14",
+                "partido": "VALLADOLID | UD Las Palmas",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "Albacete | ANDORRA FC",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "Real Sociedad B | VALLADOLID",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "ANDORRA FC | CD Castellón",
+                "resultado": "1-3"
+            },
+            {
+                "jornada": "16",
+                "partido": "VALLADOLID | Málaga",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "16",
+                "partido": "Real Sporting | ANDORRA FC",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "17",
                 "partido": "Huesca | VALLADOLID",
                 "resultado": "1-4"
+            },
+            {
+                "jornada": "17",
+                "partido": "ANDORRA FC | Almería",
+                "resultado": "1-2"
             }
         ]
     },
@@ -1612,7 +2608,7 @@
         "partido": "RACING S. | LEGANÉS",
         "division": 2,
         "clasificacionLocal": 1,
-        "clasificacionVisitante": 17,
+        "clasificacionVisitante": 18,
         "evolucionClasificacionLocal": [
             4,
             2,
@@ -1649,9 +2645,9 @@
             15,
             13,
             15,
-            18,
+            17,
             16,
-            17
+            18
         ],
         "historico_10_years": [
             {
@@ -1678,7 +2674,9 @@
         "veces1": 3,
         "vecesX": 0,
         "veces2": 1,
-        "datosDestacados": [],
+        "datosDestacados": [
+            "El RACING S. lleva 6 partidos seguidos sin perder en casa"
+        ],
         "comparativa": [
             {
                 "jornada": "1",
@@ -1686,9 +2684,19 @@
                 "resultado": "3-1"
             },
             {
+                "jornada": "1",
+                "partido": "Huesca | LEGANÉS",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "2",
                 "partido": "Albacete | RACING S.",
                 "resultado": "2-3"
+            },
+            {
+                "jornada": "2",
+                "partido": "LEGANÉS | Cádiz",
+                "resultado": "1-1"
             },
             {
                 "jornada": "3",
@@ -1696,14 +2704,49 @@
                 "resultado": "4-1"
             },
             {
+                "jornada": "3",
+                "partido": "LEGANÉS | RC Deportivo",
+                "resultado": "2-2"
+            },
+            {
                 "jornada": "4",
                 "partido": "Almería | RACING S.",
                 "resultado": "2-3"
             },
             {
+                "jornada": "4",
+                "partido": "Cultural Leonesa | LEGANÉS",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "5",
+                "partido": "RACING S. | Cultural Leonesa",
+                "resultado": "2-4"
+            },
+            {
                 "jornada": "5",
                 "partido": "Granada | LEGANÉS",
                 "resultado": "0-2"
+            },
+            {
+                "jornada": "6",
+                "partido": "Córdoba CF | RACING S.",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "6",
+                "partido": "LEGANÉS | UD Las Palmas",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "RACING S. | FC Andorra",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "7",
+                "partido": "LEGANÉS | CD Castellón",
+                "resultado": "0-1"
             },
             {
                 "jornada": "8",
@@ -1714,6 +2757,16 @@
                 "jornada": "8",
                 "partido": "FC Andorra | LEGANÉS",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "9",
+                "partido": "Real Sporting | RACING S.",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "9",
+                "partido": "Mirandés | LEGANÉS",
+                "resultado": "0-0"
             },
             {
                 "jornada": "10",
@@ -1731,9 +2784,34 @@
                 "resultado": "1-3"
             },
             {
+                "jornada": "11",
+                "partido": "Eibar | LEGANÉS",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "12",
                 "partido": "RACING S. | Real Sociedad B",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "LEGANÉS | Burgos",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "13",
+                "partido": "UD Las Palmas | RACING S.",
+                "resultado": "3-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "Real Sociedad B | LEGANÉS",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "RACING S. | Granada",
+                "resultado": "2-2"
             },
             {
                 "jornada": "14",
@@ -1746,14 +2824,29 @@
                 "resultado": "0-2"
             },
             {
+                "jornada": "15",
+                "partido": "LEGANÉS | Almería",
+                "resultado": "0-3"
+            },
+            {
                 "jornada": "16",
                 "partido": "RACING S. | Eibar",
                 "resultado": "4-0"
             },
             {
+                "jornada": "16",
+                "partido": "Real Zaragoza | LEGANÉS",
+                "resultado": "3-2"
+            },
+            {
                 "jornada": "17",
                 "partido": "Cádiz | RACING S.",
                 "resultado": "2-3"
+            },
+            {
+                "jornada": "17",
+                "partido": "LEGANÉS | Córdoba CF",
+                "resultado": "0-0"
             }
         ]
     },
@@ -1762,11 +2855,11 @@
         "partido": "R.ZARAGOZA | CÁDIZ",
         "division": 2,
         "clasificacionLocal": 22,
-        "clasificacionVisitante": 9,
+        "clasificacionVisitante": 6,
         "evolucionClasificacionLocal": [
+            16,
             17,
-            18,
-            18,
+            17,
             18,
             19,
             21,
@@ -1784,9 +2877,9 @@
             22
         ],
         "evolucionClasificacionVisitante": [
-            7,
-            9,
             5,
+            10,
+            6,
             6,
             4,
             2,
@@ -1801,7 +2894,7 @@
             8,
             7,
             9,
-            9
+            6
         ],
         "historico_10_years": [
             {
@@ -1858,12 +2951,34 @@
         "veces1": 3,
         "vecesX": 3,
         "veces2": 4,
-        "datosDestacados": [],
+        "datosDestacados": [
+            "El R.ZARAGOZA lleva 6 partidos seguidos sin empatar en casa"
+        ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "Real Sociedad B | R.ZARAGOZA",
+                "resultado": "1-0"
+            },
             {
                 "jornada": "1",
                 "partido": "CÁDIZ | Mirandés",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "2",
+                "partido": "R.ZARAGOZA | FC Andorra",
+                "resultado": "1-3"
+            },
+            {
+                "jornada": "2",
+                "partido": "Leganés | CÁDIZ",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "3",
+                "partido": "CD Castellón | R.ZARAGOZA",
+                "resultado": "1-1"
             },
             {
                 "jornada": "3",
@@ -1871,8 +2986,28 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "4",
+                "partido": "R.ZARAGOZA | Real Valladolid",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "Real Sociedad B | CÁDIZ",
+                "resultado": "3-3"
+            },
+            {
+                "jornada": "5",
+                "partido": "R.ZARAGOZA | Albacete",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "5",
                 "partido": "CÁDIZ | Eibar",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "6",
+                "partido": "AD Ceuta FC | R.ZARAGOZA",
                 "resultado": "1-0"
             },
             {
@@ -1886,9 +3021,69 @@
                 "resultado": "0-1"
             },
             {
+                "jornada": "7",
+                "partido": "CÁDIZ | AD Ceuta FC",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "8",
+                "partido": "R.ZARAGOZA | Córdoba CF",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "UD Las Palmas | CÁDIZ",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "9",
+                "partido": "Almería | R.ZARAGOZA",
+                "resultado": "4-2"
+            },
+            {
                 "jornada": "9",
                 "partido": "CÁDIZ | Huesca",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "10",
+                "partido": "R.ZARAGOZA | Cultural Leonesa",
+                "resultado": "0-5"
+            },
+            {
+                "jornada": "10",
+                "partido": "CÁDIZ | Burgos",
+                "resultado": "1-3"
+            },
+            {
+                "jornada": "11",
+                "partido": "Real Sporting | R.ZARAGOZA",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "11",
+                "partido": "Granada | CÁDIZ",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "R.ZARAGOZA | RC Deportivo",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "12",
+                "partido": "FC Andorra | CÁDIZ",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "Granada | R.ZARAGOZA",
+                "resultado": "3-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "CÁDIZ | Real Valladolid",
+                "resultado": "0-0"
             },
             {
                 "jornada": "14",
@@ -1896,8 +3091,18 @@
                 "resultado": "1-0"
             },
             {
+                "jornada": "14",
+                "partido": "Almería | CÁDIZ",
+                "resultado": "3-0"
+            },
+            {
                 "jornada": "15",
                 "partido": "Eibar | R.ZARAGOZA",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "15",
+                "partido": "CÁDIZ | Cultural Leonesa",
                 "resultado": "1-2"
             },
             {
@@ -1909,6 +3114,16 @@
                 "jornada": "16",
                 "partido": "Córdoba CF | CÁDIZ",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "17",
+                "partido": "Málaga | R.ZARAGOZA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "17",
+                "partido": "CÁDIZ | Racing",
+                "resultado": "2-3"
             }
         ]
     },
@@ -1917,12 +3132,12 @@
         "partido": "ALMERÍA | BURGOS",
         "division": 2,
         "clasificacionLocal": 3,
-        "clasificacionVisitante": 6,
+        "clasificacionVisitante": 8,
         "evolucionClasificacionLocal": [
-            13,
+            15,
             12,
             9,
-            13,
+            14,
             15,
             12,
             9,
@@ -1956,7 +3171,7 @@
             5,
             5,
             6,
-            6
+            8
         ],
         "historico_10_years": [
             {
@@ -1985,9 +3200,17 @@
         "veces2": 0,
         "datosDestacados": [
             "El ALMERÍA lleva 11 partidos seguidos sin perder",
-            "..."
+            "El ALMERÍA lleva 6 partidos seguidos sin perder en casa",
+            "El BURGOS lleva 7 partidos seguidos sin empatar fuera",
+            "En la casilla número 13 hace 12 jornadas seguidas que no aparece el signo X",
+            "En la casilla número 13 hace 4 jornadas seguidas que aparece el signo 2"
         ],
         "comparativa": [
+            {
+                "jornada": "1",
+                "partido": "ALMERÍA | Albacete",
+                "resultado": "4-4"
+            },
             {
                 "jornada": "1",
                 "partido": "BURGOS | Cultural Leonesa",
@@ -1997,6 +3220,36 @@
                 "jornada": "2",
                 "partido": "Cultural Leonesa | ALMERÍA",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "RC Deportivo | BURGOS",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "3",
+                "partido": "Real Sociedad B | ALMERÍA",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "3",
+                "partido": "FC Andorra | BURGOS",
+                "resultado": "2-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "ALMERÍA | Racing",
+                "resultado": "2-3"
+            },
+            {
+                "jornada": "4",
+                "partido": "BURGOS | UD Las Palmas",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "5",
+                "partido": "Real Valladolid | ALMERÍA",
+                "resultado": "3-1"
             },
             {
                 "jornada": "5",
@@ -2009,6 +3262,11 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "6",
+                "partido": "BURGOS | Granada",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "7",
                 "partido": "UD Las Palmas | ALMERÍA",
                 "resultado": "0-1"
@@ -2019,9 +3277,29 @@
                 "resultado": "2-1"
             },
             {
+                "jornada": "8",
+                "partido": "RC Deportivo | ALMERÍA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "8",
+                "partido": "Huesca | BURGOS",
+                "resultado": "2-1"
+            },
+            {
                 "jornada": "9",
                 "partido": "ALMERÍA | Real Zaragoza",
                 "resultado": "4-2"
+            },
+            {
+                "jornada": "9",
+                "partido": "BURGOS | Real Valladolid",
+                "resultado": "0-1"
+            },
+            {
+                "jornada": "10",
+                "partido": "Córdoba CF | ALMERÍA",
+                "resultado": "1-1"
             },
             {
                 "jornada": "10",
@@ -2049,6 +3327,16 @@
                 "resultado": "1-2"
             },
             {
+                "jornada": "13",
+                "partido": "AD Ceuta FC | ALMERÍA",
+                "resultado": "3-2"
+            },
+            {
+                "jornada": "13",
+                "partido": "BURGOS | CD Castellón",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "14",
                 "partido": "ALMERÍA | Cádiz",
                 "resultado": "3-0"
@@ -2064,9 +3352,29 @@
                 "resultado": "0-3"
             },
             {
+                "jornada": "15",
+                "partido": "BURGOS | Racing",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "16",
+                "partido": "ALMERÍA | Huesca",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "16",
+                "partido": "AD Ceuta FC | BURGOS",
+                "resultado": "1-0"
+            },
+            {
                 "jornada": "17",
                 "partido": "FC Andorra | ALMERÍA",
                 "resultado": "1-2"
+            },
+            {
+                "jornada": "17",
+                "partido": "BURGOS | Albacete",
+                "resultado": "0-1"
             }
         ]
     },
@@ -2074,7 +3382,7 @@
         "id": 14,
         "partido": "CEUTA | LAS PALMAS",
         "division": 2,
-        "clasificacionLocal": 7,
+        "clasificacionLocal": 9,
         "clasificacionVisitante": 4,
         "evolucionClasificacionLocal": [
             21,
@@ -2094,10 +3402,10 @@
             9,
             8,
             7,
-            7
+            9
         ],
         "evolucionClasificacionVisitante": [
-            12,
+            10,
             8,
             12,
             12,
@@ -2146,14 +3454,49 @@
         ],
         "comparativa": [
             {
+                "jornada": "1",
+                "partido": "Real Valladolid | CEUTA",
+                "resultado": "3-0"
+            },
+            {
+                "jornada": "1",
+                "partido": "LAS PALMAS | FC Andorra",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "CEUTA | Real Sporting",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "2",
                 "partido": "Córdoba CF | LAS PALMAS",
                 "resultado": "1-3"
             },
             {
+                "jornada": "3",
+                "partido": "Racing | CEUTA",
+                "resultado": "4-1"
+            },
+            {
+                "jornada": "3",
+                "partido": "LAS PALMAS | Málaga",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "4",
                 "partido": "CEUTA | Huesca",
                 "resultado": "2-1"
+            },
+            {
+                "jornada": "4",
+                "partido": "Burgos | LAS PALMAS",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "5",
+                "partido": "CD Castellón | CEUTA",
+                "resultado": "3-3"
             },
             {
                 "jornada": "5",
@@ -2171,6 +3514,16 @@
                 "resultado": "0-1"
             },
             {
+                "jornada": "7",
+                "partido": "Cádiz | CEUTA",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "7",
+                "partido": "LAS PALMAS | Almería",
+                "resultado": "0-1"
+            },
+            {
                 "jornada": "8",
                 "partido": "CEUTA | Eibar",
                 "resultado": "1-0"
@@ -2179,6 +3532,16 @@
                 "jornada": "8",
                 "partido": "LAS PALMAS | Cádiz",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "9",
+                "partido": "Albacete | CEUTA",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "9",
+                "partido": "Granada | LAS PALMAS",
+                "resultado": "0-0"
             },
             {
                 "jornada": "10",
@@ -2196,6 +3559,21 @@
                 "resultado": "0-1"
             },
             {
+                "jornada": "11",
+                "partido": "Huesca | LAS PALMAS",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "12",
+                "partido": "Córdoba CF | CEUTA",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "Real Sporting | LAS PALMAS",
+                "resultado": "0-0"
+            },
+            {
                 "jornada": "13",
                 "partido": "CEUTA | Almería",
                 "resultado": "3-2"
@@ -2207,8 +3585,18 @@
             },
             {
                 "jornada": "14",
+                "partido": "CEUTA | Leganés",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "14",
                 "partido": "Real Valladolid | LAS PALMAS",
                 "resultado": "0-1"
+            },
+            {
+                "jornada": "15",
+                "partido": "RC Deportivo | CEUTA",
+                "resultado": "2-1"
             },
             {
                 "jornada": "15",
@@ -2219,6 +3607,21 @@
                 "jornada": "16",
                 "partido": "CEUTA | Burgos CF",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "16",
+                "partido": "CD Castellón | LAS PALMAS",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "17",
+                "partido": "Granada | CEUTA",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "17",
+                "partido": "LAS PALMAS | Mirandés",
+                "resultado": "0-0"
             }
         ]
     },
@@ -2226,34 +3629,34 @@
         "id": 15,
         "partido": "RAYO | BETIS",
         "division": 1,
-        "clasificacionLocal": 12,
+        "clasificacionLocal": 13,
         "clasificacionVisitante": 6,
         "evolucionClasificacionLocal": [
-            3,
+            2,
             8,
             9,
             13,
             14,
-            14,
+            15,
             17,
             14,
             11,
             7,
-            10,
+            11,
             12,
-            12,
+            13,
             9,
             12,
-            12,
-            12
+            13,
+            13
         ],
         "evolucionClasificacionVisitante": [
-            12,
-            6,
+            11,
+            7,
             11,
             11,
             8,
-            8,
+            9,
             6,
             4,
             5,
@@ -2331,14 +3734,64 @@
                 "resultado": "1-3"
             },
             {
+                "jornada": "1",
+                "partido": "Elche | BETIS",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "2",
+                "partido": "Athletic | RAYO",
+                "resultado": "1-0"
+            },
+            {
                 "jornada": "2",
                 "partido": "BETIS | Deportivo Alavés",
                 "resultado": "1-0"
             },
             {
+                "jornada": "3",
+                "partido": "RAYO | Barcelona",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "3",
+                "partido": "BETIS | Athletic",
+                "resultado": "1-2"
+            },
+            {
+                "jornada": "4",
+                "partido": "Osasuna | RAYO",
+                "resultado": "2-0"
+            },
+            {
+                "jornada": "4",
+                "partido": "Levante | BETIS",
+                "resultado": "2-2"
+            },
+            {
+                "jornada": "5",
+                "partido": "RAYO | Celta",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "5",
                 "partido": "BETIS | Real Sociedad",
                 "resultado": "3-1"
+            },
+            {
+                "jornada": "6",
+                "partido": "Atlético | RAYO",
+                "resultado": "3-2"
+            },
+            {
+                "jornada": "6",
+                "partido": "Celta | BETIS",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "7",
+                "partido": "RAYO | Sevilla",
+                "resultado": "0-1"
             },
             {
                 "jornada": "7",
@@ -2361,9 +3814,24 @@
                 "resultado": "0-3"
             },
             {
+                "jornada": "9",
+                "partido": "Villarreal | BETIS",
+                "resultado": "2-2"
+            },
+            {
                 "jornada": "10",
                 "partido": "RAYO | Deportivo Alavés",
                 "resultado": "1-0"
+            },
+            {
+                "jornada": "10",
+                "partido": "BETIS | Atlético",
+                "resultado": "0-2"
+            },
+            {
+                "jornada": "11",
+                "partido": "Villarreal | RAYO",
+                "resultado": "4-0"
             },
             {
                 "jornada": "11",
@@ -2371,9 +3839,44 @@
                 "resultado": "3-0"
             },
             {
+                "jornada": "12",
+                "partido": "RAYO | Real Madrid",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "12",
+                "partido": "Valencia | BETIS",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "13",
+                "partido": "Real Oviedo | RAYO",
+                "resultado": "0-0"
+            },
+            {
+                "jornada": "13",
+                "partido": "BETIS | Girona FC",
+                "resultado": "1-1"
+            },
+            {
+                "jornada": "14",
+                "partido": "RAYO | Valencia",
+                "resultado": "1-1"
+            },
+            {
                 "jornada": "14",
                 "partido": "Sevilla | BETIS",
                 "resultado": "0-2"
+            },
+            {
+                "jornada": "15",
+                "partido": "Espanyol | RAYO",
+                "resultado": "1-0"
+            },
+            {
+                "jornada": "15",
+                "partido": "BETIS | FC Barcelona",
+                "resultado": "3-5"
             }
         ]
     }

@@ -348,13 +348,13 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
     Transforma la estructura anidada de comparativa de la API eduardolosilla.es (vuelta1/vuelta2 con
     partidos_local/partidos_visitante) en una lista plana de partidos ordenada por jornada.
     Muestra cómo cada equipo ha actuado en partidos recientes, filtrando sólo partidos completados (status=100)
-    y resultados válidos usando la función auxiliar anidada __resultado_valido.
+    y resultados válidos.
 
     Parameters
     ----------
     comparativa : dict
         Diccionario que contiene claves vuelta1 y vuelta2 con listas partidos_local y partidos_visitante.
-        Cada partido incluye: jornada, rival, resultado_casa, resultado_fuera, casa, fuera, status.
+        Cada partido incluye: jornada, rival, resultado_casa, resultado_fuera, status.
     equipo_local : str
         Nombre del equipo local para el partido actual.
     equipo_visitante : str
@@ -370,16 +370,20 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
 
     Process Detail
     --------------
-    1. Itera a través de vuelta1 y vuelta2 en el diccionario comparativa.
-    2. Procesa partidos_local: identifica si equipo_local jugó en casa (casa='1') o fuera (fuera='1').
-    3. Procesa partidos_visitante: identifica si equipo_visitante jugó en casa o fuera.
-    4. Filtra partidos con status=100 y resultados válidos (no vacíos, no '-').
-    5. Agrupa partidos por jornada, ordenando los partidos de equipo_local (orden=0) y equipo_visitante (orden=1).
-    6. Ordena la lista final por jornada (numérico) y orden.
+    1. Itera a través de vuelta1 y vuelta2 en el diccionario comparativa (las vueltas no importan).
+    2. Procesa partidos_local: partidos jugados por equipo_local contra rival.
+       - Si resultado_casa válido: partido es "equipo_local | rival"
+       - Si resultado_fuera válido: partido es "rival | equipo_local"
+    3. Procesa partidos_visitante: partidos jugados por equipo_visitante contra rival.
+       - Si resultado_casa válido: partido es "equipo_visitante | rival"
+       - Si resultado_fuera válido: partido es "rival | equipo_visitante"
+    4. Filtra partidos con status=100 y resultados válidos (no vacíos tras strip, no '-').
+    5. Agrupa partidos por jornada, ordenando por equipo (local primero, visitante después).
+    6. Ordena la lista final por jornada (numérico) y orden interno.
 
     Notes
     -----
-    Esta es una función privada (prefijo _) usada internamente por get_kiniela_matches_details.
+    Esta es una función privada (prefijo __) usada internamente por get_kiniela_matches_details.
     El campo orden se usa para ordenación interna y se elimina de la salida final.
 
     """
@@ -387,8 +391,11 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
         return []
     
     def __resultado_valido(resultado: str) -> bool:
-        """Comprueba si el resultado es válido (no vacío, no '-')."""
-        return bool(resultado and resultado.strip() and resultado != '-')
+        """Comprueba si el resultado es válido (no vacío tras strip, no '-')."""
+        if not resultado:
+            return False
+        resultado_clean = resultado.strip()
+        return bool(resultado_clean and resultado_clean != '-')
     
     partidos_por_jornada = {}
     
@@ -396,66 +403,68 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
         if vuelta not in comparativa:
             continue
         
-        # Partidos del EQUIPO LOCAL
-        # partidos_local: el equipo_local juega (puede ser casa o fuera)
+        # Partidos del EQUIPO LOCAL (partidos_local)
+        # El equipo_local juega contra rival
         for p in comparativa[vuelta].get('partidos_local', []):
             if p.get('status') != 100:
                 continue
             
-            resultado_casa = p.get('resultado_casa', '')
-            resultado_fuera = p.get('resultado_fuera', '')
+            resultado_casa = p.get('resultado_casa', '').strip()
+            resultado_fuera = p.get('resultado_fuera', '').strip()
+            rival = p.get('rival', '')
+            jornada = p.get('jornada')
             
-            # Si casa='1', equipo_local está en casa
-            if p.get('casa') == '1' and __resultado_valido(resultado=resultado_casa):
-                jornada = p.get('jornada')
+            # Si hay resultado_casa válido: equipo_local | rival
+            if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
-                    'partido': f"{equipo_local} | {p.get('rival')}",
+                    'partido': f"{equipo_local} | {rival}",
                     'resultado': resultado_casa,
                     'orden': 0
                 })
-            # Si fuera='1', equipo_local está fuera
-            if p.get('fuera') == '1' and __resultado_valido(resultado=resultado_fuera):
-                jornada = p.get('jornada')
+            
+            # Si hay resultado_fuera válido: rival | equipo_local
+            if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
-                    'partido': f"{p.get('rival')} | {equipo_local}",
+                    'partido': f"{rival} | {equipo_local}",
                     'resultado': resultado_fuera,
                     'orden': 0
                 })
         
-        # Partidos del EQUIPO VISITANTE
-        # partidos_visitante: el equipo_visitante juega (puede ser casa o fuera)
+        # Partidos del EQUIPO VISITANTE (partidos_visitante)
+        # El equipo_visitante juega contra rival
         for p in comparativa[vuelta].get('partidos_visitante', []):
             if p.get('status') != 100:
                 continue
             
-            resultado_casa = p.get('resultado_casa', '')
-            resultado_fuera = p.get('resultado_fuera', '')
+            resultado_casa = p.get('resultado_casa', '').strip()
+            resultado_fuera = p.get('resultado_fuera', '').strip()
+            rival = p.get('rival', '')
+            jornada = p.get('jornada')
             
-            # Si casa='1', equipo_visitante está en casa
-            if p.get('casa') == '1' and __resultado_valido(resultado=resultado_casa):
-                jornada = p.get('jornada')
+            # Si hay resultado_casa válido: equipo_visitante | rival
+            if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
-                    'partido': f"{equipo_visitante} | {p.get('rival')}",
+                    'partido': f"{equipo_visitante} | {rival}",
                     'resultado': resultado_casa,
                     'orden': 1
                 })
-            # Si fuera='1', equipo_visitante está fuera
-            if p.get('fuera') == '1' and __resultado_valido(resultado=resultado_fuera):
-                jornada = p.get('jornada')
+            
+            # Si hay resultado_fuera válido: rival | equipo_visitante
+            if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
-                    'partido': f"{p.get('rival')} | {equipo_visitante}",
+                    'partido': f"{rival} | {equipo_visitante}",
                     'resultado': resultado_fuera,
                     'orden': 1
                 })
