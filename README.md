@@ -27,13 +27,13 @@
 
 ## ✅ Antes de Empezar
 
-Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+** instalado en tu sistema.
+Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+**.
 
 A continuación se muestran como instalar las dos opciones, aunque debes elegir **una** de las dos:
 
 ### Opción 1: UV (Recomendado) ⚡
 
-UV es un gestor de paquetes y proyectos Python ultrarrápido que simplifica la instalación y ejecución de herramientas Python. **No requiere tener Python pre-instalado**, ya que UV lo gestiona automáticamente. Además, ofrece aislamiento de entornos y una instalación significativamente más rápida que pip tradicional.
+[UV](https://docs.astral.sh/uv/) es un gestor de paquetes y proyectos Python ultrarrápido que simplifica la instalación y ejecución de herramientas Python. **No requiere tener Python pre-instalado**.
 
 <details>
 <summary><b>🪟 Instalar UV en Windows</b></summary>
@@ -63,11 +63,10 @@ uv --version
 > Reinicia tu terminal después de la instalación.
 </details>
 
----
 
 ### Opción 2: Python 3.10+ y pip
 
-Si ya tienes Python instalado o prefieres el método tradicional, puedes usar pip (el gestor de paquetes estándar de Python). Requiere tener Python 3.10 o superior ya instalado en tu sistema.
+Si ya tienes Python instalado y prefieres el método tradicional, puedes usar pip (el gestor de paquetes de Python). Requiere tener Python 3.10 o superior ya instalado en tu sistema.
 
 <details>
 <summary><b>🪟 Instalar Python en Windows</b></summary>
@@ -82,15 +81,23 @@ pip --version
 </details>
 
 <details>
-<summary><b>🍎🐧 Instalar Python en macOS/Linux</b></summary>
+<summary><b>🍎 Instalar Python en macOS</b></summary>
 
 **macOS:**
 1. Ve a [python.org/downloads](https://www.python.org/downloads/)
 2. Descarga Python 3.10+ para macOS
 3. Ejecuta el instalador . pkg
 
+Verifica:
+```bash
+python3 --version
+pip3 --version
+```
+</details>
 
-**Linux (Ubuntu/Debian):**
+<details>
+<summary><b>🐧 Instalar Python Linux (Ubuntu/Debian)</b></summary>
+
 ```bash
 sudo apt update
 sudo apt install python3.10 python3-pip python3.10-venv
@@ -111,9 +118,10 @@ pip3 --version
 
 Con UV instalado, **no necesitas instalar** KinielaGPT. Usarás `uvx` para ejecutarlo directamente (ver [Configuración](#-configuración)).
 
----
 
 ### Opción 2: Usando pip
+
+Instala KinielaGPT desde PyPI:
 
 ```bash
 pip install kinielagpt
@@ -132,8 +140,7 @@ Edita el archivo de configuración `claude_desktop_config.json` que según tu si
 
 Añade una de las siguientes configuraciones según tu método de instalación:
 
-<details>
-<summary>Usando uvx</summary>
+Usando uvx:
 
 ```json
 {
@@ -145,10 +152,8 @@ Añade una de las siguientes configuraciones según tu método de instalación:
   }
 }
 ```
-</details>
 
-<details>
-<summary>Usando pip</summary>
+Usando pip:
 
 ```json
 {
@@ -161,8 +166,8 @@ Añade una de las siguientes configuraciones según tu método de instalación:
 }
 ```
 
-> **Nota:** En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
-</details>
+> [!WARNING]
+> En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
 
 ### 💻 Configurar para VS Code
 
