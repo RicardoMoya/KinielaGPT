@@ -60,6 +60,7 @@ Verificar:
 uv --version
 ```
 
+> [!IMPORTANT]
 > Reinicia tu terminal después de la instalación.
 </details>
 
@@ -110,7 +111,7 @@ pip3 --version
 ```
 </details>
 
----
+
 
 ## 🚀 Instalación
 
@@ -140,7 +141,8 @@ Edita el archivo de configuración `claude_desktop_config.json` que según tu si
 
 Añade una de las siguientes configuraciones según tu método de instalación:
 
-Usando uvx:
+<details>
+<summary><b>Usando uvx</b></summary>
 
 ```json
 {
@@ -152,8 +154,11 @@ Usando uvx:
   }
 }
 ```
+</details>
 
-Usando pip:
+
+<details>
+<summary><b>Usando pip</b></summary>
 
 ```json
 {
@@ -166,8 +171,10 @@ Usando pip:
 }
 ```
 
-> [!WARNING]
+> [!NOTE]
 > En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
+</details>
+
 
 ### 💻 Configurar para VS Code
 
@@ -182,11 +189,11 @@ Haz clic en el siguiente botón para instalar automáticamente el servidor MCP e
 Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configuration` y añade una de las siguientes configuraciones:
 
 <details>
-<summary>Usando uvx</summary>
+<summary><b>Usando uvx</b></summary>
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "kinielagpt": {
       "command": "uvx",
       "args": ["kinielagpt"]
@@ -196,12 +203,13 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 ```
 </details>
 
+
 <details>
-<summary>Usando pip</summary>
+<summary><b>Usando pip</b></summary>
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "kinielagpt": {
       "command": "python",
       "args": ["-m", "kinielagpt"]
@@ -210,10 +218,14 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 }
 ```
 
-> **Nota:** En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
+> [!NOTE]
+> En macOS/Linux, si `python` no funciona, usa `python3` en su lugar.
 </details>
 
-> **Alternativa:** También puedes crear el archivo `.vscode/mcp.json` en tu workspace para compartir la configuración con otros. Más detalles en la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+<br>
+
+> [!TIP]
+> Como alternativa puedes crear el archivo `.vscode/mcp.json` en tu workspace para compartir la configuración con otros. Más detalles en la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 
 
 ## 📚 Documentación
