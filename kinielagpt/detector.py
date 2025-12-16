@@ -404,6 +404,8 @@ class SurpriseDetector:
                 "description": ". ".join(description_parts),
                 "factors": factors,
                 "divergence_score": divergence,
+                "local_streak": local_streak,
+                "visitor_streak": visitor_streak,
             }
 
         return None

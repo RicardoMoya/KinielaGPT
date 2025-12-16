@@ -20,7 +20,7 @@
 """
 Tests para el módulo data_source.
 
-Ejecutar: python -m pytest tests/test_data_source.py -v
+Ejecutar: python -m pytest tests/test_data_source.py -v -s
 """
 
 import json

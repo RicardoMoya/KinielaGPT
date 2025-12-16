@@ -316,13 +316,71 @@ Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.
 <details>
 <summary>5. <code>detect_surprises</code></summary>
 
-**Descripción:** Identifica partidos con inconsistencias significativas entre probabilidades basadas en LAE y análisis contextual.  
+**Descripción:** Identifica partidos con inconsistencias significativas entre probabilidades basadas en LAE y análisis contextual.
+
+El detector funciona en **cuatro fases** para cada partido:
+
+**Fase 1: Identificación de favoritos**
+- Analiza las probabilidades LAE de cada partido
+- Si algún resultado supera el 50%, se considera favorito claro
+- Calcula la **divergencia base**: `probabilidad - 50%`
+- Ejemplo: Si el local tiene 72.5% → divergencia base = 22.5 puntos
+
+**Fase 2: Análisis de rachas (Inconsistencia de momentum)**
+- Puntúa las rachas de los últimos 5 partidos: Victoria (+3 pts), Empate (+1 pt), Derrota (-2 pts)
+- Si el favorito tiene probabilidad ≥60% Y racha mala (<-6 pts) Y rival con racha buena (>+6 pts):
+  - Calcula **divergencia por racha**: `abs(racha_mala) + racha_buena`
+  - Ejemplo: Local con -7 pts, visitante con +13 pts → divergencia = 7 + 13 = 20 puntos
+  - Score total = divergencia base + divergencia por racha
+
+**Fase 3: Análisis histórico (Inconsistencia con enfrentamientos directos)**
+- Compara la probabilidad LAE con el histórico real de enfrentamientos directos
+- Calcula **divergencia por histórico**: `probabilidad_LAE - probabilidad_histórica`
+- Si divergencia > 30 puntos porcentuales → Inconsistencia detectada
+- Ejemplo: LAE da 72.5% pero histórico muestra 35% → divergencia = 37.5 puntos
+
+**Fase 4: Análisis de clasificación (Inconsistencia con posiciones)**
+- Verifica si el favorito está significativamente peor clasificado que su rival
+- Si favorito con prob ≥65% está 8+ posiciones peor → Inconsistencia detectada
+- Calcula **divergencia por clasificación**: `diferencia_posiciones × 2.5`
+
+**Selección final:**
+- El detector evalúa las tres inconsistencias (racha, histórico, clasificación)
+- Selecciona la más significativa (mayor score de divergencia)
+- Si supera el `threshold` configurado → Se reporta como sorpresa
+- Clasifica por gravedad:
+  - 🚨 **ALERTA ROJA**: divergencia ≥ 50 (contradicción crítica)
+  - ⚠️ **ALERTA MEDIA**: divergencia ≥ 35 (contradicción notable)
+  - ⚠️ **ALERTA**: divergencia ≥ threshold (contradicción detectable)
+
 **Parámetros:**
 - `jornada` (int): Número de jornada (mínimo: 1)
 - `temporada` (int): Año de la temporada (mínimo: 2026)
 - `threshold` (float, opcional): Umbral de divergencia (0-100, default: 30)
+  - threshold=20: Detección sensible (más alertas)
+  - threshold=30: Balance recomendado
+  - threshold=40: Solo inconsistencias muy marcadas
 
-**Devuelve:** Lista de partidos con alertas de posibles sorpresas, clasificadas por nivel de gravedad (🚨 ALERTA ROJA, ⚠️ ALERTA MEDIA, ⚠️ ALERTA)
+**Devuelve:** Lista de partidos con alertas, cada una incluye:
+- Partido y nivel de alerta (🚨/⚠️)
+- Tipo de inconsistencia detectada (rachas, histórico o clasificación)
+- Descripción explicativa de la contradicción
+- Probabilidades LAE y factores contextuales relevantes
+- Score de divergencia calculado
+
+**Ejemplo práctico:**
+```
+Partido: VILLARREAL (72.5%) - GETAFE (9.2%)
+→ Divergencia base: 22.5 pts (favorito fuerte)
+→ Rachas: Villarreal -7 pts (4D-1E), Getafe +13 pts (4V-1E)
+→ Divergencia por racha: 7 + 13 = 20 pts
+→ Score total: 22.5 + 20 = 42.5 pts
+→ Resultado: ⚠️ ALERTA MEDIA - "Probabilidad alta de victoria local pero el local 
+   está en mala racha y el visitante en buena forma"
+```
+
+> [!TIP]
+> Ver análisis detallado paso a paso en [docs/deteccion_sorpresas_ejemplo.md](docs/detector_ejemplo.md)
 </details>
 
 <details>
