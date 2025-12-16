@@ -64,7 +64,7 @@ def test_calculate_streak_value_all_wins():
     print("=" * 80)
 
     streak = ["V", "V", "V", "V", "V"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 15, f"❌ Valor esperado 15, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3 × 5 victorias)")
@@ -92,7 +92,7 @@ def test_calculate_streak_value_all_losses():
     print("=" * 80)
 
     streak = ["D", "D", "D", "D", "D"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == -10, f"❌ Valor esperado -10, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (-2 × 5 derrotas)")
@@ -119,7 +119,7 @@ def test_calculate_streak_value_all_draws():
     print("=" * 80)
 
     streak = ["E", "E", "E", "E", "E"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 5, f"❌ Valor esperado 5, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (1 × 5 empates)")
@@ -146,7 +146,7 @@ def test_calculate_streak_value_mixed_positive():
     print("=" * 80)
 
     streak = ["V", "V", "E", "V", "D"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 8, f"❌ Valor esperado 8, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3×3V + 1×1E -2×1D)")
@@ -173,7 +173,7 @@ def test_calculate_streak_value_mixed_negative():
     print("=" * 80)
 
     streak = ["D", "V", "E", "D", "D"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == -2, f"❌ Valor esperado -2, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3×1V + 1×1E -2×3D)")
@@ -200,7 +200,7 @@ def test_calculate_streak_value_irregular():
     print("=" * 80)
 
     streak = ["V", "D", "V", "E"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 5, f"❌ Valor esperado 5, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3×2V + 1×1E -2×1D)")
@@ -227,7 +227,7 @@ def test_calculate_streak_value_empty():
     print("=" * 80)
 
     streak = []
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 0, f"❌ Valor esperado 0, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (lista vacía)")
@@ -255,7 +255,7 @@ def test_calculate_streak_value_villarreal_example():
 
     # Datos reales de Villarreal según detector_ejemplo.md
     streak = ["V", "V", "V", "V", "E"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 13, f"❌ Valor esperado 13, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3×4V + 1×1E)")
@@ -283,7 +283,7 @@ def test_calculate_streak_value_getafe_example():
 
     # Datos reales de Getafe según detector_ejemplo.md
     streak = ["V", "E", "D", "E", "D"]
-    result = detector._SurpriseDetector__calculate_streak_value(streak)
+    result = detector._SurpriseDetector__calculate_streak_value(streak) # type: ignore
 
     assert result == 1, f"❌ Valor esperado 1, obtenido {result}"
     print(f"✅ Valor de racha calculado correctamente: {result} (3×1V + 2×1E -2×2D)")
@@ -320,7 +320,7 @@ def test_check_streak_inconsistency_local_favorite_poor_form():
         "evolucionVisitante": ["V", "V", "V", "E"],  # +10 puntos
     }
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("1", 75.0, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("1", 75.0, prob, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "streak_inconsistency", (
@@ -357,7 +357,7 @@ def test_check_streak_inconsistency_visitor_favorite_poor_form():
         "evolucionVisitante": ["D", "D", "D", "D"],  # -8 puntos
     }
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("2", 70.0, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("2", 70.0, prob, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "streak_inconsistency", (
@@ -395,7 +395,7 @@ def test_check_streak_inconsistency_draw_underestimated():
         "evolucionVisitante": ["E", "V", "E", "D"],  # +3 puntos
     }
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("1", 40.0, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("1", 40.0, prob, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "streak_inconsistency", (
@@ -432,7 +432,7 @@ def test_check_streak_inconsistency_no_detection_balanced():
         "evolucionVisitante": ["D", "E", "V"],  # +0 puntos
     }
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("1", 33.3, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("1", 33.3, prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia en caso equilibrado")
@@ -464,7 +464,7 @@ def test_check_streak_inconsistency_threshold_not_met():
         "evolucionVisitante": ["E", "D", "V"],  # +0 puntos
     }
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("1", 60.0, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("1", 60.0, prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por umbral no alcanzado")
@@ -493,7 +493,7 @@ def test_check_streak_inconsistency_missing_data():
     prob = {"partido": "TEST", "1_Prob": 75.0, "X_Prob": 15.0, "2_Prob": 10.0}
     detail = {}  # Sin datos de evolución
 
-    result = detector._SurpriseDetector__check_streak_inconsistency("1", 75.0, prob, detail)
+    result = detector._SurpriseDetector__check_streak_inconsistency("1", 75.0, prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por datos faltantes")
@@ -531,7 +531,7 @@ def test_check_historical_inconsistency_detected():
         "veces2": 2,  # 2 victorias visitantes
     }
 
-    result = detector._SurpriseDetector__check_historical_inconsistency("X", prob, detail)
+    result = detector._SurpriseDetector__check_historical_inconsistency("X", prob, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "historical_inconsistency", (
@@ -568,7 +568,7 @@ def test_check_historical_inconsistency_not_detected():
         "veces2": 2,  # 2 victorias visitantes
     }
 
-    result = detector._SurpriseDetector__check_historical_inconsistency("1", prob, detail)
+    result = detector._SurpriseDetector__check_historical_inconsistency("1", prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia histórica en caso consistente")
@@ -602,7 +602,7 @@ def test_check_historical_inconsistency_insufficient_sample():
         }
     }
 
-    result = detector._SurpriseDetector__check_historical_inconsistency("2", prob, detail)
+    result = detector._SurpriseDetector__check_historical_inconsistency("2", prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por muestra insuficiente")
@@ -636,7 +636,7 @@ def test_check_historical_inconsistency_below_reporting_threshold():
         }
     }
 
-    result = detector._SurpriseDetector__check_historical_inconsistency("1", prob, detail)
+    result = detector._SurpriseDetector__check_historical_inconsistency("1", prob, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por debajo del umbral de reporte")
@@ -669,7 +669,7 @@ def test_check_classification_inconsistency_local_overestimated():
 
     detail = {"clasificacionLocal": "15º 20pt", "clasificacionVisitante": "3º 50pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("1", 70.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("1", 70.0, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "classification_inconsistency", (
@@ -704,7 +704,7 @@ def test_check_classification_inconsistency_visitor_overestimated():
 
     detail = {"clasificacionLocal": "4º 50pt", "clasificacionVisitante": "18º 15pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("2", 65.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("2", 65.0, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "classification_inconsistency", (
@@ -739,7 +739,7 @@ def test_check_classification_inconsistency_not_detected_small_diff():
 
     detail = {"clasificacionLocal": "6º 40pt", "clasificacionVisitante": "9º 32pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("1", 55.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("1", 55.0, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por diferencia pequeña de clasificación")
@@ -767,7 +767,7 @@ def test_check_classification_inconsistency_not_detected_low_prob():
 
     detail = {"clasificacionLocal": "12º 25pt", "clasificacionVisitante": "5º 45pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("1", 45.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("1", 45.0, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por probabilidades bajas")
@@ -795,7 +795,7 @@ def test_check_classification_inconsistency_wrong_direction():
 
     detail = {"clasificacionLocal": "15º 20pt", "clasificacionVisitante": "3º 50pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("2", 50.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("2", 50.0, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por dirección correcta")
@@ -823,7 +823,7 @@ def test_check_classification_inconsistency_missing_data():
 
     detail = {}  # Sin datos de clasificación
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("1", 70.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("1", 70.0, detail) # type: ignore
 
     assert result is None, f"❌ Se detectó inconsistencia inesperada: {result}"
     print("✅ No se detectó inconsistencia por datos de clasificación faltantes")
@@ -851,7 +851,7 @@ def test_check_classification_inconsistency_int_format():
 
     detail = {"clasificacionLocal": "16º 18pt", "clasificacionVisitante": "7º 38pt"}
 
-    result = detector._SurpriseDetector__check_classification_inconsistency("1", 65.0, detail)
+    result = detector._SurpriseDetector__check_classification_inconsistency("1", 65.0, detail) # type: ignore
 
     assert result is not None, "❌ No se detectó inconsistencia"
     assert result["type"] == "classification_inconsistency", (
