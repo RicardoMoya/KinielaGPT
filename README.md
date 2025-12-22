@@ -400,18 +400,15 @@ Ver el archivo [LICENSE](LICENSE) para el texto legal completo.
 >Este proyecto es únicamente para fines de entretenimiento. Las predicciones no garantizan resultados y no deben usarse como única base para decisiones de apuestas. Juega responsablemente.
 
 
-## 👨‍💻 Autor
+## 👨‍💻 Autor - Ricardo Moya
 
-
-<div align="left">
-  <div style="display: flex; align-items: center;">
-    <img src="https://github.com/RicardoMoya.png" alt="Ricardo Moya GitHub avatar" width="150" style="border-radius: 90px; margin-right: 24px;"/>
-    <div style="font-size:1.5em;">
-      🐙 GitHub: <a href="https://github.com/RicardoMoya" target="_blank">@RicardoMoya</a><br>
-      💼 LinkedIn: <a href="https://www.linkedin.com/in/phdricardomoya/" target="_blank">Ricardo Moya, PhD</a>
-    </div>
-  </div>
-</div>
+<p align="left">
+  <img src="https://github.com/RicardoMoya.png" alt="Ricardo Moya GitHub avatar" width="120" style="border-radius: 50%;" />
+</p>
+<p align="left">
+  🐙 GitHub: <a href="https://github.com/RicardoMoya">@RicardoMoya</a><br>
+  💼 LinkedIn: <a href="https://www.linkedin.com/in/phdricardomoya/">Ricardo Moya, PhD</a>
+</p>
 
 ## 📧 Contacto
 

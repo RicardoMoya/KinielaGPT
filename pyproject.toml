@@ -46,6 +46,7 @@ docs = [
     "furo>=2025.0.0",
     "sphinx-autodoc-typehints>=2.0.0",
     "myst-parser>=3.0.0",
+    "sphinx-copybutton>=0.5.2",
 ]
 
 [project.urls]
