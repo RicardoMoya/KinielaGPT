@@ -79,7 +79,7 @@
 Sigue estos pasos para tener KinielaGPT listo y funcionando en tu equipo:
 
 1. [Instala UV o Python 3.10+](quickstart.md) en tu PC.
-2. [Instala](installation.md) KinielaGPT.s
+2. [Instala](installation.md) KinielaGPT.
 3. [Configura](configuration.md) el servidor MCP, eligiendo Claude o VS Code como cliente.
 
 Una vez completados estos pasos, ¡ya puedes empezar a hacer predicciones y análisis con KinielaGPT!
