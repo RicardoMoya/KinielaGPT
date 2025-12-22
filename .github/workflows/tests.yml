@@ -10,7 +10,7 @@ on:
       - main
       - develop
   schedule:
-    - cron: '0 9 * * 3'  # Todos los miércoles a las 9:00 UTC
+    - cron: '0 9 * * 4'  # Todos los jueves a las 9:00 UTC
   workflow_dispatch:
 
 jobs:

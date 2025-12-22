@@ -47,12 +47,12 @@ predictor = KinielaPredictor()
 # Cargar datos de muestra para pruebas
 # Nota: Los datos reales de data_source_samples se cargan pero no se usan directamente
 # en estos tests para mantener el aislamiento y la simplicidad
-with open('tests/data_source_samples/quiniela_probs_lae.xml', 'r', encoding='utf-8') as f:
+with open("tests/data_source_samples/quiniela_probs_lae.xml", encoding="utf-8") as f:
     # Los datos XML se cargan para referencia pero no se parsean en estos tests
     # En un escenario real, se implementaría un parser XML a dict
     quiniela_probs_raw = f.read()
 
-with open('tests/data_source_samples/match_details_process.json', 'r', encoding='utf-8') as f:
+with open("tests/data_source_samples/match_details_process.json", encoding="utf-8") as f:
     match_details_raw = json.load(f)
 
 
@@ -82,22 +82,22 @@ def test_predict_conservative():
 
     # Datos de prueba: partido con victoria local clara y empate probable
     sample_probs = [
-        {'1_Prob': 60.0, 'X_Prob': 25.0, '2_Prob': 15.0, 'partido': 'A | B'},
-        {'1_Prob': 30.0, 'X_Prob': 40.0, '2_Prob': 30.0, 'partido': 'C | D'}
+        {"1_Prob": 60.0, "X_Prob": 25.0, "2_Prob": 15.0, "partido": "A | B"},
+        {"1_Prob": 30.0, "X_Prob": 40.0, "2_Prob": 30.0, "partido": "C | D"},
     ]
     sample_details = [
-        {'clasificacionLocal': 1, 'clasificacionVisitante': 2, 'veces1': 5, 'vecesX': 3, 'veces2': 2},
-        {'clasificacionLocal': 2, 'clasificacionVisitante': 1, 'veces1': 2, 'vecesX': 5, 'veces2': 3}
+        {"clasificacionLocal": 1, "clasificacionVisitante": 2, "veces1": 5, "vecesX": 3, "veces2": 2},
+        {"clasificacionLocal": 2, "clasificacionVisitante": 1, "veces1": 2, "vecesX": 5, "veces2": 3},
     ]
 
-    preds = predictor._KinielaPredictor__predict_conservative(sample_probs, sample_details)
+    preds = predictor._KinielaPredictor__predict_conservative(sample_probs, sample_details)  # type: ignore
 
     # Verificaciones
-    assert preds[0]['prediction'] == '1', "❌ Primera predicción debería ser '1'"
-    assert preds[1]['prediction'] == 'X', "❌ Segunda predicción debería ser 'X'"
-    assert preds[0]['confidence'] == 'ALTA', "❌ Primera confianza debería ser 'ALTA'"
-    assert preds[1]['confidence'] == 'BAJA', "❌ Segunda confianza debería ser 'BAJA'"
-    assert 'Probabilidad LAE' in preds[0]['reasoning'], "❌ Falta 'Probabilidad LAE' en justificación"
+    assert preds[0]["prediction"] == "1", "❌ Primera predicción debería ser '1'"
+    assert preds[1]["prediction"] == "X", "❌ Segunda predicción debería ser 'X'"
+    assert preds[0]["confidence"] == "ALTA", "❌ Primera confianza debería ser 'ALTA'"
+    assert preds[1]["confidence"] == "BAJA", "❌ Segunda confianza debería ser 'BAJA'"
+    assert "Probabilidad LAE" in preds[0]["reasoning"], "❌ Falta 'Probabilidad LAE' en justificación"
 
     print("✅ Predicción conservadora: signos correctos")
     print(f"   Partido 1: {preds[0]['prediction']} (confianza: {preds[0]['confidence']})")
@@ -129,22 +129,22 @@ def test_predict_risky():
     print("=" * 80)
 
     sample_probs = [
-        {'1_Prob': 60.0, 'X_Prob': 25.0, '2_Prob': 15.0, 'partido': 'A | B'},
-        {'1_Prob': 30.0, 'X_Prob': 40.0, '2_Prob': 30.0, 'partido': 'C | D'}
+        {"1_Prob": 60.0, "X_Prob": 25.0, "2_Prob": 15.0, "partido": "A | B"},
+        {"1_Prob": 30.0, "X_Prob": 40.0, "2_Prob": 30.0, "partido": "C | D"},
     ]
     sample_details = [
-        {'clasificacionLocal': 1, 'clasificacionVisitante': 2, 'veces1': 5, 'vecesX': 3, 'veces2': 2},
-        {'clasificacionLocal': 2, 'clasificacionVisitante': 1, 'veces1': 2, 'vecesX': 5, 'veces2': 3}
+        {"clasificacionLocal": 1, "clasificacionVisitante": 2, "veces1": 5, "vecesX": 3, "veces2": 2},
+        {"clasificacionLocal": 2, "clasificacionVisitante": 1, "veces1": 2, "vecesX": 5, "veces2": 3},
     ]
 
-    preds = predictor._KinielaPredictor__predict_risky(sample_probs, sample_details)
+    preds = predictor._KinielaPredictor__predict_risky(sample_probs, sample_details)  # type: ignore
 
     # Verificaciones
     assert len(preds) == 2, "❌ Deberían haber 2 predicciones"
-    assert all('prediction' in p for p in preds), "❌ Todas las predicciones deben tener 'prediction'"
-    assert all('adjusted_probabilities' in p for p in preds), "❌ Todas deben tener 'adjusted_probabilities'"
-    assert all('context_factors' in p for p in preds), "❌ Todas deben tener 'context_factors'"
-    assert all('reasoning' in p for p in preds), "❌ Todas deben tener 'reasoning'"
+    assert all("prediction" in p for p in preds), "❌ Todas las predicciones deben tener 'prediction'"
+    assert all("adjusted_probabilities" in p for p in preds), "❌ Todas deben tener 'adjusted_probabilities'"
+    assert all("context_factors" in p for p in preds), "❌ Todas deben tener 'context_factors'"
+    assert all("reasoning" in p for p in preds), "❌ Todas deben tener 'reasoning'"
 
     print("✅ Estrategia arriesgada: predicciones con ajustes contextuales")
     print(f"   Número de predicciones: {len(preds)}")
@@ -167,29 +167,31 @@ def test_predict_custom():
     print("=" * 80)
 
     sample_probs = [
-        {'1_Prob': 60.0, 'X_Prob': 25.0, '2_Prob': 15.0, 'partido': 'A | B'},
-        {'1_Prob': 30.0, 'X_Prob': 40.0, '2_Prob': 30.0, 'partido': 'C | D'}
+        {"1_Prob": 60.0, "X_Prob": 25.0, "2_Prob": 15.0, "partido": "A | B"},
+        {"1_Prob": 30.0, "X_Prob": 40.0, "2_Prob": 30.0, "partido": "C | D"},
     ]
     sample_details = [
-        {'clasificacionLocal': 1, 'clasificacionVisitante': 2, 'veces1': 5, 'vecesX': 3, 'veces2': 2},
-        {'clasificacionLocal': 2, 'clasificacionVisitante': 1, 'veces1': 2, 'vecesX': 5, 'veces2': 3}
+        {"clasificacionLocal": 1, "clasificacionVisitante": 2, "veces1": 5, "vecesX": 3, "veces2": 2},
+        {"clasificacionLocal": 2, "clasificacionVisitante": 1, "veces1": 2, "vecesX": 5, "veces2": 3},
     ]
-    custom_dist = {'1': 1, 'X': 1, '2': 0}  # 1 uno, 1 empate, 0 doses
+    custom_dist = {"1": 1, "X": 1, "2": 0}  # 1 uno, 1 empate, 0 doses
 
-    preds = predictor._KinielaPredictor__predict_custom(sample_probs, sample_details, custom_dist)
+    preds = predictor._KinielaPredictor__predict_custom(sample_probs, sample_details, custom_dist)  # type: ignore
 
     # Verificaciones
     assert len(preds) == 2, "❌ Deberían haber 2 predicciones"
-    assert sum(1 for p in preds if p['prediction'] == '1') == 1, "❌ Debería haber 1 predicción '1'"
-    assert sum(1 for p in preds if p['prediction'] == 'X') == 1, "❌ Debería haber 1 predicción 'X'"
-    assert sum(1 for p in preds if p['prediction'] == '2') == 0, "❌ Debería haber 0 predicciones '2'"
-    assert all('score' in p for p in preds), "❌ Todas las predicciones deben tener 'score'"
+    assert sum(1 for p in preds if p["prediction"] == "1") == 1, "❌ Debería haber 1 predicción '1'"
+    assert sum(1 for p in preds if p["prediction"] == "X") == 1, "❌ Debería haber 1 predicción 'X'"
+    assert sum(1 for p in preds if p["prediction"] == "2") == 0, "❌ Debería haber 0 predicciones '2'"
+    assert all("score" in p for p in preds), "❌ Todas las predicciones deben tener 'score'"
 
     print("✅ Predicción personalizada: distribución correcta")
     print(f"   Distribución objetivo: {custom_dist}")
-    obtained = {'1': sum(1 for p in preds if p['prediction'] == '1'),
-                'X': sum(1 for p in preds if p['prediction'] == 'X'),
-                '2': sum(1 for p in preds if p['prediction'] == '2')}
+    obtained = {
+        "1": sum(1 for p in preds if p["prediction"] == "1"),
+        "X": sum(1 for p in preds if p["prediction"] == "X"),
+        "2": sum(1 for p in preds if p["prediction"] == "2"),
+    }
     print(f"   Distribución obtenida: {obtained}")
     print("✅ Todas las predicciones incluyen scores")
 
@@ -208,21 +210,17 @@ def test_analyze_context():
     print("TEST: test_analyze_context()")
     print("=" * 80)
 
-    detail = {
-        'clasificacionLocal': 1,
-        'clasificacionVisitante': 2,
-        'veces1': 5, 'vecesX': 3, 'veces2': 2
-    }
+    detail = {"clasificacionLocal": 1, "clasificacionVisitante": 2, "veces1": 5, "vecesX": 3, "veces2": 2}
 
-    context = predictor._KinielaPredictor__analyze_context(detail)
+    context = predictor._KinielaPredictor__analyze_context(detail)  # type: ignore
 
     # Verificaciones
     assert isinstance(context, dict), "❌ El contexto debe ser un diccionario"
-    required_keys = ['local_strength', 'visitor_strength', 'draw_tendency',
-                    'recent_form_local', 'recent_form_visitor']
+    required_keys = ["local_strength", "visitor_strength", "draw_tendency", "recent_form_local", "recent_form_visitor"]
     assert all(key in context for key in required_keys), f"❌ Faltan claves requeridas: {required_keys}"
-    assert all(isinstance(context[key], (int, float, str)) for key in context), \
-           "❌ Todos los valores deben ser numéricos o string"
+    assert all(isinstance(context[key], (int, float, str)) for key in context), (
+        "❌ Todos los valores deben ser numéricos o string"
+    )
 
     print("✅ Análisis contextual: factores correctos")
     print(f"   Claves encontradas: {list(context.keys())}")
@@ -245,23 +243,23 @@ def test_adjust_probabilities():
     predictor : KinielaPredictor
         Instancia del predictor proporcionada por el fixture.
     """
-    probs = {'1': 50.0, 'X': 30.0, '2': 20.0}
+    probs = {"1": 50.0, "X": 30.0, "2": 20.0}
     context = {
-        'local_strength': 10,
-        'visitor_strength': -5,
-        'draw_tendency': 0,
-        'recent_form_local': 'neutral',
-        'recent_form_visitor': 'neutral'
+        "local_strength": 10,
+        "visitor_strength": -5,
+        "draw_tendency": 0,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral",
     }
 
-    adjusted = predictor._KinielaPredictor__adjust_probabilities(probs, context)
+    adjusted = predictor._KinielaPredictor__adjust_probabilities(probs, context)  # type: ignore
 
     # Verificaciones
     assert abs(sum(adjusted.values()) - 100) < 1e-6  # Suma normalizada
     assert all(isinstance(v, float) for v in adjusted.values())
     assert all(v >= 0 for v in adjusted.values())  # No negativas
     # Con local_strength=10, la prob de 1 debería aumentar
-    assert adjusted['1'] > probs['1']
+    assert adjusted["1"] > probs["1"]
 
 
 def test_generate_reasoning():
@@ -278,23 +276,23 @@ def test_generate_reasoning():
     print("TEST: test_generate_reasoning()")
     print("=" * 80)
 
-    original_probs = {'1': 50.0, 'X': 30.0, '2': 20.0}
-    adjusted_probs = {'1': 60.0, 'X': 25.0, '2': 15.0}
+    original_probs = {"1": 50.0, "X": 30.0, "2": 20.0}
+    adjusted_probs = {"1": 60.0, "X": 25.0, "2": 15.0}
     context = {
-        'local_strength': 20,
-        'visitor_strength': -10,
-        'draw_tendency': 0,
-        'recent_form_local': 'neutral',
-        'recent_form_visitor': 'neutral'
+        "local_strength": 20,
+        "visitor_strength": -10,
+        "draw_tendency": 0,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral",
     }
 
-    reasoning = predictor._KinielaPredictor__generate_reasoning('1', original_probs, adjusted_probs, context)
+    reasoning = predictor._KinielaPredictor__generate_reasoning("1", original_probs, adjusted_probs, context)  # type: ignore
 
     # Verificaciones
     assert isinstance(reasoning, str), "❌ La justificación debe ser un string"
     assert len(reasoning) > 0, "❌ La justificación no debe estar vacía"
-    assert 'Probabilidad LAE' in reasoning, "❌ Debe mencionar 'Probabilidad LAE'"
-    assert 'ajustada' in reasoning, "❌ Debe mencionar el ajuste"
+    assert "Probabilidad LAE" in reasoning, "❌ Debe mencionar 'Probabilidad LAE'"
+    assert "ajustada" in reasoning, "❌ Debe mencionar el ajuste"
 
     print("✅ Generación de justificación: contenido correcto")
     print(f"   Longitud: {len(reasoning)} caracteres")
@@ -316,27 +314,41 @@ def test_optimize_distribution():
     print("=" * 80)
 
     match_scores = [
-        {'match_id': 1, 'match': 'A | B', '1': 60.0, 'X': 25.0, '2': 15.0,
-         'probabilities': {'1': 60.0, 'X': 25.0, '2': 15.0}, 'context': {}},
-        {'match_id': 2, 'match': 'C | D', '1': 30.0, 'X': 40.0, '2': 30.0,
-         'probabilities': {'1': 30.0, 'X': 40.0, '2': 30.0}, 'context': {}}
+        {
+            "match_id": 1,
+            "match": "A | B",
+            "1": 60.0,
+            "X": 25.0,
+            "2": 15.0,
+            "probabilities": {"1": 60.0, "X": 25.0, "2": 15.0},
+            "context": {},
+        },
+        {
+            "match_id": 2,
+            "match": "C | D",
+            "1": 30.0,
+            "X": 40.0,
+            "2": 30.0,
+            "probabilities": {"1": 30.0, "X": 40.0, "2": 30.0},
+            "context": {},
+        },
     ]
 
-    preds = predictor._KinielaPredictor__optimize_distribution(match_scores, 1, 1, 0)
+    preds = predictor._KinielaPredictor__optimize_distribution(match_scores, 1, 1, 0)  # type: ignore
 
     # Verificaciones
     assert len(preds) == 2, "❌ Deberían haber 2 predicciones"
-    assert sum(1 for p in preds if p['prediction'] == '1') == 1, "❌ Debería haber 1 predicción '1'"
-    assert sum(1 for p in preds if p['prediction'] == 'X') == 1, "❌ Debería haber 1 predicción 'X'"
-    assert sum(1 for p in preds if p['prediction'] == '2') == 0, "❌ Debería haber 0 predicciones '2'"
+    assert sum(1 for p in preds if p["prediction"] == "1") == 1, "❌ Debería haber 1 predicción '1'"
+    assert sum(1 for p in preds if p["prediction"] == "X") == 1, "❌ Debería haber 1 predicción 'X'"
+    assert sum(1 for p in preds if p["prediction"] == "2") == 0, "❌ Debería haber 0 predicciones '2'"
     # El partido 1 debería tener el score más alto para '1', el 2 para 'X'
-    assert preds[0]['match_id'] == 1 and preds[0]['prediction'] == '1', "❌ Partido 1 debería ser '1'"
-    assert preds[1]['match_id'] == 2 and preds[1]['prediction'] == 'X', "❌ Partido 2 debería ser 'X'"
+    assert preds[0]["match_id"] == 1 and preds[0]["prediction"] == "1", "❌ Partido 1 debería ser '1'"
+    assert preds[1]["match_id"] == 2 and preds[1]["prediction"] == "X", "❌ Partido 2 debería ser 'X'"
 
     print("✅ Optimización de distribución: asignaciones correctas")
-    count_1 = sum(1 for p in preds if p['prediction'] == '1')
-    count_x = sum(1 for p in preds if p['prediction'] == 'X')
-    count_2 = sum(1 for p in preds if p['prediction'] == '2')
+    count_1 = sum(1 for p in preds if p["prediction"] == "1")
+    count_x = sum(1 for p in preds if p["prediction"] == "X")
+    count_2 = sum(1 for p in preds if p["prediction"] == "2")
     print(f"   Distribución: 1={count_1}, X={count_x}, 2={count_2}")
     print("✅ Priorización de scores altos")
 
@@ -357,28 +369,30 @@ def test_validate_custom_distribution():
 
     # Distribuciones válidas
     valid_distributions = [
-        {'1': 7, 'X': 4, '2': 4},  # Distribución por defecto
-        {'1': 8, 'X': 4, '2': 3},  # Otra distribución válida
-        {'1': 5, 'X': 5, '2': 5},  # Distribución equilibrada
+        {"1": 7, "X": 4, "2": 4},  # Distribución por defecto
+        {"1": 8, "X": 4, "2": 3},  # Otra distribución válida
+        {"1": 5, "X": 5, "2": 5},  # Distribución equilibrada
     ]
 
     # Distribuciones inválidas
     invalid_distributions = [
-        {'1': 8, 'X': 4, '2': 2},  # Suma 14
-        {'1': 10, 'X': 3, '2': 3},  # Suma 16
-        {'1': 7, 'X': 4},  # Falta clave '2'
-        {'1': 7, '2': 4},  # Falta clave 'X'
-        {'X': 4, '2': 4},  # Falta clave '1'
+        {"1": 8, "X": 4, "2": 2},  # Suma 14
+        {"1": 10, "X": 3, "2": 3},  # Suma 16
+        {"1": 7, "X": 4},  # Falta clave '2'
+        {"1": 7, "2": 4},  # Falta clave 'X'
+        {"X": 4, "2": 4},  # Falta clave '1'
     ]
 
     # Verificaciones
     for valid in valid_distributions:
-        assert predictor._KinielaPredictor__validate_custom_distribution(valid), \
-               f"❌ Distribución válida rechazada: {valid}"
+        assert predictor._KinielaPredictor__validate_custom_distribution(valid), ( # type: ignore
+            f"❌ Distribución válida rechazada: {valid}"
+        )
 
     for invalid in invalid_distributions:
-        assert not predictor._KinielaPredictor__validate_custom_distribution(invalid), \
-               f"❌ Distribución inválida aceptada: {invalid}"
+        assert not predictor._KinielaPredictor__validate_custom_distribution(invalid), ( # type: ignore
+            f"❌ Distribución inválida aceptada: {invalid}"
+        ) 
 
     print("✅ Validación de distribuciones: correctas")
     print(f"   Distribuciones válidas probadas: {len(valid_distributions)}")
@@ -400,17 +414,12 @@ def test_calculate_summary():
     predictor : KinielaPredictor
         Instancia del predictor proporcionada por el fixture.
     """
-    preds = [
-        {'prediction': '1'},
-        {'prediction': 'X'},
-        {'prediction': '2'},
-        {'prediction': '1'}
-    ]
+    preds = [{"prediction": "1"}, {"prediction": "X"}, {"prediction": "2"}, {"prediction": "1"}]
 
-    summary = predictor._KinielaPredictor__calculate_summary(preds)
+    summary = predictor._KinielaPredictor__calculate_summary(preds) # type: ignore
 
     # Verificaciones
-    expected = {'1': 2, 'X': 1, '2': 1}
+    expected = {"1": 2, "X": 1, "2": 1}
     assert summary == expected, f"❌ Resumen esperado {expected}, obtenido {summary}"
     assert all(isinstance(count, int) for count in summary.values()), "❌ Todos los conteos deben ser enteros"
     assert all(count >= 0 for count in summary.values()), "❌ Todos los conteos deben ser no negativos"
@@ -424,7 +433,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 80)
     print("TESTS DE PREDICTOR - KinielaPredictor")
     print("=" * 80)
-    
+
     test_predict_conservative()
     test_predict_risky()
     test_predict_custom()
@@ -434,7 +443,7 @@ if __name__ == "__main__":
     test_optimize_distribution()
     test_validate_custom_distribution()
     test_calculate_summary()
-    
+
     print("\n" + "=" * 80)
     print("✅ TODOS LOS TESTS DEL PREDICTOR COMPLETADOS EXITOSAMENTE")
     print("=" * 80)
