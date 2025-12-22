@@ -54,7 +54,7 @@ Sigue este guion paso a paso para tener KinielaGPT listo y funcionando:
 
 <a name="antes_de_empezar"></a>
 
-## ✅ 1. Instalar UV o Python 3.10+
+## ✅ Instalar UV o Python 3.10+
 
 Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+**.
 
@@ -65,7 +65,7 @@ A continuación se muestran como instalar las dos opciones, aunque *debes elegir
 [UV](https://docs.astral.sh/uv/) es un gestor de paquetes y proyectos Python ultrarrápido que simplifica la instalación y ejecución de herramientas Python. **No requiere tener Python pre-instalado**.
 
 <details>
-<summary><b>🪟 Instalar UV en Windows</b></summary>
+<summary><b>🪟 UV en Windows</b></summary>
 
 ```powershell
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -78,7 +78,7 @@ uv --version
 </details>
 
 <details>
-<summary><b>🍎🐧 Instalar UV en macOS/Linux</b></summary>
+<summary><b>🍎🐧 UV en macOS/Linux</b></summary>
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -99,7 +99,7 @@ uv --version
 Si ya tienes Python instalado y prefieres el método tradicional, puedes usar pip (el gestor de paquetes de Python). Requiere tener Python 3.10 o superior ya instalado en tu sistema.
 
 <details>
-<summary><b>🪟 Instalar Python en Windows</b></summary>
+<summary><b>🪟 Python en Windows</b></summary>
 
 1. Descarga Python 3.10+ desde [python.org/downloads](https://www.python.org/downloads/)
 2. **Marca "Add Python to PATH"** durante la instalación
@@ -111,7 +111,7 @@ pip --version
 </details>
 
 <details>
-<summary><b>🍎 Instalar Python en macOS</b></summary>
+<summary><b>🍎 Python en macOS</b></summary>
 
 **macOS:**
 1. Ve a [python.org/downloads](https://www.python.org/downloads/)
@@ -126,7 +126,7 @@ pip3 --version
 </details>
 
 <details>
-<summary><b>🐧 Instalar Python Linux (Ubuntu/Debian)</b></summary>
+<summary><b>🐧 Python en Linux (Ubuntu/Debian)</b></summary>
 
 ```bash
 sudo apt update
@@ -143,11 +143,11 @@ pip3 --version
 
 <a name="instalacion"></a>
 
-## 🚀 2. Instalación
+## 🚀 Instalación
 
 ### Opción 1: Usando UV (recomendado)
 
-Con UV instalado, **no necesitas instalar** KinielaGPT. Usarás `uvx` para ejecutarlo directamente (ver [Configuración](#-configuración)).
+Con UV instalado, **no necesitas instalar** KinielaGPT. Usarás `uvx` para ejecutarlo directamente - ver [Configuración](#configuracion).
 
 
 ### Opción 2: Usando pip
@@ -162,7 +162,7 @@ pip install kinielagpt
 
 <a name="configuracion"></a>
 
-## 🔧 3. Configuración
+## 🔧 Configuración
 
 ### 🤖 Configurar para Claude.app
 
