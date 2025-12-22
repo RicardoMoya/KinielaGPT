@@ -41,11 +41,18 @@ Incluye 7 herramientas especializadas, totalmente compatibles con Claude Desktop
 
 # ¿Cómo empezar a usar KinielaGPT?
 
-Para usar KinielaGPT vas a tener que realizar los siguientes pasos:
+## Guía rápida para empezar
 
-1. Instalar **UV** (recomendado) o **Python 3.10+** en tu PC. [🔗](#antes_de_empezar)
-2. Instalar KinielaGPT. [🔗](#instalacion)
-3. Configurar el servidor MCP para usarlo con Claude o con VS Code. [🔗](#configuracion)
+Sigue este guion paso a paso para tener KinielaGPT listo y funcionando:
+
+1. **Prepara tu entorno**
+  - Instala [UV (recomendado) o Python 3.10+](#antes_de_empezar) en tu PC.
+2. **Instala KinielaGPT**
+  - Sigue las instrucciones de la sección [Instalación](#instalacion).
+3. **Configura el servidor MCP**
+  - Elige tu cliente (Claude, VS Code, etc.) y sigue la [configuración recomendada](#configuracion).
+
+> Una vez completados estos pasos, ¡ya puedes empezar a hacer predicciones y análisis con KinielaGPT!
 
 
 ---
