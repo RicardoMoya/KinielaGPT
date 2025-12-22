@@ -24,7 +24,13 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx_autodoc_typehints',
     'myst_parser',
+    'sphinx_copybutton'
 ]
+
+# -- Pygments (syntax highlighting) style -----------------------------------
+# https://pygments.org/styles/
+pygments_style = 'emacs'
+pygments_dark_style = 'dracula'
 
 # MyST-Parser configuration
 source_suffix = {

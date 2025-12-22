@@ -39,15 +39,16 @@ Incluye 7 herramientas especializadas, totalmente compatibles con Claude Desktop
 
 ---
 
-## 🏁 ¿Cómo empezar a usar KinielaGPT?
 
-Sigue este guion paso a paso para tener KinielaGPT listo y funcionando:
+## 🏁 Pasos para empezar a usar KinielaGPT
+
+Sigue estos pasos para tener KinielaGPT listo y funcionando en tu equipo:
 
 1. [Instala UV o Python 3.10+](#antes_de_empezar) en tu PC.
 2. [Instala](#instalacion) KinielaGPT.s
 3. [Configura](#configuracion) el servidor MCP, eligiendo Claude o VS Code como cliente.
 
-> Una vez completados estos pasos, ¡ya puedes empezar a hacer predicciones y análisis con KinielaGPT!
+Una vez completados estos pasos, ¡ya puedes empezar a hacer predicciones y análisis con KinielaGPT!
 
 
 ---
@@ -158,7 +159,6 @@ Instala KinielaGPT desde PyPI:
 pip install kinielagpt
 ```
 
----
 
 <a name="configuracion"></a>
 
@@ -259,6 +259,7 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 > [!TIP]
 > Como alternativa puedes crear el archivo `.vscode/mcp.json` en tu workspace para compartir la configuración con otros. Más detalles en la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 
+---
 
 ## 📖 ¿Cómo usar KinielaGPT?
 
@@ -272,6 +273,7 @@ Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, GPT, Gemini, 
 | **Detección de sorpresas** | 🔹 "¿Hay algún partido donde pueda haber sorpresa en la jornada 26?"<br>🔹 "Detecta sorpresas con un umbral más sensible (threshold=20)" |
 | **Análisis de equipos** | 🔹 "¿Cómo está jugando el Rayo Vallecano últimamente?"<br>🔹 "Analiza el rendimiento del Barcelona en la jornada 26"<br>🔹 "¿Qué racha tiene el Atletico de Madrid actualmente?" |
 
+---
 
 ### Herramientas Disponibles
 
@@ -297,7 +299,13 @@ Para detalles completos de parámetros y ejemplos, consulta la [documentación c
 La documentación completa está disponible en: **https://ricardomoya.github.io/KinielaGPT/**
 
 Incluye:
-TODO
+- **Guía de inicio rápido:** Instalación, configuración y primeros pasos para usar KinielaGPT en tu entorno.
+- **Manual de instalación:** Instrucciones detalladas para instalar con UV o pip, y requisitos previos.
+- **Configuración avanzada:** Cómo conectar KinielaGPT con Claude Desktop, VS Code y otros clientes MCP.
+- **Uso y ejemplos:** Preguntas frecuentes, ejemplos de comandos y flujos de trabajo recomendados.
+- **Referencia de API:** Explicación de todas las herramientas MCP disponibles, parámetros y ejemplos de uso.
+- **Contribución:** Guía para contribuir al proyecto, abrir issues y enviar pull requests.
+- **Licencia y créditos:** Información legal y reconocimiento a los autores y colaboradores.
 
 ---
 
@@ -352,6 +360,7 @@ Los tests se ejecutan automáticamente en GitHub Actions:
 
 Para ver los resultados de CI, visita la pestaña [Actions](https://github.com/RicardoMoya/KinielaGPT/actions) del repositorio.
 
+---
 
 ## 🤝 Contribuir
 
@@ -363,7 +372,9 @@ Para ver los resultados de CI, visita la pestaña [Actions](https://github.com/R
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📏 Licencia
+---
+
+## 📝 Licencia
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
@@ -391,9 +402,16 @@ Ver el archivo [LICENSE](LICENSE) para el texto legal completo.
 
 ## 👨‍💻 Autor
 
-**Ricardo Moya**
-- 🐙 GitHub: [@RicardoMoya](https://github.com/RicardoMoya)
-- 💼 LinkedIn: [Ricardo Moya, PhD](https://www.linkedin.com/in/phdricardomoya/)
+
+<div align="left">
+  <div style="display: flex; align-items: center;">
+    <img src="https://github.com/RicardoMoya.png" alt="Ricardo Moya GitHub avatar" width="150" style="border-radius: 90px; margin-right: 24px;"/>
+    <div style="font-size:1.5em;">
+      🐙 GitHub: <a href="https://github.com/RicardoMoya" target="_blank">@RicardoMoya</a><br>
+      💼 LinkedIn: <a href="https://www.linkedin.com/in/phdricardomoya/" target="_blank">Ricardo Moya, PhD</a>
+    </div>
+  </div>
+</div>
 
 ## 📧 Contacto
 
@@ -403,4 +421,4 @@ Para preguntas, sugerencias o reportar issues:
 
 ---
 
-Hecho con ❤️ por Ricardo Moya para los aficionados a la quiniela española
+⚽ Proyecto creado por Ricardo Moya para que cada quiniela se juegue con cabeza, pasión, estrategia y datos.
