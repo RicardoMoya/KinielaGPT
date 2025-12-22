@@ -262,7 +262,7 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 
 ## 📖 ¿Cómo usar KinielaGPT?
 
-Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.) en lenguaje natural. Simplemente hazle preguntas como las siguientes:
+Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, GPT, Gemini, etc.) en lenguaje natural. Simplemente hazle preguntas como las siguientes:
 
 | Categoría | Ejemplos de Preguntas |
 |-----------|----------------------|
