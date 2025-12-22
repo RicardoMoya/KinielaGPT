@@ -50,8 +50,9 @@ Para usar KinielaGPT vas a tener que realizar los siguientes pasos:
 
 ---
 
-## ✅ Antes de Empezar
 <a name="antes_de_empezar"></a>
+
+## ✅ 1. Antes de Empezar
 
 Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+**.
 
@@ -138,9 +139,9 @@ pip3 --version
 </details>
 
 
-
-## 🚀 Instalación
 <a name="instalacion"></a>
+
+## 🚀 2. Instalación
 
 ### Opción 1: Usando UV (recomendado)
 
@@ -157,8 +158,9 @@ pip install kinielagpt
 
 ---
 
-## 🔧 Configuración
 <a name="configuracion"></a>
+
+## 🔧 3. Configuración
 
 ### 🤖 Configurar para Claude.app
 
@@ -256,13 +258,6 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 > Como alternativa puedes crear el archivo `.vscode/mcp.json` en tu workspace para compartir la configuración con otros. Más detalles en la [documentación oficial de VS Code MCP](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
 
 
-## 📚 Documentación
-
-La documentación completa está disponible en: **https://ricardomoya.github.io/KinielaGPT/**
-
-Incluye:
-TODO
-
 ## 📖 ¿Cómo usar KinielaGPT?
 
 Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.) en lenguaje natural. Simplemente hazle preguntas como las siguientes:
@@ -293,6 +288,16 @@ Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, Copilot, etc.
 Para detalles completos de parámetros y ejemplos, consulta la [documentación completa](https://ricardomoya.github.io/KinielaGPT/).
 
 
+---
+
+## 📚 Documentación
+
+La documentación completa está disponible en: **https://ricardomoya.github.io/KinielaGPT/**
+
+Incluye:
+TODO
+
+---
 
 ## 🧪 Testing
 
