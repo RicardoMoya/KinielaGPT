@@ -1,4 +1,4 @@
-## ⚡ Antes de Empezar
+## ⚡ Instalar UV o Python
 
 Antes de usar `KinielaGPT` necesitaras tener instalado **UV** (recomendado) o **Python 3.10+**.
 
