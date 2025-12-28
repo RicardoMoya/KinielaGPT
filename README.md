@@ -418,4 +418,4 @@ Para preguntas, sugerencias o reportar issues:
 
 ---
 
-⚽ Proyecto creado por Ricardo Moya para que cada quiniela se juegue con cabeza, pasión, estrategia y datos.
+⚽ Proyecto creado por Ricardo Moya para que cada quiniela se juegue con cabeza, estrategia y datos.

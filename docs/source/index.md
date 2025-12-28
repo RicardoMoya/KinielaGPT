@@ -112,7 +112,7 @@ Una vez completados estos pasos, ¡ya puedes empezar a hacer predicciones y aná
 <br>
 <hr>
 
-⚽ Proyecto creado por **Ricardo Moya** para que cada quiniela se juegue con cabeza, pasión, estrategia y datos.
+⚽ Proyecto creado por **Ricardo Moya** para que cada quiniela se juegue con cabeza, estrategia y datos.
 
 <div align="left">
   <div style="display: flex; align-items: center;">
