@@ -418,21 +418,48 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
             if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                try:
+                    goles_local, goles_rival = map(int, resultado_casa.split('-'))
+                except Exception:
+                    goles_local, goles_rival = None, None
+                if goles_local is not None and goles_rival is not None:
+                    if goles_local > goles_rival:
+                        signo = 'V'
+                    elif goles_local == goles_rival:
+                        signo = 'E'
+                    else:
+                        signo = 'D'
+                else:
+                    signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{equipo_local} | {rival}",
                     'resultado': resultado_casa,
+                    'resultado_signo': signo,
                     'orden': 0
                 })
-            
             # Si hay resultado_fuera válido: rival | equipo_local
             if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                try:
+                    goles_rival, goles_local = map(int, resultado_fuera.split('-'))
+                except Exception:
+                    goles_rival, goles_local = None, None
+                if goles_local is not None and goles_rival is not None:
+                    if goles_local > goles_rival:
+                        signo = 'V'
+                    elif goles_local == goles_rival:
+                        signo = 'E'
+                    else:
+                        signo = 'D'
+                else:
+                    signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{rival} | {equipo_local}",
                     'resultado': resultado_fuera,
+                    'resultado_signo': signo,
                     'orden': 0
                 })
         
@@ -451,21 +478,48 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
             if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                try:
+                    goles_visitante, goles_rival = map(int, resultado_casa.split('-'))
+                except Exception:
+                    goles_visitante, goles_rival = None, None
+                if goles_visitante is not None and goles_rival is not None:
+                    if goles_visitante > goles_rival:
+                        signo = 'V'
+                    elif goles_visitante == goles_rival:
+                        signo = 'E'
+                    else:
+                        signo = 'D'
+                else:
+                    signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{equipo_visitante} | {rival}",
                     'resultado': resultado_casa,
+                    'resultado_signo': signo,
                     'orden': 1
                 })
-            
             # Si hay resultado_fuera válido: rival | equipo_visitante
             if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                try:
+                    goles_rival, goles_visitante = map(int, resultado_fuera.split('-'))
+                except Exception:
+                    goles_rival, goles_visitante = None, None
+                if goles_visitante is not None and goles_rival is not None:
+                    if goles_visitante > goles_rival:
+                        signo = 'V'
+                    elif goles_visitante == goles_rival:
+                        signo = 'E'
+                    else:
+                        signo = 'D'
+                else:
+                    signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{rival} | {equipo_visitante}",
                     'resultado': resultado_fuera,
+                    'resultado_signo': signo,
                     'orden': 1
                 })
     
@@ -474,7 +528,10 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
     for jornada in sorted(partidos_por_jornada.keys(), key=lambda x: int(x) if x.isdigit() else 0):
         partidos_jornada = sorted(partidos_por_jornada[jornada], key=lambda x: x['orden'])
         todos_partidos.extend(
-            [{'jornada': p['jornada'], 'partido': p['partido'], 'resultado': p['resultado']} 
+            [{'jornada': p['jornada'], 
+              'partido': p['partido'], 
+              'resultado': p['resultado'], 
+              'cod_resultado': p['resultado_signo']} 
              for p in partidos_jornada]
         )
     
