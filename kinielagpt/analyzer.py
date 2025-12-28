@@ -122,8 +122,8 @@ class MatchAnalyzer:
                 "local": detail.get("clasificacionLocal", "N/A"),
                 "visitor": detail.get("clasificacionVisitante", "N/A"),
             },
-            "evolution_local": detail.get("evolucionLocal", []),
-            "evolution_visitor": detail.get("evolucionVisitante", []),
+            "evolucionClasificacionLocal": detail.get("evolucionClasificacionLocal", []),
+            "evolucionClasificacionVisitante": detail.get("evolucionClasificacionVisitante", []),
             "comparativa": detail.get("comparativa", []),
             "datos_destacados": detail.get("datosDestacados", []),
         }
