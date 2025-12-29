@@ -251,12 +251,12 @@ def test_get_kiniela_probabilities() -> None:
           f"M={partido_15.get('Mas_Goles_Visitante_Prob', 0):.1f}%")
 
 
-def test_procesar_comparativa() -> None:
+def test_procesar_ultimos_partidos() -> None:
     """
-    Prueba la función __procesar_comparativa comparando resultados con datos esperados.
+    Prueba la función __procesar_ultimos_partidos comparando resultados con datos esperados.
 
     Carga datos raw de match_details_raw.json, procesa la comparativa del primer partido
-    usando la función privada __procesar_comparativa y compara el resultado obtenido
+    usando la función privada __procesar_ultimos_partidos y compara el resultado obtenido
     con los datos procesados previamente guardados en match_details_process.json.
     Valida que jornada, partido y resultado coincidan exactamente.
 
@@ -275,15 +275,15 @@ def test_procesar_comparativa() -> None:
     1. Carga datos raw desde match_details_raw.json con comparativa sin procesar.
     2. Carga datos esperados desde match_details_process.json.
     3. Extrae comparativa, equipo_local y equipo_visitante del primer partido.
-    4. Invoca __procesar_comparativa con los datos extraídos.
+    4. Invoca __procesar_ultimos_partidos con los datos extraídos.
     5. Compara resultado obtenido con comparativa esperada campo por campo.
     6. Verifica que número de partidos, jornadas, equipos y resultados coincidan.
 
     Examples
     --------
-    >>> test_procesar_comparativa()
+    >>> test_procesar_ultimos_partidos()
     ================================================================================
-    TEST: __procesar_comparativa()
+    TEST: __procesar_ultimos_partidos()
     ================================================================================
     ✅ Se cargaron 15 partidos del JSON raw
     ✅ Se cargaron 15 partidos del JSON process
@@ -293,19 +293,19 @@ def test_procesar_comparativa() -> None:
     ✅ Todos los partidos procesados coinciden con los esperados
     """
     print("\n" + "=" * 80)
-    print("TEST: __procesar_comparativa()")
+    print("TEST: __procesar_ultimos_partidos()")
     print("=" * 80)
-    
+
     # Cargar datos raw
     json_raw_path = "tests/data_source_samples/match_details_raw.json"
     with open(json_raw_path, encoding="utf-8") as f:
         data_raw = json.load(f)
-    
+
     # Cargar datos procesados esperados
     json_process_path = "tests/data_source_samples/match_details_process.json"
     with open(json_process_path, encoding="utf-8") as f:
         data_process = json.load(f)
-    
+
     assert 'detallePartidos' in data_raw, "❌ No se encontró 'detallePartidos' en el JSON raw"
     partidos_raw = data_raw['detallePartidos']
     partidos_process = data_process
@@ -313,34 +313,63 @@ def test_procesar_comparativa() -> None:
     assert len(partidos_process) > 0, "❌ No hay partidos en el JSON process"
     print(f"✅ Se cargaron {len(partidos_raw)} partidos del JSON raw")
     print(f"✅ Se cargaron {len(partidos_process)} partidos del JSON process")
-    
+
     # Probar con el primer partido
     primer_partido_raw = partidos_raw[0]
     primer_partido_process = partidos_process[0]
-    
-    comparativa = primer_partido_raw.get('comparativa', {})
+
+    ultimos_partidos = primer_partido_raw.get('comparativa', {})
     equipo_local = primer_partido_raw.get('local')
     equipo_visitante = primer_partido_raw.get('visitante')
-    
-    assert comparativa, "❌ No hay comparativa en el primer partido"
+
+    assert ultimos_partidos, "❌ No hay ultimos_partidos en el primer partido" 
     assert equipo_local, "❌ No hay equipo local"
     assert equipo_visitante, "❌ No hay equipo visitante"
     print(f"✅ Partido: {equipo_local} vs {equipo_visitante}")
-    
+
     # Acceder a la función privada __procesar_comparativa
     procesar_func = getattr(ds_module, '_data_source__procesar_comparativa', None)
-    
+
     if procesar_func is None:
-        procesar_func = getattr(ds_module, '__procesar_comparativa', None)
-    
-    assert procesar_func is not None, "❌ No se pudo acceder a __procesar_comparativa"
-    
+        procesar_func = getattr(ds_module, '__procesar_ultimos_partidos', None)
+
+    assert procesar_func is not None, "❌ No se pudo acceder a __procesar_ultimos_partidos"
+
     # Procesar comparativa
     result = procesar_func(
-        comparativa=comparativa,
+        ultimos_partidos=ultimos_partidos,
         equipo_local=equipo_local,
         equipo_visitante=equipo_visitante
     )
+
+    # Comparar con datos esperados
+    ultimos_partidos_esperada = primer_partido_process.get('ultimos_partidos', [])
+    assert len(result) == len(ultimos_partidos_esperada), (
+        f"❌ Número de partidos no coincide: {len(result)} vs {len(ultimos_partidos_esperada)}"
+    )
+    print(f"✅ Se obtuvieron {len(result)} partidos procesados")
+    print(f"✅ Número de partidos coincide: {len(result)}")
+
+    # Verificar que todos los partidos coincidan
+    for i, (obtenido, esperado) in enumerate(zip(result, ultimos_partidos_esperada)):
+        assert obtenido.get('jornada') == esperado.get('jornada'), (
+            f"❌ Jornada no coincide en partido {i}: {obtenido.get('jornada')} vs {esperado.get('jornada')}"
+        )
+        assert obtenido.get('partido') == esperado.get('partido'), (
+            f"❌ Partido no coincide en partido {i}: {obtenido.get('partido')} vs {esperado.get('partido')}"
+        )
+        assert obtenido.get('resultado') == esperado.get('resultado'), (
+            f"❌ Resultado no coincide en partido {i}: {obtenido.get('resultado')} vs {esperado.get('resultado')}"
+        )
+        assert obtenido.get('cod_resultado') == esperado.get('cod_resultado'), (
+            f"❌ Código de resultado no coincide en partido {i}: "
+            f"{obtenido.get('cod_resultado')} vs {esperado.get('cod_resultado')}"
+        )
+        assert obtenido.get('tipo') == esperado.get('tipo'), (
+            f"❌ Tipo no coincide en partido {i}: {obtenido.get('tipo')} vs {esperado.get('tipo')}"
+        )
+
+    print("✅ Todos los partidos procesados coinciden con los esperados")
     
     assert result is not None, "❌ El resultado no debe ser None"
     assert isinstance(result, list), "❌ El resultado debe ser una lista"
@@ -355,16 +384,16 @@ def test_procesar_comparativa() -> None:
         print("✅ Estructura correcta de partidos procesados")
     
     # Comparar resultado obtenido con el esperado (process.json)
-    comparativa_esperada = primer_partido_process.get('comparativa', [])
+    ultimos_partidos_esperada = primer_partido_process.get('ultimos_partidos', [])
     
-    assert len(result) == len(comparativa_esperada), (
+    assert len(result) == len(ultimos_partidos_esperada), (
         f"❌ Número de partidos procesados no coincide: "
-        f"obtenido={len(result)}, esperado={len(comparativa_esperada)}"
+        f"obtenido={len(result)}, esperado={len(ultimos_partidos_esperada)}"
     )
     print(f"✅ Número de partidos coincide: {len(result)}")
     
     # Comparar cada partido procesado
-    for i, (obtenido, esperado) in enumerate(zip(result, comparativa_esperada)):
+    for i, (obtenido, esperado) in enumerate(zip(result, ultimos_partidos_esperada)):
         assert obtenido['jornada'] == esperado['jornada'], (
             f"❌ Jornada no coincide en partido {i}: "
             f"obtenido={obtenido['jornada']}, esperado={esperado['jornada']}"
@@ -385,4 +414,4 @@ if __name__ == "__main__":
     test_get_xml_as_json()
     test_get_kiniela()
     test_get_kiniela_probabilities()
-    test_procesar_comparativa()
+    test_procesar_ultimos_partidos()

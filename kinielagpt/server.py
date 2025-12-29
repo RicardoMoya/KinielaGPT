@@ -33,7 +33,7 @@ from mcp.server.stdio import stdio_server
 from mcp.types import TextContent, Tool
 
 from kinielagpt import data_source
-from kinielagpt.analyzer import MatchAnalyzer, TeamAnalyzer
+from kinielagpt.analyzer import Analyzer
 from kinielagpt.detector import SurpriseDetector
 from kinielagpt.predictor import KinielaPredictor
 
@@ -42,8 +42,7 @@ app = Server(name="kiniela-gpt")
 
 # Instanciar componentes del sistema
 predictor = KinielaPredictor()
-match_analyzer = MatchAnalyzer()
-team_analyzer = TeamAnalyzer()
+analyzer = Analyzer()
 surprise_detector = SurpriseDetector()
 
 
@@ -393,7 +392,7 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
             match_id = arguments["match_id"]
             include_prediction = arguments.get("include_prediction", True)
 
-            analysis = match_analyzer.analyze(
+            analysis = analyzer.analyze_match(
                 jornada=jornada, temporada=temporada, match_id=match_id, include_prediction=include_prediction
             )
 
@@ -412,7 +411,7 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
             temporada = arguments["temporada"]
             team_name = arguments["team_name"]
 
-            analysis = team_analyzer.analyze(jornada=jornada, temporada=temporada, team_name=team_name)
+            analysis = analyzer.analyze_team(jornada=jornada, temporada=temporada, team_name=team_name)
 
             if analysis is None:
                 return [

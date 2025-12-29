@@ -36,14 +36,13 @@ __license__ = "AGPL-3.0-or-later"
 __github__ = "https://github.com/RicardoMoya/kiniela-gpt"
 
 from kinielagpt import data_source
-from kinielagpt.analyzer import MatchAnalyzer, TeamAnalyzer
+from kinielagpt.analyzer import Analyzer
 from kinielagpt.detector import SurpriseDetector
 from kinielagpt.predictor import KinielaPredictor
 
 __all__ = [
     "data_source",
     "KinielaPredictor",
-    "MatchAnalyzer",
-    "TeamAnalyzer",
+    "Analyzer",
     "SurpriseDetector",
 ]

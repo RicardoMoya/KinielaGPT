@@ -26,6 +26,8 @@ las probabilidades LAE y el análisis contextual (histórico, rachas, clasificac
 
 from typing import Any
 
+from charset_normalizer import detect
+
 from kinielagpt import data_source
 
 
@@ -669,7 +671,7 @@ class SurpriseDetector:
         
         Este método cuantifica la calidad de una racha de resultados convirtiéndola en un
         score numérico único que permite comparaciones rápidas y evaluación de momentum. A
-        diferencia de __calculate_streak() en analyzer.py que identifica rachas consecutivas,
+        diferencia de métodos que identifican rachas consecutivas,
         este método suma todos los resultados para obtener una valoración global.
         
         El sistema de puntuación es:

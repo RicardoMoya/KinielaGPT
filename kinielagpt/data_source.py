@@ -310,28 +310,59 @@ def get_kiniela_matches_details(jornada: int, temporada: int) -> list | None:
         partidos_filtrados = []
         for dt in data:
             historico_10 = (dt.get('historico', []) or [])[:10]
-            
-            # Procesar comparativa
-            comparativa_procesada = __procesar_comparativa(
-                comparativa=dt.get('comparativa', {}),
+
+            # Local English-named wrapper for comparativa processing,
+            # delegating to the existing implementation.
+            def __process_comparison(*, ultimos_partidos, equipo_local, equipo_visitante):
+                return __procesar_ultimos_partidos(
+                    ultimos_partidos=ultimos_partidos,
+                    equipo_local=equipo_local,
+                    equipo_visitante=equipo_visitante,
+                )
+
+            # Procesar comparativa / Process comparison
+            ultimos_partidos_procesado = __process_comparison(
+                ultimos_partidos=dt.get('comparativa', {}),
                 equipo_local=dt.get('local'),
                 equipo_visitante=dt.get('visitante')
             )
+
+            # Calcular rachas en un solo pase para optimizar
+            rachas = {
+                'local': [p['cod_resultado'] for p in ultimos_partidos_procesado 
+                         if p.get('cod_resultado') and p.get('tipo') in ['local_como_local', 'local_como_visitante']],
+                'visitante': [p['cod_resultado'] for p in ultimos_partidos_procesado 
+                             if p.get('cod_resultado') and 
+                             p.get('tipo') in ['visitante_como_local', 'visitante_como_visitante']],
+                'local_como_local': [p['cod_resultado'] for p in ultimos_partidos_procesado 
+                                    if p.get('cod_resultado') and p.get('tipo') == 'local_como_local'],
+                'visitante_como_visitante': [p['cod_resultado'] for p in ultimos_partidos_procesado 
+                                            if p.get('cod_resultado') and p.get('tipo') == 'visitante_como_visitante']
+            }
             
+            loc = rachas['local'][-5:] if rachas['local'] else []
+            vist = rachas['visitante'][-5:] if rachas['visitante'] else []
+            loc_as_loc = rachas['local_como_local'][-5:] if rachas['local_como_local'] else []
+            vist_as_vist = rachas['visitante_como_visitante'][-5:] if rachas['visitante_como_visitante'] else []
+
             partido_filtrado = {
                 'id': dt.get('orden'),
                 'partido': f"{dt.get('local')} | {dt.get('visitante')}",
                 'division': dt.get('division'),
-                'clasificacionLocal': dt.get('clasificacionLocal'),
-                'clasificacionVisitante': dt.get('clasificacionVisitante'),
-                'evolucionClasificacionLocal': dt.get('evolucionLocal'),
-                'evolucionClasificacionVisitante': dt.get('evolucionVisitante'),
+                'clasificacion_local': dt.get('clasificacionLocal'),
+                'clasificacion_visitante': dt.get('clasificacionVisitante'),
+                'evolucion_clasificacion_local': dt.get('evolucionLocal'),
+                'evolucion_clasificacion_visitante': dt.get('evolucionVisitante'),
                 'historico_10_years': historico_10,
                 'veces1': sum(1 for h in historico_10 if h.get('signo') == '1'),
                 'vecesX': sum(1 for h in historico_10 if h.get('signo') == 'X'),
                 'veces2': sum(1 for h in historico_10 if h.get('signo') == '2'),
-                'datosDestacados': dt.get('datosDestacados'),
-                'comparativa': comparativa_procesada
+                'datos_destacados': dt.get('datosDestacados'),
+                'ultimos_partidos': ultimos_partidos_procesado,
+                'racha_local_ultimos_5_partidos': loc,
+                'racha_visitante_ultimos_5_partidos': vist,
+                'racha_local_como_local_ultimos_5_partidos': loc_as_loc,
+                'racha_visitante_como_visitante_ultimos_5_partidos': vist_as_vist
             }
             partidos_filtrados.append(partido_filtrado)
         
@@ -341,18 +372,18 @@ def get_kiniela_matches_details(jornada: int, temporada: int) -> list | None:
         print(f"Error making request: {e}")
         return None
 
-def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitante: str) -> list:
+def __procesar_ultimos_partidos(ultimos_partidos: dict, equipo_local: str, equipo_visitante: str) -> list:
     """
-    Procesa los datos de comparativa para extraer resultados históricos de partidos de ambos equipos.
+    Procesa los datos de ultimos_partidos para extraer resultados históricos de partidos de ambos equipos.
 
-    Transforma la estructura anidada de comparativa de la API eduardolosilla.es (vuelta1/vuelta2 con
-    partidos_local/partidos_visitante) en una lista plana de partidos ordenada por jornada.
+    Transforma la estructura anidada de ultimos_partidos (vuelta1/vuelta2 con partidos_local/partidos_visitante) 
+    en una lista plana de partidos ordenada por jornada.
     Muestra cómo cada equipo ha actuado en partidos recientes, filtrando sólo partidos completados (status=100)
     y resultados válidos.
 
     Parameters
     ----------
-    comparativa : dict
+    ultimos_partidos : dict
         Diccionario que contiene claves vuelta1 y vuelta2 con listas partidos_local y partidos_visitante.
         Cada partido incluye: jornada, rival, resultado_casa, resultado_fuera, status.
     equipo_local : str
@@ -367,6 +398,7 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
         - jornada (str): Número de jornada.
         - partido (str): Partido formateado como "LOCAL | VISITANTE".
         - resultado (str): Resultado del partido (ej., "2-1", "0-0").
+        - cod_resultado (str): Código del resultado para quiniela: 'VICTORIA', 'EMPATE' y 'DERROTA'.
 
     Process Detail
     --------------
@@ -387,7 +419,7 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
     El campo orden se usa para ordenación interna y se elimina de la salida final.
 
     """
-    if not comparativa:
+    if not ultimos_partidos:
         return []
     
     def __resultado_valido(resultado: str) -> bool:
@@ -400,12 +432,12 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
     partidos_por_jornada = {}
     
     for vuelta in ['vuelta1', 'vuelta2']:
-        if vuelta not in comparativa:
+        if vuelta not in ultimos_partidos:
             continue
         
         # Partidos del EQUIPO LOCAL (partidos_local)
         # El equipo_local juega contra rival
-        for p in comparativa[vuelta].get('partidos_local', []):
+        for p in ultimos_partidos[vuelta].get('partidos_local', []):
             if p.get('status') != 100:
                 continue
             
@@ -418,54 +450,58 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
             if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                orden = len(partidos_por_jornada[jornada])
                 try:
                     goles_local, goles_rival = map(int, resultado_casa.split('-'))
                 except Exception:
                     goles_local, goles_rival = None, None
                 if goles_local is not None and goles_rival is not None:
                     if goles_local > goles_rival:
-                        signo = 'V'
+                        signo = 'VICTORIA'
                     elif goles_local == goles_rival:
-                        signo = 'E'
+                        signo = 'EMPATE'
                     else:
-                        signo = 'D'
+                        signo = 'DERROTA'
                 else:
                     signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{equipo_local} | {rival}",
                     'resultado': resultado_casa,
-                    'resultado_signo': signo,
-                    'orden': 0
+                    'cod_resultado': signo,
+                    'tipo': 'local_como_local',
+                    'orden': orden
                 })
             # Si hay resultado_fuera válido: rival | equipo_local
             if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                orden = len(partidos_por_jornada[jornada])
                 try:
                     goles_rival, goles_local = map(int, resultado_fuera.split('-'))
                 except Exception:
                     goles_rival, goles_local = None, None
                 if goles_local is not None and goles_rival is not None:
                     if goles_local > goles_rival:
-                        signo = 'V'
+                        signo = 'VICTORIA'
                     elif goles_local == goles_rival:
-                        signo = 'E'
+                        signo = 'EMPATE'
                     else:
-                        signo = 'D'
+                        signo = 'DERROTA'
                 else:
                     signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{rival} | {equipo_local}",
                     'resultado': resultado_fuera,
-                    'resultado_signo': signo,
-                    'orden': 0
+                    'cod_resultado': signo,
+                    'tipo': 'local_como_visitante',
+                    'orden': orden
                 })
         
         # Partidos del EQUIPO VISITANTE (partidos_visitante)
         # El equipo_visitante juega contra rival
-        for p in comparativa[vuelta].get('partidos_visitante', []):
+        for p in ultimos_partidos[vuelta].get('partidos_visitante', []):
             if p.get('status') != 100:
                 continue
             
@@ -478,49 +514,53 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
             if __resultado_valido(resultado=resultado_casa):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                orden = len(partidos_por_jornada[jornada])
                 try:
                     goles_visitante, goles_rival = map(int, resultado_casa.split('-'))
                 except Exception:
                     goles_visitante, goles_rival = None, None
                 if goles_visitante is not None and goles_rival is not None:
                     if goles_visitante > goles_rival:
-                        signo = 'V'
+                        signo = 'VICTORIA'
                     elif goles_visitante == goles_rival:
-                        signo = 'E'
+                        signo = 'EMPATE'
                     else:
-                        signo = 'D'
+                        signo = 'DERROTA'
                 else:
                     signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{equipo_visitante} | {rival}",
                     'resultado': resultado_casa,
-                    'resultado_signo': signo,
-                    'orden': 1
+                    'cod_resultado': signo,
+                    'tipo': 'visitante_como_local',
+                    'orden': orden
                 })
             # Si hay resultado_fuera válido: rival | equipo_visitante
             if __resultado_valido(resultado=resultado_fuera):
                 if jornada not in partidos_por_jornada:
                     partidos_por_jornada[jornada] = []
+                orden = len(partidos_por_jornada[jornada])
                 try:
                     goles_rival, goles_visitante = map(int, resultado_fuera.split('-'))
                 except Exception:
                     goles_rival, goles_visitante = None, None
                 if goles_visitante is not None and goles_rival is not None:
                     if goles_visitante > goles_rival:
-                        signo = 'V'
+                        signo = 'VICTORIA'
                     elif goles_visitante == goles_rival:
-                        signo = 'E'
+                        signo = 'EMPATE'
                     else:
-                        signo = 'D'
+                        signo = 'DERROTA'
                 else:
                     signo = ''
                 partidos_por_jornada[jornada].append({
                     'jornada': jornada,
                     'partido': f"{rival} | {equipo_visitante}",
                     'resultado': resultado_fuera,
-                    'resultado_signo': signo,
-                    'orden': 1
+                    'cod_resultado': signo,
+                    'tipo': 'visitante_como_visitante',
+                    'orden': orden
                 })
     
     # Ordenar por jornada y luego por orden
@@ -531,7 +571,8 @@ def __procesar_comparativa(comparativa: dict, equipo_local: str, equipo_visitant
             [{'jornada': p['jornada'], 
               'partido': p['partido'], 
               'resultado': p['resultado'], 
-              'cod_resultado': p['resultado_signo']} 
+              'cod_resultado': p['cod_resultado'],
+              'tipo': p['tipo']}
              for p in partidos_jornada]
         )
     
