@@ -26,8 +26,6 @@ las probabilidades LAE y el análisis contextual (histórico, rachas, clasificac
 
 from typing import Any
 
-from charset_normalizer import detect
-
 from kinielagpt import data_source
 
 

@@ -37,7 +37,7 @@ class KinielaPredictor:
 
     Attributes
     ----------
-    _strategies : dict
+    __strategies : dict
         Diccionario mapeando nombres de estrategias a métodos de predicción.
     """
 
@@ -87,9 +87,12 @@ class KinielaPredictor:
             - jornada: Número de jornada
             - temporada: Año de temporada
             - strategy: Estrategia utilizada
-            - predictions: Lista de 15 predicciones, cada una con match_id, match, prediction, confidence, reasoning, 
-                           probabilities
-            - summary: Resumen con distribución de signos
+            - predictions: Lista de predicciones (normalmente 15), cada una con match_id, match, prediction, 
+              confidence, reasoning, probabilities. Para partidos excepcionales con probabilidades de goles, 
+              prediction es el marcador más probable (ej: "1-1"), confidence="N/A", 
+              reasoning="Marcador más probable basado en probabilidades de goles", 
+              y probabilities contiene las probabilidades de goles.
+            - summary: Resumen con distribución de signos (solo incluye partidos normales)
             Retorna None si hay algún error.
 
         Raises
@@ -129,27 +132,73 @@ class KinielaPredictor:
         if probabilities is None or details is None:
             return None
 
-        # Ejecutar estrategia seleccionada
-        if strategy == "personalizada":
-            predictions = self.__strategies[strategy](
-                probabilities=probabilities,
-                details=details,
-                custom_distribution=custom_distribution,
-            )
-        else:
-            predictions = self.__strategies[strategy](
-                probabilities=probabilities,
-                details=details,
-            )
+        # Separar partidos normales y excepcionales
+        normal_indices = []
+        exceptional_indices = []
+        for i, prob in enumerate(probabilities):
+            if "1_Prob" in prob:
+                normal_indices.append(i)
+            else:
+                exceptional_indices.append(i)
 
-        # Calcular resumen
-        summary = self.__calculate_summary(predictions=predictions)
+        normal_probs = [probabilities[i] for i in normal_indices]
+        normal_details = [details[i] for i in normal_indices]
+        exceptional_probs = [probabilities[i] for i in exceptional_indices]
+
+        # Ejecutar estrategia para partidos normales
+        predictions_normal = []
+        if normal_probs:
+            if strategy == "personalizada":
+                predictions_normal = self.__strategies[strategy](
+                    probabilities=normal_probs,
+                    details=normal_details,
+                    custom_distribution=custom_distribution,
+                )
+            else:
+                predictions_normal = self.__strategies[strategy](
+                    probabilities=normal_probs,
+                    details=normal_details,
+                )
+            # Ajustar match_id
+            for j, pred in enumerate(predictions_normal):
+                pred["match_id"] = normal_indices[j] + 1
+
+        # Crear predicciones para partidos excepcionales
+        predictions_exceptional = []
+        for j, prob in enumerate(exceptional_probs):
+            match_id = exceptional_indices[j] + 1
+            # Calcular marcador más probable
+            max_prob = 0
+            best_score = ""
+            for local in ["0", "1", "2", "Mas"]:
+                for visitor in ["0", "1", "2", "Mas"]:
+                    p_l = prob.get(f"{local}_Goles_Local_Prob", 0)
+                    p_v = prob.get(f"{visitor}_Goles_Visitante_Prob", 0)
+                    joint_prob = p_l * p_v
+                    if joint_prob > max_prob:
+                        max_prob = joint_prob
+                        best_score = f"{local}-{visitor}"
+            predictions_exceptional.append({
+                "match_id": match_id,
+                "match": prob["partido"],
+                "prediction": best_score,
+                "confidence": "N/A",
+                "reasoning": "Marcador más probable basado en probabilidades de goles",
+                "probabilities": prob,
+            })
+
+        # Combinar todas las predicciones
+        all_predictions = predictions_normal + predictions_exceptional
+        all_predictions.sort(key=lambda x: x["match_id"])
+
+        # Calcular resumen solo para normales
+        summary = self.__calculate_summary(predictions=predictions_normal)
 
         return {
             "jornada": jornada,
             "temporada": temporada,
             "strategy": strategy,
-            "predictions": predictions,
+            "predictions": all_predictions,
             "summary": summary,
         }
 
