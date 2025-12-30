@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "kinielagpt"
-version = "1.0.0"
+version = "1.0.1"
 description = "MCP server for Spanish football quiniela predictions using LAE probabilities and match analysis"
 readme = "README.md"
 requires-python = ">=3.10"

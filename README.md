@@ -1,11 +1,10 @@
 <div align="left">
   <img src="https://raw.githubusercontent.com/RicardoMoya/KinielaGPT/refs/heads/main/docs/source/_static/logo.png" alt="KinielaGPT Logo" width="70" align="left" style="margin-right: 20px;"/>
-  
   <div>
-    <h1>KinielaGPT - Kiniela Game Prediction Tool</h1>
+    <h1 style="padding-top: 20px; padding-bottom: 20px;">KinielaGPT - Kiniela Game Prediction Tool</h1>
   </div>
-  <br clear="left"/>
 </div>
+<br clear="left"/>
 
 <p align="left">
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+"/></a>
