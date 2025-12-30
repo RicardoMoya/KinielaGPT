@@ -390,11 +390,8 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
             jornada = arguments["jornada"]
             temporada = arguments["temporada"]
             match_id = arguments["match_id"]
-            include_prediction = arguments.get("include_prediction", True)
 
-            analysis = analyzer.analyze_match(
-                jornada=jornada, temporada=temporada, match_id=match_id, include_prediction=include_prediction
-            )
+            analysis = analyzer.analyze_match(jornada=jornada, temporada=temporada, match_id=match_id)
 
             if analysis is None:
                 return [
