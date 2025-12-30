@@ -1,5 +1,5 @@
 <div align="left">
-  <img src="docs/source/_static/logo.png" alt="KinielaGPT Logo" width="70" align="left" style="margin-right: 20px;"/>
+  <img src="https://raw.githubusercontent.com/RicardoMoya/KinielaGPT/refs/heads/main/docs/source/_static/logo.png" alt="KinielaGPT Logo" width="70" align="left" style="margin-right: 20px;"/>
   
   <div>
     <h1>KinielaGPT - Kiniela Game Prediction Tool</h1>
