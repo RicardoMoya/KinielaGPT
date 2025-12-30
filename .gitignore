@@ -1,5 +1,3 @@
-# No subir credenciales privadas
-.pypirc
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -151,3 +149,6 @@ Thumbs.db
 # Project specific
 *.bak
 scraping_prueba_formatted.py
+
+# No subir credenciales privadas
+.pypirc
