@@ -19,6 +19,70 @@ Detecta posibles sorpresas en una jornada completa.
 
 **return:** `dict` con lista de alertas de sorpresas (ver ejemplo de estructura más abajo).
 
+## Ejemplo de Uso Programático
+
+```{note}
+Los valores de `jornada` y `temporada` en los siguientes ejemplos son ilustrativos. Para probar su funcionamiento, actualiza estos valores con datos actuales, ya que las APIs no proporcionan datos históricos.
+```
+
+```python
+import json
+from kinielagpt.detector import SurpriseDetector
+
+detector = SurpriseDetector()
+detect = detector.detect(jornada=32, temporada=2026, threshold=30.0)
+print(json.dumps(detect, indent=2, ensure_ascii=False))
+```
+
+<details>
+<summary><b>Resultado</b></summary>
+
+```json
+{
+  "jornada": 32,
+  "temporada": 2026,
+  "threshold": 30.0,
+  "total_surprises": 2,
+  "surprises": [
+    {
+      "match_id": 3,
+      "match": "ELCHE | VILLARREAL",
+      "alert_level": "⚠️ ALERTA MEDIA",
+      "inconsistency_type": "historical_inconsistency",
+      "description": "Probabilidad LAE de victoria visitante (58%) muy superior al histórico de enfrentamientos (11% en 9 partidos)",
+      "probabilities": {
+        "1": 16.1,
+        "X": 25.6,
+        "2": 58.3
+      },
+      "context_factors": {
+        "historical_rate": "11%",
+        "lae_probability": "58%",
+        "total_matches": 9
+      }
+    },
+    {
+      "match_id": 6,
+      "match": "R.MADRID | BETIS",
+      "alert_level": "⚠️ ALERTA MEDIA",
+      "inconsistency_type": "historical_inconsistency",
+      "description": "Probabilidad LAE de victoria local (77%) muy superior al histórico de enfrentamientos (40% en 10 partidos)",
+      "probabilities": {
+        "1": 77.4,
+        "X": 15.9,
+        "2": 6.7
+      },
+      "context_factors": {
+        "historical_rate": "40%",
+        "lae_probability": "77%",
+        "total_matches": 10
+      }
+    }
+  ]
+}
+```
+</details>
+
 ---
 
 ## Algoritmo de Detección de Sorpresas

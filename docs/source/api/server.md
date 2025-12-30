@@ -21,5 +21,5 @@ El módulo `server` implementa el servidor MCP (Model Context Protocol) que expo
 | `get_probabilities` | Probabilidades LAE para todos los partidos | `jornada` (int), `temporada` (int) | Lista de partidos con probabilidades|
 | `predict_quiniela`  | Predicción completa de quiniela | `jornada`, `temporada`, `strategy`, `custom_distribution` | Ver módulo `predictor` |
 | `detect_surprises`  | Detecta posibles sorpresas | `jornada`, `temporada`, `threshold` | Ver módulo `detector` |
-| `analyze_match`     | Análisis detallado de un partido | `jornada`, `temporada`, `match_id`, `include_prediction` | Ver módulo `analyzer` |
+| `analyze_match`     | Análisis detallado de un partido | `jornada`, `temporada`, `match_id` | Ver módulo `analyzer` |
 | `analyze_team`      | Análisis completo de un equipo | `jornada`, `temporada`, `team_name` | Ver módulo `analyzer` |

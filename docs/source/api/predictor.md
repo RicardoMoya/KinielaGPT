@@ -40,7 +40,11 @@ Optimiza la distribución de signos según especificaciones del usuario (`custom
 
 ---
 
-## Ejemplos de Uso
+## Ejemplos de Uso Programático
+
+```{note}
+Los valores de `jornada` y `temporada` en los siguientes ejemplos son ilustrativos. Para probar su funcionamiento, actualiza estos valores con datos actuales, ya que las APIs no proporcionan datos históricos.
+```
 
 ### Predicción Conservadora
 ```python
@@ -48,9 +52,210 @@ import json
 from kinielagpt.predictor import KinielaPredictor
 
 predictor = KinielaPredictor()
-result = predictor.predict(jornada=26, temporada=2026)
+result = predictor.predict(jornada=32, temporada=2026)
 print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
+
+<details>
+<summary><b>Resultado</b></summary>
+
+```json
+{
+  "jornada": 32,
+  "temporada": 2026,
+  "strategy": "conservadora",
+  "predictions": [
+    {
+      "match_id": 1,
+      "match": "CELTA | VALENCIA",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE del 1: 55.9% (la más alta)",
+      "probabilities": {
+        "1": 55.9,
+        "X": 28.5,
+        "2": 15.6
+      }
+    },
+    {
+      "match_id": 2,
+      "match": "OSASUNA | ATH.CLUB",
+      "prediction": "2",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE del 2: 40.6% (la más alta)",
+      "probabilities": {
+        "1": 25.7,
+        "X": 33.6,
+        "2": 40.6
+      }
+    },
+    {
+      "match_id": 3,
+      "match": "ELCHE | VILLARREAL",
+      "prediction": "2",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE del 2: 58.3% (la más alta)",
+      "probabilities": {
+        "1": 16.1,
+        "X": 25.6,
+        "2": 58.3
+      }
+    },
+    {
+      "match_id": 4,
+      "match": "ESPANYOL | BARCELONA",
+      "prediction": "2",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE del 2: 65.5% (la más alta)",
+      "probabilities": {
+        "1": 10.8,
+        "X": 23.7,
+        "2": 65.5
+      }
+    },
+    {
+      "match_id": 5,
+      "match": "SEVILLA | LEVANTE",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE del 1: 74.0% (la más alta)",
+      "probabilities": {
+        "1": 74.0,
+        "X": 18.1,
+        "2": 8.0
+      }
+    },
+    {
+      "match_id": 6,
+      "match": "R.MADRID | BETIS",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE del 1: 77.4% (la más alta)",
+      "probabilities": {
+        "1": 77.4,
+        "X": 15.9,
+        "2": 6.7
+      }
+    },
+    {
+      "match_id": 7,
+      "match": "ALAVÉS | R.OVIEDO",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE del 1: 59.3% (la más alta)",
+      "probabilities": {
+        "1": 59.3,
+        "X": 27.0,
+        "2": 13.7
+      }
+    },
+    {
+      "match_id": 8,
+      "match": "MALLORCA | GIRONA",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE del 1: 45.8% (la más alta)",
+      "probabilities": {
+        "1": 45.8,
+        "X": 32.1,
+        "2": 22.1
+      }
+    },
+    {
+      "match_id": 9,
+      "match": "CASTELLÓN | HUESCA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE del 1: 63.4% (la más alta)",
+      "probabilities": {
+        "1": 63.4,
+        "X": 26.3,
+        "2": 10.4
+      }
+    },
+    {
+      "match_id": 10,
+      "match": "VALLADOLID | RACING S.",
+      "prediction": "2",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE del 2: 39.3% (la más alta)",
+      "probabilities": {
+        "1": 30.4,
+        "X": 30.3,
+        "2": 39.3
+      }
+    },
+    {
+      "match_id": 11,
+      "match": "CÓRDOBA | BURGOS",
+      "prediction": "1",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE del 1: 42.2% (la más alta)",
+      "probabilities": {
+        "1": 42.2,
+        "X": 36.9,
+        "2": 20.9
+      }
+    },
+    {
+      "match_id": 12,
+      "match": "SPORTING | MÁLAGA",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE del 1: 57.2% (la más alta)",
+      "probabilities": {
+        "1": 57.2,
+        "X": 29.7,
+        "2": 13.2
+      }
+    },
+    {
+      "match_id": 13,
+      "match": "R.ZARAGOZA | LAS PALMAS",
+      "prediction": "2",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE del 2: 44.8% (la más alta)",
+      "probabilities": {
+        "1": 24.5,
+        "X": 30.7,
+        "2": 44.8
+      }
+    },
+    {
+      "match_id": 14,
+      "match": "DEPORTIVO | CÁDIZ",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE del 1: 64.5% (la más alta)",
+      "probabilities": {
+        "1": 64.5,
+        "X": 24.6,
+        "2": 10.9
+      }
+    },
+    {
+      "match_id": 15,
+      "match": "R.SOCIEDAD | AT.MADRID",
+      "prediction": "1",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE del 1: 0.0% (la más alta)",
+      "probabilities": {
+        "1": 0,
+        "X": 0,
+        "2": 0
+      }
+    }
+  ],
+  "summary": {
+    "1": 10,
+    "X": 0,
+    "2": 5
+  }
+}
+```
+</details>
+
+---
 
 ### Predicción Arriesgada
 ```python
@@ -58,9 +263,390 @@ import json
 from kinielagpt.predictor import KinielaPredictor
 
 predictor = KinielaPredictor()
-result = predictor.predict(jornada=26, temporada=2026, strategy="arriesgada")
+result = predictor.predict(jornada=32, temporada=2026, strategy="arriesgada")
 print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
+
+<details>
+<summary><b>Resultado</b></summary>
+
+```json
+{
+  "jornada": 32,
+  "temporada": 2026,
+  "strategy": "arriesgada",
+  "predictions": [
+    {
+      "match_id": 1,
+      "match": "CELTA | VALENCIA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 55.9%.",
+      "probabilities": {
+        "1": 55.9,
+        "X": 28.5,
+        "2": 15.6
+      },
+      "adjusted_probabilities": {
+        "1": 56.852176511604746,
+        "X": 27.282099810738124,
+        "2": 15.865723677657137
+      },
+      "context_factors": {
+        "local_strength": 2.1,
+        "visitor_strength": 2.1,
+        "draw_tendency": -3.9000000000000004,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 2,
+      "match": "OSASUNA | ATH.CLUB",
+      "prediction": "2",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE 2: 40.6%.",
+      "probabilities": {
+        "1": 25.7,
+        "X": 33.6,
+        "2": 40.6
+      },
+      "adjusted_probabilities": {
+        "1": 25.254316110537644,
+        "X": 30.01877065590205,
+        "2": 44.7269132335603
+      },
+      "context_factors": {
+        "local_strength": -0.9000000000000008,
+        "visitor_strength": 11.099999999999998,
+        "draw_tendency": -9.9,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 3,
+      "match": "ELCHE | VILLARREAL",
+      "prediction": "2",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 2: 58.3%.",
+      "probabilities": {
+        "1": 16.1,
+        "X": 25.6,
+        "2": 58.3
+      },
+      "adjusted_probabilities": {
+        "1": 17.66884807784555,
+        "X": 26.34030014390461,
+        "2": 55.99085177824984
+      },
+      "context_factors": {
+        "local_strength": 6.766666666666667,
+        "visitor_strength": -6.566666666666667,
+        "draw_tendency": 0.09999999999999898,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 4,
+      "match": "ESPANYOL | BARCELONA",
+      "prediction": "2",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 2: 65.5%.",
+      "probabilities": {
+        "1": 10.8,
+        "X": 23.7,
+        "2": 65.5
+      },
+      "adjusted_probabilities": {
+        "1": 9.290965684495962,
+        "X": 23.103958599881604,
+        "2": 67.60507571562243
+      },
+      "context_factors": {
+        "local_strength": -9.9,
+        "visitor_strength": 8.1,
+        "draw_tendency": 2.1,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 5,
+      "match": "SEVILLA | LEVANTE",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 74.0%.",
+      "probabilities": {
+        "1": 74.0,
+        "X": 18.1,
+        "2": 8.0
+      },
+      "adjusted_probabilities": {
+        "1": 74.99751692588674,
+        "X": 17.820372007895692,
+        "2": 7.18211106621756
+      },
+      "context_factors": {
+        "local_strength": 5.1,
+        "visitor_strength": -6.9,
+        "draw_tendency": 2.1,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 6,
+      "match": "R.MADRID | BETIS",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 77.4%.",
+      "probabilities": {
+        "1": 77.4,
+        "X": 15.9,
+        "2": 6.7
+      },
+      "adjusted_probabilities": {
+        "1": 77.70595291942811,
+        "X": 15.962850793525925,
+        "2": 6.331196287045959
+      },
+      "context_factors": {
+        "local_strength": 2.1,
+        "visitor_strength": -3.9000000000000004,
+        "draw_tendency": 2.1,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 7,
+      "match": "ALAVÉS | R.OVIEDO",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 59.3%. ajustada a 64.9% por análisis contextual. ventaja del local por clasificación/histórico.",
+      "probabilities": {
+        "1": 59.3,
+        "X": 27.0,
+        "2": 13.7
+      },
+      "adjusted_probabilities": {
+        "1": 64.94542699750284,
+        "X": 23.509881127187366,
+        "2": 11.544691875309809
+      },
+      "context_factors": {
+        "local_strength": 17.1,
+        "visitor_strength": -9.9,
+        "draw_tendency": -6.9,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 8,
+      "match": "MALLORCA | GIRONA",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE 1: 45.8%.",
+      "probabilities": {
+        "1": 45.8,
+        "X": 32.1,
+        "2": 22.1
+      },
+      "adjusted_probabilities": {
+        "1": 48.09120115394702,
+        "X": 31.601199842643585,
+        "2": 20.307599003409386
+      },
+      "context_factors": {
+        "local_strength": 6.766666666666667,
+        "visitor_strength": -6.566666666666667,
+        "draw_tendency": 0.09999999999999898,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 9,
+      "match": "CASTELLÓN | HUESCA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 63.4%.",
+      "probabilities": {
+        "1": 63.4,
+        "X": 26.3,
+        "2": 10.4
+      },
+      "adjusted_probabilities": {
+        "1": 60.193192630987745,
+        "X": 27.741066658517745,
+        "2": 12.06574071049451
+      },
+      "context_factors": {
+        "local_strength": -9.9,
+        "visitor_strength": 10.099999999999998,
+        "draw_tendency": 0.09999999999999898,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 10,
+      "match": "VALLADOLID | RACING S.",
+      "prediction": "2",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE 2: 39.3%.",
+      "probabilities": {
+        "1": 30.4,
+        "X": 30.3,
+        "2": 39.3
+      },
+      "adjusted_probabilities": {
+        "1": 31.945608158776185,
+        "X": 29.113932910063493,
+        "2": 38.94045893116033
+      },
+      "context_factors": {
+        "local_strength": 5.1,
+        "visitor_strength": -0.9000000000000008,
+        "draw_tendency": -3.9000000000000004,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 11,
+      "match": "CÓRDOBA | BURGOS",
+      "prediction": "1",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE 1: 42.2%.",
+      "probabilities": {
+        "1": 42.2,
+        "X": 36.9,
+        "2": 20.9
+      },
+      "adjusted_probabilities": {
+        "1": 44.380942999737336,
+        "X": 36.38386524822694,
+        "2": 19.23519175203572
+      },
+      "context_factors": {
+        "local_strength": 6.766666666666667,
+        "visitor_strength": -6.566666666666667,
+        "draw_tendency": 0.09999999999999898,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 12,
+      "match": "SPORTING | MÁLAGA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 57.2%.",
+      "probabilities": {
+        "1": 57.2,
+        "X": 29.7,
+        "2": 13.2
+      },
+      "adjusted_probabilities": {
+        "1": 59.088992442507916,
+        "X": 28.05354034446595,
+        "2": 12.85746721302613
+      },
+      "context_factors": {
+        "local_strength": 5.1,
+        "visitor_strength": -0.9000000000000008,
+        "draw_tendency": -3.9000000000000004,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 13,
+      "match": "R.ZARAGOZA | LAS PALMAS",
+      "prediction": "2",
+      "confidence": "MEDIA",
+      "reasoning": "Probabilidad LAE 2: 44.8%.",
+      "probabilities": {
+        "1": 24.5,
+        "X": 30.7,
+        "2": 44.8
+      },
+      "adjusted_probabilities": {
+        "1": 25.055842139530228,
+        "X": 30.473982070416188,
+        "2": 44.47017579005359
+      },
+      "context_factors": {
+        "local_strength": 2.1,
+        "visitor_strength": -0.9000000000000008,
+        "draw_tendency": -0.9000000000000008,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 14,
+      "match": "DEPORTIVO | CÁDIZ",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Probabilidad LAE 1: 64.5%. ventaja del local por clasificación/histórico.",
+      "probabilities": {
+        "1": 64.5,
+        "X": 24.6,
+        "2": 10.9
+      },
+      "adjusted_probabilities": {
+        "1": 67.69334681037984,
+        "X": 23.029312576162635,
+        "2": 9.277340613457524
+      },
+      "context_factors": {
+        "local_strength": 11.099999999999998,
+        "visitor_strength": -9.9,
+        "draw_tendency": -0.9000000000000008,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    },
+    {
+      "match_id": 15,
+      "match": "R.SOCIEDAD | AT.MADRID",
+      "prediction": "1",
+      "confidence": "BAJA",
+      "reasoning": "Probabilidad LAE 1: 0.0%.",
+      "probabilities": {
+        "1": 0,
+        "X": 0,
+        "2": 0
+      },
+      "adjusted_probabilities": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "context_factors": {
+        "local_strength": -0.9000000000000008,
+        "visitor_strength": 5.1,
+        "draw_tendency": -3.9000000000000004,
+        "recent_form_local": "neutral",
+        "recent_form_visitor": "neutral"
+      }
+    }
+  ],
+  "summary": {
+    "1": 10,
+    "X": 0,
+    "2": 5
+  }
+}
+```
+</details>
+
+---
 
 ### Predicción Personalizada
 ```python
@@ -69,9 +655,223 @@ from kinielagpt.predictor import KinielaPredictor
 
 predictor = KinielaPredictor()
 custom_dist = {"1": 7, "X": 4, "2": 4}
-result = predictor.predict(jornada=26, temporada=2026, strategy="personalizada", custom_distribution=custom_dist)
+result = predictor.predict(jornada=32, temporada=2026, strategy="personalizada", custom_distribution=custom_dist)
 print(json.dumps(result, indent=2, ensure_ascii=False))
 ```
+
+<details>
+<summary><b>Resultado</b></summary>
+
+```json
+{
+  "jornada": 32,
+  "temporada": 2026,
+  "strategy": "personalizada",
+  "predictions": [
+    {
+      "match_id": 1,
+      "match": "CELTA | VALENCIA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 57.1",
+      "probabilities": {
+        "1": 55.9,
+        "X": 28.5,
+        "2": 15.6
+      },
+      "score": 57.073899999999995
+    },
+    {
+      "match_id": 2,
+      "match": "OSASUNA | ATH.CLUB",
+      "prediction": "2",
+      "confidence": "MEDIA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 45.1",
+      "probabilities": {
+        "1": 25.7,
+        "X": 33.6,
+        "2": 40.6
+      },
+      "score": 45.1066
+    },
+    {
+      "match_id": 3,
+      "match": "ELCHE | VILLARREAL",
+      "prediction": "2",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 54.5",
+      "probabilities": {
+        "1": 16.1,
+        "X": 25.6,
+        "2": 58.3
+      },
+      "score": 54.47163333333333
+    },
+    {
+      "match_id": 4,
+      "match": "ESPANYOL | BARCELONA",
+      "prediction": "2",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 70.8",
+      "probabilities": {
+        "1": 10.8,
+        "X": 23.7,
+        "2": 65.5
+      },
+      "score": 70.8055
+    },
+    {
+      "match_id": 5,
+      "match": "SEVILLA | LEVANTE",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 77.8",
+      "probabilities": {
+        "1": 74.0,
+        "X": 18.1,
+        "2": 8.0
+      },
+      "score": 77.774
+    },
+    {
+      "match_id": 6,
+      "match": "R.MADRID | BETIS",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 79.0",
+      "probabilities": {
+        "1": 77.4,
+        "X": 15.9,
+        "2": 6.7
+      },
+      "score": 79.0254
+    },
+    {
+      "match_id": 7,
+      "match": "ALAVÉS | R.OVIEDO",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 69.4",
+      "probabilities": {
+        "1": 59.3,
+        "X": 27.0,
+        "2": 13.7
+      },
+      "score": 69.4403
+    },
+    {
+      "match_id": 8,
+      "match": "MALLORCA | GIRONA",
+      "prediction": "X",
+      "confidence": "BAJA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 32.1",
+      "probabilities": {
+        "1": 45.8,
+        "X": 32.1,
+        "2": 22.1
+      },
+      "score": 32.1321
+    },
+    {
+      "match_id": 9,
+      "match": "CASTELLÓN | HUESCA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 57.1",
+      "probabilities": {
+        "1": 63.4,
+        "X": 26.3,
+        "2": 10.4
+      },
+      "score": 57.123400000000004
+    },
+    {
+      "match_id": 10,
+      "match": "VALLADOLID | RACING S.",
+      "prediction": "X",
+      "confidence": "BAJA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 29.1",
+      "probabilities": {
+        "1": 30.4,
+        "X": 30.3,
+        "2": 39.3
+      },
+      "score": 29.1183
+    },
+    {
+      "match_id": 11,
+      "match": "CÓRDOBA | BURGOS",
+      "prediction": "X",
+      "confidence": "MEDIA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 36.9",
+      "probabilities": {
+        "1": 42.2,
+        "X": 36.9,
+        "2": 20.9
+      },
+      "score": 36.936899999999994
+    },
+    {
+      "match_id": 12,
+      "match": "SPORTING | MÁLAGA",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 60.1",
+      "probabilities": {
+        "1": 57.2,
+        "X": 29.7,
+        "2": 13.2
+      },
+      "score": 60.1172
+    },
+    {
+      "match_id": 13,
+      "match": "R.ZARAGOZA | LAS PALMAS",
+      "prediction": "2",
+      "confidence": "MEDIA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 44.4",
+      "probabilities": {
+        "1": 24.5,
+        "X": 30.7,
+        "2": 44.8
+      },
+      "score": 44.3968
+    },
+    {
+      "match_id": 14,
+      "match": "DEPORTIVO | CÁDIZ",
+      "prediction": "1",
+      "confidence": "ALTA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 71.7",
+      "probabilities": {
+        "1": 64.5,
+        "X": 24.6,
+        "2": 10.9
+      },
+      "score": 71.6595
+    },
+    {
+      "match_id": 15,
+      "match": "R.SOCIEDAD | AT.MADRID",
+      "prediction": "X",
+      "confidence": "BAJA",
+      "reasoning": "Optimizado para distribución personalizada. Score: 0.0",
+      "probabilities": {
+        "1": 0,
+        "X": 0,
+        "2": 0
+      },
+      "score": 0.0
+    }
+  ],
+  "summary": {
+    "1": 7,
+    "X": 4,
+    "2": 4
+  }
+}
+```
+</details>
 
 ---
 
