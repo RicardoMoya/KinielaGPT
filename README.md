@@ -320,7 +320,7 @@ El proyecto incluye una suite completa de tests automatizados que cubren todas l
 | `test_data_source.py` | 4 | Tests para la obtención y procesamiento de datos de quiniela desde APIs externas |
 | `test_predictor.py` | 9 | Tests para las estrategias de predicción (conservadora, arriesgada, personalizada) |
 | `test_detector.py` | 30 | Tests para la detección de sorpresas e inconsistencias en partidos |
-| `test_analyzer.py` | 20 | Tests para el análisis de partidos y rendimiento de equipos |
+| `test_analyzer.py` | 12 | Tests para el análisis de partidos y rendimiento de equipos |
 
 ### Ejecutar Tests Localmente
 
@@ -344,10 +344,10 @@ Los tests proporcionan cobertura completa del código principal. La cobertura ac
 
 | Módulo | Cobertura | Descripción |
 |--------|-----------|-------------|
-| `data_source` | 69% | Funciones de obtención y parsing de datos de quiniela |
+| `data_source` | 67% | Funciones de obtención y parsing de datos de quiniela |
 | `predictor` | 84% | Algoritmos de predicción y estrategias (conservadora, arriesgada, personalizada) |
 | `detector` | 88% | Lógica de detección de sorpresas e inconsistencias |
-| `analyzer` | 58% | Análisis de partidos y rendimiento de equipos |
+| `analyzer` | 48% | Análisis de partidos y rendimiento de equipos |
 
 ### CI/CD
 
