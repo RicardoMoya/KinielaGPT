@@ -150,23 +150,17 @@ class Analyzer:
         }
 
     def analyze_match(
-        self, jornada: int, temporada: int, match_id: int, include_prediction: bool = True
+        self, jornada: int, temporada: int, match_id: int
     ) -> dict[str, Any] | None:
         """
-        Analiza un partido específico con opción de incluir predicción o solo datos en crudo.
+        Analiza un partido específico con predicción justificada.
 
-        Este método unificado permite obtener tanto análisis completo con predicción justificada
-        como información en crudo del partido. Es la herramienta principal para consultar cualquier
-        aspecto de un partido específico.
+        Este método proporciona un análisis completo de un partido individual, incluyendo
+        probabilidades LAE, histórico de enfrentamientos, forma reciente, clasificación
+        y factores contextuales. Siempre genera una predicción con nivel de confianza
+        y justificación detallada basada en todos los datos disponibles.
 
-        Modos de operación:
-
-        **Con predicción (include_prediction=True, por defecto)**:
-        Realiza un análisis exhaustivo combinando múltiples fuentes de datos y generando una
-        predicción justificada con nivel de confianza. Integra probabilidades LAE, histórico
-        de enfrentamientos, forma reciente, clasificación y factores contextuales.
-
-        Proceso de análisis con predicción:
+        El proceso de análisis incluye:
         1. Obtención de datos: probabilidades LAE y detalles del partido
         2. Análisis histórico: Revisa últimos 10 años de enfrentamientos directos
         3. Análisis de forma: Evalúa últimos 5 partidos de cada equipo
@@ -176,14 +170,9 @@ class Analyzer:
         7. Asignación de confianza: ALTA (>=60%), MEDIA (45-60%), BAJA (<45%)
         8. Justificación detallada: Explica el razonamiento completo
 
-        **Sin predicción (include_prediction=False)**:
-        Retorna únicamente los datos en crudo del partido sin análisis ni interpretación.
-        Útil para consultas específicas sobre histórico, evolución, clasificaciones, etc.
-
-        Casos de uso:
-        - Con predicción: "¿Qué resultado es más probable en el partido 5?"
-        - Sin predicción: "Muéstrame el histórico de enfrentamientos del partido 3"
-        - Sin predicción: "¿Cuáles son los últimos resultados de ambos equipos en el partido 8?"
+        Casos de uso típicos:
+        - "¿Qué resultado es más probable en el partido 5?"
+        - "¿Cuál es el análisis del enfrentamiento entre Barcelona y Real Madrid?"
 
         Parameters
         ----------
@@ -193,36 +182,23 @@ class Analyzer:
             Año de la temporada.
         match_id : int
             ID del partido dentro de la jornada (1-15).
-        include_prediction : bool, optional
-            Si True (default), incluye análisis completo con predicción.
-            Si False, retorna solo datos en crudo sin predicción.
 
         Returns
         -------
         dict[str, Any] | None
-            Si include_prediction=True: Análisis completo con predicción, confianza y razonamiento.
-            Si include_prediction=False: Datos en crudo del partido sin procesamiento.
+            Análisis completo con predicción, confianza, razonamiento detallado,
+            datos históricos, tendencias y análisis de rendimiento.
             Retorna None si hay algún error.
 
         Examples
         --------
         >>> analyzer = Analyzer()
-        >>> # Análisis completo con predicción
         >>> analysis = analyzer.analyze_match(jornada=26, temporada=2025, match_id=5)
         >>> print(analysis["prediccion"])
         '1'
         >>> print(analysis["confianza"])
         'ALTA'
-        >>>
-        >>> # Solo datos en crudo
-        >>> raw_data = analyzer.analyze_match(jornada=26, temporada=2026, match_id=5, include_prediction=False)
-        >>> print(raw_data["historico"]["total_partidos"])
-        12
         """
-        # Si no se solicita predicción, retornar solo datos en crudo
-        if not include_prediction:
-            return self.get_raw_data(jornada=jornada, temporada=temporada, match_id=match_id)
-
         # Obtener datos del partido
         probabilities = data_source.get_kiniela_probabilities(jornada=jornada, temporada=temporada)
         details = data_source.get_kiniela_matches_details(jornada=jornada, temporada=temporada)
