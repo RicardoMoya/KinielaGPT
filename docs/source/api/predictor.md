@@ -6,9 +6,9 @@ El módulo `predictor` implementa algoritmos avanzados de predicción de quiniel
 
 ## Clase Principal: `KinielaPredictor`
 
+### Método `predict`
 
 <div class="api-method-signature">predict(jornada, temporada, strategy="conservadora", custom_distribution=None)</div>
-
 
 Genera una predicción completa de quiniela usando la estrategia especificada.
 
@@ -70,10 +70,10 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CELTA | VALENCIA",
       "prediction": "1",
       "confidence": "MEDIA",
-      "reasoning": "Probabilidad LAE del 1: 55.9% (la más alta)",
+      "reasoning": "Probabilidad LAE del 1: 56.0% (la más alta)",
       "probabilities": {
-        "1": 55.9,
-        "X": 28.5,
+        "1": 56.0,
+        "X": 28.4,
         "2": 15.6
       }
     },
@@ -94,11 +94,11 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "ELCHE | VILLARREAL",
       "prediction": "2",
       "confidence": "MEDIA",
-      "reasoning": "Probabilidad LAE del 2: 58.3% (la más alta)",
+      "reasoning": "Probabilidad LAE del 2: 58.2% (la más alta)",
       "probabilities": {
         "1": 16.1,
         "X": 25.6,
-        "2": 58.3
+        "2": 58.2
       }
     },
     {
@@ -106,11 +106,11 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "ESPANYOL | BARCELONA",
       "prediction": "2",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE del 2: 65.5% (la más alta)",
+      "reasoning": "Probabilidad LAE del 2: 65.6% (la más alta)",
       "probabilities": {
         "1": 10.8,
-        "X": 23.7,
-        "2": 65.5
+        "X": 23.6,
+        "2": 65.6
       }
     },
     {
@@ -121,7 +121,7 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE del 1: 74.0% (la más alta)",
       "probabilities": {
         "1": 74.0,
-        "X": 18.1,
+        "X": 18.0,
         "2": 8.0
       }
     },
@@ -130,10 +130,10 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "R.MADRID | BETIS",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE del 1: 77.4% (la más alta)",
+      "reasoning": "Probabilidad LAE del 1: 77.5% (la más alta)",
       "probabilities": {
-        "1": 77.4,
-        "X": 15.9,
+        "1": 77.5,
+        "X": 15.8,
         "2": 6.7
       }
     },
@@ -145,8 +145,8 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE del 1: 59.3% (la más alta)",
       "probabilities": {
         "1": 59.3,
-        "X": 27.0,
-        "2": 13.7
+        "X": 26.9,
+        "2": 13.8
       }
     },
     {
@@ -166,10 +166,10 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CASTELLÓN | HUESCA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE del 1: 63.4% (la más alta)",
+      "reasoning": "Probabilidad LAE del 1: 63.5% (la más alta)",
       "probabilities": {
-        "1": 63.4,
-        "X": 26.3,
+        "1": 63.5,
+        "X": 26.2,
         "2": 10.4
       }
     },
@@ -178,11 +178,11 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "VALLADOLID | RACING S.",
       "prediction": "2",
       "confidence": "BAJA",
-      "reasoning": "Probabilidad LAE del 2: 39.3% (la más alta)",
+      "reasoning": "Probabilidad LAE del 2: 39.4% (la más alta)",
       "probabilities": {
         "1": 30.4,
-        "X": 30.3,
-        "2": 39.3
+        "X": 30.2,
+        "2": 39.4
       }
     },
     {
@@ -202,9 +202,9 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "SPORTING | MÁLAGA",
       "prediction": "1",
       "confidence": "MEDIA",
-      "reasoning": "Probabilidad LAE del 1: 57.2% (la más alta)",
+      "reasoning": "Probabilidad LAE del 1: 57.1% (la más alta)",
       "probabilities": {
-        "1": 57.2,
+        "1": 57.1,
         "X": 29.7,
         "2": 13.2
       }
@@ -229,25 +229,32 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE del 1: 64.5% (la más alta)",
       "probabilities": {
         "1": 64.5,
-        "X": 24.6,
-        "2": 10.9
+        "X": 24.5,
+        "2": 11.0
       }
     },
     {
       "match_id": 15,
       "match": "R.SOCIEDAD | AT.MADRID",
-      "prediction": "1",
-      "confidence": "BAJA",
-      "reasoning": "Probabilidad LAE del 1: 0.0% (la más alta)",
+      "prediction": "1-2",
+      "confidence": "N/A",
+      "reasoning": "Marcador más probable basado en probabilidades de goles",
       "probabilities": {
-        "1": 0,
-        "X": 0,
-        "2": 0
+        "id": 15,
+        "0_Goles_Local_Prob": 28.3,
+        "1_Goles_Local_Prob": 54.9,
+        "2_Goles_Local_Prob": 12.9,
+        "Mas_Goles_Local_Prob": 3.9,
+        "0_Goles_Visitante_Prob": 8.4,
+        "1_Goles_Visitante_Prob": 37.2,
+        "2_Goles_Visitante_Prob": 40.1,
+        "Mas_Goles_Visitante_Prob": 14.3,
+        "partido": "R.SOCIEDAD | AT.MADRID"
       }
     }
   ],
   "summary": {
-    "1": 10,
+    "1": 9,
     "X": 0,
     "2": 5
   }
@@ -281,16 +288,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CELTA | VALENCIA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 1: 55.9%.",
+      "reasoning": "Probabilidad LAE 1: 56.0%.",
       "probabilities": {
-        "1": 55.9,
-        "X": 28.5,
+        "1": 56.0,
+        "X": 28.4,
         "2": 15.6
       },
       "adjusted_probabilities": {
-        "1": 56.852176511604746,
-        "X": 27.282099810738124,
-        "2": 15.865723677657137
+        "1": 56.950476114586245,
+        "X": 27.184748396350457,
+        "2": 15.864775489063309
       },
       "context_factors": {
         "local_strength": 2.1,
@@ -329,16 +336,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "ELCHE | VILLARREAL",
       "prediction": "2",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 2: 58.3%.",
+      "reasoning": "Probabilidad LAE 2: 58.2%.",
       "probabilities": {
         "1": 16.1,
         "X": 25.6,
-        "2": 58.3
+        "2": 58.2
       },
       "adjusted_probabilities": {
-        "1": 17.66884807784555,
-        "X": 26.34030014390461,
-        "2": 55.99085177824984
+        "1": 17.6858334102134,
+        "X": 26.36562147502038,
+        "2": 55.948545114766226
       },
       "context_factors": {
         "local_strength": 6.766666666666667,
@@ -353,16 +360,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "ESPANYOL | BARCELONA",
       "prediction": "2",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 2: 65.5%.",
+      "reasoning": "Probabilidad LAE 2: 65.6%.",
       "probabilities": {
         "1": 10.8,
-        "X": 23.7,
-        "2": 65.5
+        "X": 23.6,
+        "2": 65.6
       },
       "adjusted_probabilities": {
-        "1": 9.290965684495962,
-        "X": 23.103958599881604,
-        "2": 67.60507571562243
+        "1": 9.290433454267712,
+        "X": 23.00515562344854,
+        "2": 67.70441092228374
       },
       "context_factors": {
         "local_strength": -9.9,
@@ -380,13 +387,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE 1: 74.0%.",
       "probabilities": {
         "1": 74.0,
-        "X": 18.1,
+        "X": 18.0,
         "2": 8.0
       },
       "adjusted_probabilities": {
-        "1": 74.99751692588674,
-        "X": 17.820372007895692,
-        "2": 7.18211106621756
+        "1": 75.07142857142858,
+        "X": 17.73938223938224,
+        "2": 7.1891891891891895
       },
       "context_factors": {
         "local_strength": 5.1,
@@ -401,15 +408,15 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "R.MADRID | BETIS",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 1: 77.4%.",
+      "reasoning": "Probabilidad LAE 1: 77.5%.",
       "probabilities": {
-        "1": 77.4,
-        "X": 15.9,
+        "1": 77.5,
+        "X": 15.8,
         "2": 6.7
       },
       "adjusted_probabilities": {
-        "1": 77.70595291942811,
-        "X": 15.962850793525925,
+        "1": 77.80634820743771,
+        "X": 15.862455505516332,
         "2": 6.331196287045959
       },
       "context_factors": {
@@ -428,13 +435,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE 1: 59.3%. ajustada a 64.9% por análisis contextual. ventaja del local por clasificación/histórico.",
       "probabilities": {
         "1": 59.3,
-        "X": 27.0,
-        "2": 13.7
+        "X": 26.9,
+        "2": 13.8
       },
       "adjusted_probabilities": {
-        "1": 64.94542699750284,
-        "X": 23.509881127187366,
-        "2": 11.544691875309809
+        "1": 64.94724929385136,
+        "X": 23.423464711274065,
+        "2": 11.629285994874579
       },
       "context_factors": {
         "local_strength": 17.1,
@@ -473,16 +480,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CASTELLÓN | HUESCA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 1: 63.4%.",
+      "reasoning": "Probabilidad LAE 1: 63.5%.",
       "probabilities": {
-        "1": 63.4,
-        "X": 26.3,
+        "1": 63.5,
+        "X": 26.2,
         "2": 10.4
       },
       "adjusted_probabilities": {
-        "1": 60.193192630987745,
-        "X": 27.741066658517745,
-        "2": 12.06574071049451
+        "1": 60.29448804459053,
+        "X": 27.638499695964065,
+        "2": 12.0670122594454
       },
       "context_factors": {
         "local_strength": -9.9,
@@ -497,16 +504,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "VALLADOLID | RACING S.",
       "prediction": "2",
       "confidence": "BAJA",
-      "reasoning": "Probabilidad LAE 2: 39.3%.",
+      "reasoning": "Probabilidad LAE 2: 39.4%.",
       "probabilities": {
         "1": 30.4,
-        "X": 30.3,
-        "2": 39.3
+        "X": 30.2,
+        "2": 39.4
       },
       "adjusted_probabilities": {
-        "1": 31.945608158776185,
-        "X": 29.113932910063493,
-        "2": 38.94045893116033
+        "1": 31.944649963006654,
+        "X": 29.016976944150052,
+        "2": 39.03837309284329
       },
       "context_factors": {
         "local_strength": 5.1,
@@ -545,16 +552,16 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "SPORTING | MÁLAGA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Probabilidad LAE 1: 57.2%.",
+      "reasoning": "Probabilidad LAE 1: 57.1%.",
       "probabilities": {
-        "1": 57.2,
+        "1": 57.1,
         "X": 29.7,
         "2": 13.2
       },
       "adjusted_probabilities": {
-        "1": 59.088992442507916,
-        "X": 28.05354034446595,
-        "2": 12.85746721302613
+        "1": 59.04668667289812,
+        "X": 28.082550302553255,
+        "2": 12.870763024548628
       },
       "context_factors": {
         "local_strength": 5.1,
@@ -596,13 +603,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Probabilidad LAE 1: 64.5%. ventaja del local por clasificación/histórico.",
       "probabilities": {
         "1": 64.5,
-        "X": 24.6,
-        "2": 10.9
+        "X": 24.5,
+        "2": 11.0
       },
       "adjusted_probabilities": {
-        "1": 67.69334681037984,
-        "X": 23.029312576162635,
-        "2": 9.277340613457524
+        "1": 67.69910250354275,
+        "X": 22.93764761454889,
+        "2": 9.363249881908361
       },
       "context_factors": {
         "local_strength": 11.099999999999998,
@@ -615,30 +622,25 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
     {
       "match_id": 15,
       "match": "R.SOCIEDAD | AT.MADRID",
-      "prediction": "1",
-      "confidence": "BAJA",
-      "reasoning": "Probabilidad LAE 1: 0.0%.",
+      "prediction": "1-2",
+      "confidence": "N/A",
+      "reasoning": "Marcador más probable basado en probabilidades de goles",
       "probabilities": {
-        "1": 0,
-        "X": 0,
-        "2": 0
-      },
-      "adjusted_probabilities": {
-        "1": 0.0,
-        "X": 0.0,
-        "2": 0.0
-      },
-      "context_factors": {
-        "local_strength": -0.9000000000000008,
-        "visitor_strength": 5.1,
-        "draw_tendency": -3.9000000000000004,
-        "recent_form_local": "neutral",
-        "recent_form_visitor": "neutral"
+        "id": 15,
+        "0_Goles_Local_Prob": 28.3,
+        "1_Goles_Local_Prob": 54.9,
+        "2_Goles_Local_Prob": 12.9,
+        "Mas_Goles_Local_Prob": 3.9,
+        "0_Goles_Visitante_Prob": 8.4,
+        "1_Goles_Visitante_Prob": 37.2,
+        "2_Goles_Visitante_Prob": 40.1,
+        "Mas_Goles_Visitante_Prob": 14.3,
+        "partido": "R.SOCIEDAD | AT.MADRID"
       }
     }
   ],
   "summary": {
-    "1": 10,
+    "1": 9,
     "X": 0,
     "2": 5
   }
@@ -673,13 +675,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CELTA | VALENCIA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 57.1",
+      "reasoning": "Optimizado para distribución personalizada. Score: 57.2",
       "probabilities": {
-        "1": 55.9,
-        "X": 28.5,
+        "1": 56.0,
+        "X": 28.4,
         "2": 15.6
       },
-      "score": 57.073899999999995
+      "score": 57.175999999999995
     },
     {
       "match_id": 2,
@@ -699,26 +701,26 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "ELCHE | VILLARREAL",
       "prediction": "2",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 54.5",
+      "reasoning": "Optimizado para distribución personalizada. Score: 54.4",
       "probabilities": {
         "1": 16.1,
         "X": 25.6,
-        "2": 58.3
+        "2": 58.2
       },
-      "score": 54.47163333333333
+      "score": 54.37820000000001
     },
     {
       "match_id": 4,
       "match": "ESPANYOL | BARCELONA",
       "prediction": "2",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 70.8",
+      "reasoning": "Optimizado para distribución personalizada. Score: 70.9",
       "probabilities": {
         "1": 10.8,
-        "X": 23.7,
-        "2": 65.5
+        "X": 23.6,
+        "2": 65.6
       },
-      "score": 70.8055
+      "score": 70.91359999999999
     },
     {
       "match_id": 5,
@@ -728,7 +730,7 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Optimizado para distribución personalizada. Score: 77.8",
       "probabilities": {
         "1": 74.0,
-        "X": 18.1,
+        "X": 18.0,
         "2": 8.0
       },
       "score": 77.774
@@ -738,13 +740,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "R.MADRID | BETIS",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 79.0",
+      "reasoning": "Optimizado para distribución personalizada. Score: 79.1",
       "probabilities": {
-        "1": 77.4,
-        "X": 15.9,
+        "1": 77.5,
+        "X": 15.8,
         "2": 6.7
       },
-      "score": 79.0254
+      "score": 79.1275
     },
     {
       "match_id": 7,
@@ -754,8 +756,8 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Optimizado para distribución personalizada. Score: 69.4",
       "probabilities": {
         "1": 59.3,
-        "X": 27.0,
-        "2": 13.7
+        "X": 26.9,
+        "2": 13.8
       },
       "score": 69.4403
     },
@@ -777,26 +779,26 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "CASTELLÓN | HUESCA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 57.1",
+      "reasoning": "Optimizado para distribución personalizada. Score: 57.2",
       "probabilities": {
-        "1": 63.4,
-        "X": 26.3,
+        "1": 63.5,
+        "X": 26.2,
         "2": 10.4
       },
-      "score": 57.123400000000004
+      "score": 57.2135
     },
     {
       "match_id": 10,
       "match": "VALLADOLID | RACING S.",
       "prediction": "X",
       "confidence": "BAJA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 29.1",
+      "reasoning": "Optimizado para distribución personalizada. Score: 29.0",
       "probabilities": {
         "1": 30.4,
-        "X": 30.3,
-        "2": 39.3
+        "X": 30.2,
+        "2": 39.4
       },
-      "score": 29.1183
+      "score": 29.022199999999998
     },
     {
       "match_id": 11,
@@ -816,13 +818,13 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "match": "SPORTING | MÁLAGA",
       "prediction": "1",
       "confidence": "ALTA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 60.1",
+      "reasoning": "Optimizado para distribución personalizada. Score: 60.0",
       "probabilities": {
-        "1": 57.2,
+        "1": 57.1,
         "X": 29.7,
         "2": 13.2
       },
-      "score": 60.1172
+      "score": 60.0121
     },
     {
       "match_id": 13,
@@ -845,28 +847,34 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
       "reasoning": "Optimizado para distribución personalizada. Score: 71.7",
       "probabilities": {
         "1": 64.5,
-        "X": 24.6,
-        "2": 10.9
+        "X": 24.5,
+        "2": 11.0
       },
       "score": 71.6595
     },
     {
       "match_id": 15,
       "match": "R.SOCIEDAD | AT.MADRID",
-      "prediction": "X",
-      "confidence": "BAJA",
-      "reasoning": "Optimizado para distribución personalizada. Score: 0.0",
+      "prediction": "1-2",
+      "confidence": "N/A",
+      "reasoning": "Marcador más probable basado en probabilidades de goles",
       "probabilities": {
-        "1": 0,
-        "X": 0,
-        "2": 0
-      },
-      "score": 0.0
+        "id": 15,
+        "0_Goles_Local_Prob": 28.3,
+        "1_Goles_Local_Prob": 54.9,
+        "2_Goles_Local_Prob": 12.9,
+        "Mas_Goles_Local_Prob": 3.9,
+        "0_Goles_Visitante_Prob": 8.4,
+        "1_Goles_Visitante_Prob": 37.2,
+        "2_Goles_Visitante_Prob": 40.1,
+        "Mas_Goles_Visitante_Prob": 14.3,
+        "partido": "R.SOCIEDAD | AT.MADRID"
+      }
     }
   ],
   "summary": {
     "1": 7,
-    "X": 4,
+    "X": 3,
     "2": 4
   }
 }
