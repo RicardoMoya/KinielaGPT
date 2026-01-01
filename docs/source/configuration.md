@@ -6,7 +6,7 @@
 
 Edita el archivo de configuración `claude_desktop_config.json` que según tu sistema operativo se encuentra en:
 
-- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Roaming\Claude\claude_desktop_config.json`
 - **macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 Añade una de las siguientes configuraciones según tu método de instalación:

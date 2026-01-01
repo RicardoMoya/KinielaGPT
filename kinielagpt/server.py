@@ -443,5 +443,15 @@ async def main() -> None:
         )
 
 
+def run() -> None:
+    """
+    Función síncrona que ejecuta el servidor MCP.
+    
+    Esta es la función de punto de entrada definida en pyproject.toml
+    para el script `kinielagpt`.
+    """
+    asyncio.run(main())
+
+
 if __name__ == "__main__":
-    asyncio.run(main=main())
+    run()

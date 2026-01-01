@@ -23,9 +23,7 @@ Punto de entrada para ejecutar el servidor MCP como módulo Python.
 Permite ejecutar el servidor con: python -m kinielagpt
 """
 
-import asyncio
-
-from kinielagpt.server import main
+from kinielagpt.server import run
 
 if __name__ == "__main__":
-    asyncio.run(main=main())
+    run()

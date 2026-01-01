@@ -29,7 +29,7 @@ LinkedIn: https://www.linkedin.com/in/phdricardomoya/
 Licencia: AGPL-3.0-or-later
 """
 
-__version__ = "1.0.0"
+__version__ = "1.0.3"
 __author__ = "Ricardo Moya"
 __email__ = "contact@ricardomoya.dev"
 __license__ = "AGPL-3.0-or-later"
