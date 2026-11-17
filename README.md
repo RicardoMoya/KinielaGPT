@@ -168,7 +168,7 @@ pip install kinielagpt
 
 Edita el archivo de configuración `claude_desktop_config.json` que según tu sistema operativo se encuentra en:
 
-- **Windows:** `%APPDATA%\Roaming\Claude\claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 Añade una de las siguientes configuraciones según tu método de instalación:
@@ -176,12 +176,16 @@ Añade una de las siguientes configuraciones según tu método de instalación:
 <details>
 <summary><b>Usando uvx</b></summary>
 
+> [!IMPORTANT]
+> `--with "mcp<2"` es necesario con la versión 1.0.3 publicada en PyPI: declara `mcp` sin límite superior y con
+> `mcp` 2.x el servidor no arranca. Las versiones posteriores ya fijan `mcp<2` en sus dependencias.
+
 ```json
 {
   "mcpServers": {
     "kinielagpt": {
       "command": "uvx",
-      "args": ["kinielagpt"]
+      "args": ["--with", "mcp<2", "kinielagpt"]
     }
   }
 }
@@ -223,12 +227,16 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
 <details>
 <summary><b>Usando uvx</b></summary>
 
+> [!IMPORTANT]
+> `--with "mcp<2"` es necesario con la versión 1.0.3 publicada en PyPI: declara `mcp` sin límite superior y con
+> `mcp` 2.x el servidor no arranca. Las versiones posteriores ya fijan `mcp<2` en sus dependencias.
+
 ```json
 {
   "mcpServers": {
     "kinielagpt": {
       "command": "uvx",
-      "args": ["kinielagpt"]
+      "args": ["--with", "mcp<2", "kinielagpt"]
     }
   }
 }
@@ -281,13 +289,18 @@ Una vez configurado el MCP, puedes interactuar con tu LLM (Claude, GPT, Gemini, 
 |-------------|-------------|----------------------|----------|
 | `get_last_quiniela` | Obtiene la última quiniela disponible | - | Jornada, temporada y partidos |
 | `get_quiniela` | Información de jornada específica | `jornada`, `temporada` | Partidos programados |
-| `get_probabilities` | Probabilidades basadas en LAE de una jornada | `jornada`, `temporada` | Probabilidades 1/X/2 y goles |
-| `predict_quiniela` | Predicción completa con estrategias: conservadora, arriesgada, personalizada | `jornada`, `temporada`, `strategy` | Quiniela de 15 partidos |
+| `get_probabilities` | Porcentajes de apuestas del público (media de LAE y Quinielista) de una jornada | `jornada`, `temporada` | Porcentajes 1/X/2 y goles |
+| `predict_quiniela` | Predicción completa con estrategias: conservadora, arriesgada, personalizada | `jornada`, `temporada`, `strategy`, `custom_distribution` (suma = partidos 1X2, normalmente 14) | Quiniela de 15 partidos |
 | `detect_surprises` | Detecta inconsistencias en partidos | `jornada`, `temporada`, `threshold` | Lista de partidos con alertas de sorpresas potenciales |
-| `analyze_match` | Análisis detallado de un partido | `jornada`, `temporada`, `partido` | Predicción y datos contextuales |
-| `analyze_team` | Rendimiento completo de un equipo | `jornada`, `temporada`, `equipo` | Análisis con rachas y tendencias |
+| `analyze_match` | Análisis detallado de un partido | `jornada`, `temporada`, `match_id`, `include_prediction` | Predicción y datos contextuales, o solo datos en crudo |
+| `analyze_team` | Rendimiento completo de un equipo | `jornada`, `temporada`, `team_name` | Análisis con rachas y tendencias |
 
 **Total: 7 herramientas MCP disponibles**
+
+> [!NOTE]
+> Los valores que devuelve `get_probabilities` (y que usan las estrategias de predicción) son **porcentajes de
+> apuestas del público**, no probabilidades reales de resultado. `temporada` es el año en que termina la
+> temporada: 2026 equivale a 2025/2026.
 
 Para detalles completos de parámetros y ejemplos, consulta la [documentación completa](https://ricardomoya.github.io/KinielaGPT/).
 

@@ -6,7 +6,7 @@
 
 Edita el archivo de configuración `claude_desktop_config.json` que según tu sistema operativo se encuentra en:
 
-- **Windows:** `%APPDATA%\Roaming\Claude\claude_desktop_config.json`
+- **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
 - **macOS/Linux:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 Añade una de las siguientes configuraciones según tu método de instalación:
@@ -19,7 +19,7 @@ Añade una de las siguientes configuraciones según tu método de instalación:
   "mcpServers": {
     "kinielagpt": {
       "command": "uvx",
-      "args": ["kinielagpt"]
+      "args": ["--with", "mcp<2", "kinielagpt"]
     }
   }
 }
@@ -61,7 +61,7 @@ Abre la Paleta de Comandos (`Ctrl + Shift + P`), ejecuta `MCP: Open User Configu
   "mcpServers": {
     "kinielagpt": {
       "command": "uvx",
-      "args": ["kinielagpt"]
+      "args": ["--with", "mcp<2", "kinielagpt"]
     }
   }
 }

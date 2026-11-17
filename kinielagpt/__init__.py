@@ -31,9 +31,9 @@ Licencia: AGPL-3.0-or-later
 
 __version__ = "1.0.3"
 __author__ = "Ricardo Moya"
-__email__ = "contact@ricardomoya.dev"
+__email__ = "setmoya@gmail.com"
 __license__ = "AGPL-3.0-or-later"
-__github__ = "https://github.com/RicardoMoya/kiniela-gpt"
+__github__ = "https://github.com/RicardoMoya/KinielaGPT"
 
 from kinielagpt import data_source
 from kinielagpt.analyzer import Analyzer
